@@ -1,0 +1,24 @@
+{
+  "name": "a11y-guidelines",
+  "version": "0.0.0",
+  "description": "Ameblo Accessibility Guidelines",
+  "devDependencies": {
+    "textlint": "^8.2.1",
+    "textlint-rule-preset-japanese": "^1.3.4",
+    "textlint-rule-preset-jtf-style": "^2.2.5"
+  },
+  "scripts": {
+    "test": "npm run textlint",
+    "textlint": "textlint content",
+    "textlint:fix": "textlint --fix content"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@ghe.ca-tools.org:tama/a11y-guidelines.git"
+  },
+  "keywords": [
+    "accessibility"
+  ],
+  "author": "CyberAgent, Inc.",
+  "license": "MIT"
+}
