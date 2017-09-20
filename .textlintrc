@@ -1,6 +1,13 @@
 {
   "rules": {
-    "preset-japanese": true,
+    "preset-japanese": {
+      "no-mix-dearu-desumasu": {
+         "preferInHeader": "である",
+         "preferInBody": "である",
+         "preferInList": "である",
+         "strict": false
+       }
+    },
     "preset-jtf-style": true
   }
 }
