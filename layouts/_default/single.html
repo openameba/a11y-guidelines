@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    {{ partial "meta.html" . }}
+  </head>
+
+  <body>
+    {{ partial "header.html" . }}
+
+    <main class="Main">
+      <div class="Container">
+        <article class="Article">
+          <h2>{{ .Params.Title }}</h2>
+          {{ .Content }}
+        </article>
+      </div>
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    {{ partial "script.html" . }}
+  </body>
+</html>
