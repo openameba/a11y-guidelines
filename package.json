@@ -10,8 +10,8 @@
   },
   "scripts": {
     "test": "npm run textlint",
-    "textlint": "textlint content",
-    "textlint:fix": "textlint --fix content"
+    "textlint": "textlint content src",
+    "textlint:fix": "textlint --fix content src"
   },
   "repository": {
     "type": "git",
