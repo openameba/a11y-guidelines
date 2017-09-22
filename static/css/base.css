@@ -1,0 +1,74 @@
+html {
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  color: #444;
+}
+
+@media (max-width: 414px) {
+  body {
+    font-size: 0.875em; /* 14px */
+  }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.5em; /* 40px */
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2em; /* 32px */
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.75em; /* 28px */
+}
+
+h4 {
+  font-size: 1.5em; /* 24px */
+}
+
+h5 {
+  font-size: 1.375em; /* 22px */
+}
+
+h6 {
+  font-size: 1.25em; /* 20px */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+code {
+  font-family: 'Roboto Mono', monospace;
+}
+
+ol,
+ul {
+  padding-left: 1.2em;
+}
+
+li {
+  margin: 0.25em 0;
+}
+
+iframe {
+  overflow: hidden;
+  border: 0;
+}
