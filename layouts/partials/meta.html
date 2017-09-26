@@ -5,14 +5,17 @@
 {{ else }}
   <title>{{ .Title }} - {{ .Site.Title }}</title>
 {{ end }}
-<link rel="icon" href="{{ .Site.BaseURL }}/favicon.png">
-<link rel="shortcut icon" href="{{ .Site.BaseURL }}/favicon.png">
+<link rel="icon" href="{{ .Site.BaseURL }}favicon.png">
+<link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/github.min.css">
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/base.css">
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/app.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/base.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/container.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/header.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/footer.css">
 
 <meta property="og:description" content="{{ .Site.Params.description }}">
 <meta property="og:image" content="{{ .Site.BaseURL }}/favicon.png">
@@ -26,7 +29,7 @@
 <meta name="twitter:url" content="{{ .Permalink }}">
 <meta name="twitter:title" content="{{ .Title }}">
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
-<link rel="apple-touch-icon-precomposed" href="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ .Site.BaseURL }}img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ .Site.BaseURL }}img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ .Site.BaseURL }}img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" href="{{ .Site.BaseURL }}img/apple-touch-icon.png">
