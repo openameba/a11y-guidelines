@@ -1,0 +1,15 @@
+.Header {
+  margin-bottom: 60px;
+  padding: 24px 0;
+  color: #000;
+}
+
+.Header a {
+  color: inherit;
+}
+
+.Header__Logo {
+  height: 48px;
+  margin: 0;
+  vertical-align: -0.25em;
+}
