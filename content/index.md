@@ -3,11 +3,36 @@ layout: single
 title: Ameblo Accessibility Guidelines
 ---
 
+## 対象範囲
+
+SPブラウザで閲覧する
+
+- トップページ： https://ameblo.jp/{amebaId}
+- 記事詳細ページ： https://ameblo.jp/{amebaId}/entry-{entryId}.html
+
+の、全てのページとコンテンツを対象とする。
+
+本プロジェクトの目的の実現に向けたアクセシブルなサービスを提供できるよう努めるが、ユーザーから提供されるコンテンツや情報そのものは、本ガイドラインの対象外とする。
+
+より多くのユーザーにアクセスされている上記2画面を当面の目標とする。
+
+PCブラウザやネイティブアプリなどの他端末など、対象範囲は徐々に広げていくものとする。
+
+## 各項目の構成
+
+- 方針：その項目の簡単な説明
+- 詳細：項目を対応する目的、対応方法の詳細
+- テスト・チェック方法
+- 実装方法
+- 参考文献
+
 ## 目次
 
-### 1 知覚可能
+WCAG2.0に記載の項目のうち、アメブロで準拠すべき項目
 
-- [1.1.1](/a11y-guidelines/1/1/1)
+### 1. 知覚可能
+
+- [1.1.1 画像に代替テキストを提供する](/a11y-guidelines/1/1/1)
 - [1.2.1](/a11y-guidelines/1/2/1)
 - [1.2.2](/a11y-guidelines/1/2/2)
 - [1.2.3](/a11y-guidelines/1/2/3)
@@ -23,7 +48,7 @@ title: Ameblo Accessibility Guidelines
 - [1.4.7](/a11y-guidelines/1/4/7)
 - [1.4.8](/a11y-guidelines/1/4/8)
 
-### 2 操作可能
+### 2. 操作可能
 
 - [2.1.1](/a11y-guidelines/2/1/1)
 - [2.1.2](/a11y-guidelines/2/1/2)
@@ -43,7 +68,7 @@ title: Ameblo Accessibility Guidelines
 - [2.4.9](/a11y-guidelines/2/4/9)
 - [2.4.10](/a11y-guidelines/2/4/10)
 
-### 3 理解可能
+### 3. 理解可能
 
 - [3.1.1](/a11y-guidelines/3/1/1)
 - [3.1.3](/a11y-guidelines/3/1/3)
@@ -60,7 +85,7 @@ title: Ameblo Accessibility Guidelines
 - [3.3.5](/a11y-guidelines/3/3/5)
 - [3.3.6](/a11y-guidelines/3/3/6)
 
-### 4 堅牢性
+### 4. 堅牢性
 
 - [4.1.1](/a11y-guidelines/4/1/1)
 - [4.1.2](/a11y-guidelines/4/1/2)
