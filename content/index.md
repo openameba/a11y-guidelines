@@ -1,6 +1,5 @@
 ---
 layout: single
-title: Ameblo Accessibility Guidelines
 ---
 
 ## 対象範囲

@@ -5,6 +5,11 @@
   background-color: #2d8c3c;
 }
 
+.Footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .Footer__Credit {
   display: flex;
   justify-content: flex-end;
