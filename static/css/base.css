@@ -16,14 +16,6 @@ body {
   }
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: normal;
-}
-
 h1 {
   font-size: 2.5em; /* 40px */
   line-height: 1.2;
@@ -51,8 +43,7 @@ h6 {
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+  color: #777;
 }
 
 code {
