@@ -38,7 +38,7 @@ WCAG2.0に記載の項目のうち、アメブロで準拠すべき項目
 - [1.3.1](/a11y-guidelines/1/3/1)
 - [1.3.2](/a11y-guidelines/1/3/2)
 - [1.3.3](/a11y-guidelines/1/3/3)
-- [1.4.1](/a11y-guidelines/1/4/1)
+- [1.4.1 色の使用](/a11y-guidelines/1/4/1)
 - [1.4.2](/a11y-guidelines/1/4/2)
 - [1.4.3](/a11y-guidelines/1/4/3)
 - [1.4.4](/a11y-guidelines/1/4/4)
