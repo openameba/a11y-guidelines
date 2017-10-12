@@ -10,10 +10,7 @@
     "textlint": "textlint content src",
     "textlint:fix": "textlint --fix content src"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@ghe.ca-tools.org:tama/a11y-guidelines.git"
-  },
+  "repository": "openameba/a11y-guidelines",
   "keywords": [
     "accessibility"
   ],
