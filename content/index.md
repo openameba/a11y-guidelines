@@ -53,7 +53,7 @@ WCAG2.0に記載の項目のうち、アメブロで準拠すべき項目
 
 - [2.1.1](/a11y-guidelines/2/1/1)
 - [2.1.2](/a11y-guidelines/2/1/2)
-- [2.2.1](/a11y-guidelines/2/2/1)
+- [2.2.1 キーボード、タッチデバイスでの操作](/a11y-guidelines/2/2/1)
 - [2.2.2](/a11y-guidelines/2/2/2)
 - [2.2.4](/a11y-guidelines/2/2/4)
 - [2.3.1](/a11y-guidelines/2/3/1)
