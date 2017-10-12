@@ -5,7 +5,6 @@
   "description": "Ameblo Accessibility Guidelines",
   "scripts": {
     "start": "hugo serve",
-    "build": "hugo",
     "test": "npm run textlint",
     "textlint": "textlint content src",
     "textlint:fix": "textlint --fix content src"
