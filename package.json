@@ -2,7 +2,7 @@
   "name": "a11y-guidelines",
   "private": true,
   "version": "0.0.0",
-  "description": "Ameblo Accessibility Guidelines",
+  "description": "Ameba Accessibility Guidelines",
   "scripts": {
     "start": "hugo serve",
     "test": "npm run textlint",
