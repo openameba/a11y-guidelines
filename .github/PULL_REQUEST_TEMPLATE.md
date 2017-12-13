@@ -1,10 +1,11 @@
+## チェック項目
+
+Pull Request を出す前に確認しましょう
+
+- [ ] Pull Request の概要を適切に書いた
+- [ ] レビュアの指定をしている
+- [ ] `npm test` を実行してエラーがでていない
+
+---
+
 ## 概要
-
-## 見た人はチェックしてね
-
-- [ ] @he0003-sg
-- [ ] @matsuura-dai
-- [ ] @tanaka-yui
-- [ ] @toki-marina
-- [ ] @totsuka-mayuko
-- [ ] @yonekawa-yui
