@@ -7,7 +7,14 @@
     "start": "hugo serve",
     "test": "npm run textlint",
     "textlint": "textlint content src",
-    "textlint:fix": "textlint --fix content src"
+    "textlint:fix": "textlint --fix content src",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.@(md)": [
+      "textlint --fix",
+      "git add"
+    ]
   },
   "repository": "openameba/a11y-guidelines",
   "keywords": [
@@ -16,6 +23,8 @@
   "author": "CyberAgent, Inc.",
   "license": "MIT",
   "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
     "textlint": "^8.2.1",
     "textlint-rule-preset-japanese": "^1.3.4",
     "textlint-rule-preset-jtf-style": "^2.2.5",
