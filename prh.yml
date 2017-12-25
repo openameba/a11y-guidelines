@@ -60,6 +60,7 @@ rules:
 
   - expected: 代わり
     patterns:
+      - かわり
       - がわり
 
   # patternには正規表現が利用可能
