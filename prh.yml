@@ -50,6 +50,18 @@ rules:
     patterns:
       - 利用者
 
+  - expected: または
+    patterns:
+      - 又は
+
+  - expected: や
+    patterns:
+      - 及び
+
+  - expected: 代わり
+    patterns:
+      - がわり
+
   # patternには正規表現が利用可能
   - expected: （$1）
     pattern:  /\(([^)]+)\)/
@@ -76,3 +88,9 @@ rules:
     specs:
       - from: サーバ
         to:   サーバー
+
+  - expected: ユーザー
+    pattern:  /ユーザ(?!ー)/
+    specs:
+      - from: ユーザ
+        to:   ユーザー
