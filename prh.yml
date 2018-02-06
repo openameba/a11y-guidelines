@@ -63,6 +63,10 @@ rules:
       - かわり
       - がわり
 
+  - expected: 文字色
+    patterns:
+      - テキスト色
+
   # patternには正規表現が利用可能
   - expected: （$1）
     pattern:  /\(([^)]+)\)/
