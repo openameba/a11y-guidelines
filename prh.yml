@@ -58,6 +58,10 @@ rules:
     patterns:
       - 及び
 
+  - expected: ただし
+    patterns:
+      - 但し
+
   - expected: 代わり
     patterns:
       - かわり
