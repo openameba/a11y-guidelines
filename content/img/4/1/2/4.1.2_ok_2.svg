@@ -6,39 +6,30 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="4.1.2_ok_2">
-            <rect id="Rectangle-10" fill="#FFFFFF" x="20" y="20" width="460" height="460"></rect>
-            <text id="バナー作成の手順" font-family="HiraKakuPro-W6, Hiragino Kaku Gothic Pro" font-size="32" font-weight="500" fill="#555555">
-                <tspan x="90" y="72">バナー作成の手順</tspan>
+            <rect id="Rectangle-10" fill="#FFFFFF" x="21" y="20" width="460" height="460"></rect>
+            <text id="見出し一覧" font-family="HiraKakuPro-W6, Hiragino Kaku Gothic Pro" font-size="28" font-weight="500" fill="#555555">
+                <tspan x="181" y="89">見出し一覧</tspan>
             </text>
-            <text id="手順①バナー構成を確認" font-family="HiraKakuPro-W6, Hiragino Kaku Gothic Pro" font-size="22" font-weight="500" fill="#555555">
-                <tspan x="114" y="163">手順①バナー構成を確認</tspan>
+            <text id="バナー作成の手順" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="20" font-weight="300" fill="#555555">
+                <tspan x="81" y="150">バナー作成の手順</tspan>
             </text>
-            <text id="バナーの構成を確認します。本文…" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="16" font-weight="300" fill="#555555">
-                <tspan x="115" y="192">バナーの構成を確認します。本文…</tspan>
+            <text id="手順①バナー構成を確認" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="20" font-weight="300" fill="#555555">
+                <tspan x="120" y="194">手順①バナー構成を確認</tspan>
             </text>
-            <text id="構成の内容を整理しましょう。本文…" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="16" font-weight="300" fill="#555555">
-                <tspan x="138" y="256">構成の内容を整理しましょう。本文…</tspan>
+            <text id="構成の内容を整理する" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="20" font-weight="300" fill="#555555">
+                <tspan x="160" y="238">構成の内容を整理する</tspan>
             </text>
-            <text id="………" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="16" font-weight="300" fill="#555555">
-                <tspan x="115" y="342">………</tspan>
+            <text id="手順②入稿規定を確認" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="20" font-weight="300" fill="#555555">
+                <tspan x="120" y="282">手順②入稿規定を確認</tspan>
             </text>
-            <text id="………" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="16" font-weight="300" fill="#555555">
-                <tspan x="138" y="406">………</tspan>
+            <text id="サイズ・容量・掲載箇所" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="20" font-weight="300" fill="#555555">
+                <tspan x="160" y="326">サイズ・容量・掲載箇所</tspan>
             </text>
-            <text id="構成の内容を整理する。" font-family="HiraKakuPro-W6, Hiragino Kaku Gothic Pro" font-size="16" font-weight="500" fill="#555555">
-                <tspan x="138" y="228">構成の内容を整理する。</tspan>
+            <text id="手順③素材を集める" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="20" font-weight="300" fill="#555555">
+                <tspan x="120" y="370">手順③素材を集める</tspan>
             </text>
-            <text id="バナーの作成手順を紹介します。本文…" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="16" font-weight="300" fill="#555555">
-                <tspan x="90" y="106">バナーの作成手順を紹介します。本文…</tspan>
-            </text>
-            <text id="手順②入稿規定を確認" font-family="HiraKakuPro-W6, Hiragino Kaku Gothic Pro" font-size="22" font-weight="500" fill="#555555">
-                <tspan x="115" y="313">手順②入稿規定を確認</tspan>
-            </text>
-            <text id="サイズ・容量・掲載箇所" font-family="HiraKakuPro-W6, Hiragino Kaku Gothic Pro" font-size="16" font-weight="500" fill="#555555">
-                <tspan x="138" y="378">サイズ・容量・掲載箇所</tspan>
-            </text>
-            <text id="手順③素材を集める" font-family="HiraKakuPro-W6, Hiragino Kaku Gothic Pro" font-size="22" font-weight="500" fill="#555555">
-                <tspan x="115" y="463">手順③素材を集める</tspan>
+            <text id="使用可能な素材一覧" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="20" font-weight="300" fill="#555555">
+                <tspan x="160" y="414">使用可能な素材一覧</tspan>
             </text>
         </g>
     </g>
