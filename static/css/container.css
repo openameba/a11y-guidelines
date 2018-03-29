@@ -1,6 +1,0 @@
-.Container {
-  max-width: 640px;
-  height: 100%;
-  margin: 0 auto;
-  padding: 0 3.125vw; /* = 10px viewport-width: 320px */
-}

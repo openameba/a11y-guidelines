@@ -1,8 +1,17 @@
 <header class="Header">
-  <h1 class="Container">
-    <a href="{{ .Site.BaseURL }}">
-      <img src="{{ .Site.BaseURL }}/img/logo.svg" class="Header__Logo" alt="Ameba" />
-      <span style="display: inline-block;">Accessibility Guidelines</span>
-    </a>
-  </h1>
+  {{ if eq .Params.isTop true }}
+    <h1 class="Container">
+      <a href="{{ .Site.BaseURL }}">
+        <img src="{{ .Site.BaseURL }}/img/logo.svg" class="Header__Logo" alt="Ameba" />
+        <span class="Header__title">Accessibility<br>Guidelines</span>
+      </a>
+    </h1>
+  {{ else }}
+    <p class="Container">
+      <a href="{{ .Site.BaseURL }}">
+        <img src="{{ .Site.BaseURL }}/img/logo.svg" class="Header__Logo" alt="Ameba" />
+        <span class="Header__title">Accessibility<br>Guidelines</span>
+      </a>
+    </p>
+  {{ end }}
 </header>
