@@ -1,0 +1,10 @@
+/**
+ * ページ共通　style
+ */
+@import "./base.css";
+@import "./overrides.css";
+
+@import "./container.css";
+@import "./footer.css";
+@import "./header.css";
+@import "./label.css";

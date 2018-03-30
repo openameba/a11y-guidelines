@@ -2,6 +2,9 @@ box: node:latest
 build:
   steps:
     - npm-install
+    - script:
+        name: build
+        code: npm run build
     - arjen/hugo-build:
         version: "0.24.1"
 deploy:

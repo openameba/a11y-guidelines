@@ -1,0 +1,11 @@
+/**
+ * Overrides
+ * ライブラリの上書きしたいもの
+ */
+
+/* highlight.jsの上書き */
+.hljs {
+  padding: 3.2rem 32px;
+  font-size: 1.4rem;
+  line-height: 2.28;
+}
