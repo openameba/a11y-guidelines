@@ -12,6 +12,7 @@ html {
 
 body {
   color: var(--clr-darkgray);
+  margin: 0;
 }
 
 a {
