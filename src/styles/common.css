@@ -12,18 +12,18 @@ html {
 }
 
 body {
-  color: #333;
+  color: var(--clr-darkgray);
 }
 
 a {
-  color: #757575;
+  color: var(--clr-gray);
 }
 
 a:hover,
 a:focus {
-  color: #333;
+  color: var(--clr-darkgray);
   text-decoration: none;
-  background-color: #e2e2e2;
+  background-color: var(--clr-silver);
 }
 
 /* ヘッダー以外のアウトラインは不要 */
@@ -53,7 +53,7 @@ ol > li ul li::before {
   display: inline-block;
   width: 8px;
   height: 2px;
-  background: #757575;
+  background: var(--clr-gray);
   vertical-align: middle;
   margin-right: 8px;
 }
@@ -89,7 +89,6 @@ p {
 
 .Header {
   padding: 0;
-  color: #000;
   margin-bottom: 7.2rem;
 }
 
@@ -112,7 +111,7 @@ p {
 }
 
 .Header__title {
-  border-left: 8px solid #333;
+  border-left: 8px solid var(--clr-darkgray);
   display: inline-block;
   padding-left: 32px;
   font-size: 4.8rem;
@@ -124,8 +123,8 @@ p {
 .Footer {
   margin-top: 30px;
   padding: 30px 0;
-  color: #fff;
-  background-color: #2d8c3c;
+  color: var(--clr-white);
+  background-color: var(--clr-green);
 }
 
 .Footer a {
@@ -139,9 +138,9 @@ p {
 }
 
 .Label {
-  background: #e2e2e2;
+  background: var(--clr-silver);
   border-radius: 8px;
-  color: #757575;
+  color: var(--clr-gray);
   font-size: 10px;
   font-weight: bold;
   margin-left: 8px;
