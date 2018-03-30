@@ -84,7 +84,7 @@ WCAG2.0に記載の項目のうち、Amebaブランドのサービスで準拠�
 - [2.4.5 コンテンツへの到達手段を複数用意する](/a11y-guidelines/2/4/5)<span class="Label">AA</span>
 - [2.4.6 見出しやラベルは、主題または目的を説明する](/a11y-guidelines/2/4/6)<span class="Label">AA</span>
 - [2.4.7 フォーカスを見えるようにする](/a11y-guidelines/2/4/7)<span class="Label">AA</span>
-- [2.4.8](/a11y-guidelines/2/4/8)<span class="Label">AAA</span>
+- [2.4.8 現在位置を確認することができる](/a11y-guidelines/2/4/8)<span class="Label">AAA</span>
 - [2.4.10 各セクションに見出しをつける](/a11y-guidelines/2/4/10)<span class="Label">AAA</span>
 
 ### 3. 理解可能
