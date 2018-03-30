@@ -7,6 +7,8 @@
     "styles": "npm run styles:default && npm run styles:detail",
     "styles:default": "postcss -c ./postcss.config.js ./src/styles/default.css -o ./static/css/default.css",
     "styles:detail": "postcss -c ./postcss.config.js ./src/styles/detail.css -o ./static/css/detail.css",
+    "watch:styles": "onchange ./src/styles/**/*.css -- npm run styles",
+    "watch": "npm run watch:styles",
     "start": "hugo serve",
     "test": "npm run textlint",
     "textlint": "textlint content src",
@@ -30,12 +32,17 @@
     "cssnano": "^3.10.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
+    "onchange": "^3.3.0",
     "postcss-cli": "^5.0.0",
+    "postcss-custom-properties": "^7.0.0",
     "postcss-import": "^11.1.0",
     "postcss-single-charset": "^2.0.0",
     "textlint": "^10.0.1",
     "textlint-rule-preset-japanese": "^2.0.0",
     "textlint-rule-preset-jtf-style": "^2.2.5",
     "textlint-rule-prh": "^5.0.1"
+  },
+  "dependencies": {
+    "ameba-color-palette.css": "^2.2.0"
   }
 }

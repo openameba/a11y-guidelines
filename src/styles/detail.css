@@ -1,4 +1,17 @@
 @charset "utf-8";
 
+/**
+ * Colors
+ * https://app.frontify.com/d/WNaMzU7K3G6y/amebablog-style-guide#/basics/colors
+ */
+@import "ameba-color-palette.css";
+
+/**
+ * Common css
+ */
 @import "common.css";
+
+/**
+ * For detail.css
+ */
 @import "detail/index.css";
