@@ -1,4 +1,5 @@
 ---
+pageType: default
 layout: single
 title: 対象となるサービス
 ---

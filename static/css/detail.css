@@ -1,0 +1,93 @@
+/*
+*
+* 記事詳細ページ
+*/
+h1 {
+  font-size: 2.6rem;
+  line-height: 1.5;
+  margin: 6.4rem 0 2.4rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  line-height: 1.75;
+  margin: 4.8rem 0 3.2rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+h3 {
+  font-size: 1.6rem;
+  line-height: 1.71;
+  margin: 3.2rem 0 1.6rem;
+}
+
+h4 {
+  border-left: 4px solid #757575;
+  font-size: 1.4rem;
+  line-height: 1.71;
+  margin: 3.2rem 0 2.4rem;
+  padding-left: 16px;
+}
+
+/*
+開閉パネル
+*/
+
+details {
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  color: #333;
+  border: 3px solid #e2e2e2;
+  border-radius: 4px;
+}
+
+summary {
+  text-indent: -1.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  padding: 1.6rem 32px;
+}
+
+summary:before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+details[open] {
+  padding: 0 32px 1.6rem;
+}
+
+details[open] summary {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  margin: 0 -32px 3.6rem;
+}
+
+summary:after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  content: '+';
+  font-size: 28px;
+  color: #858585;
+  height: 100%;
+  display: inline-block;
+  width: 32px;
+  text-align: center;
+}
+details[open] > summary:after {
+  position: absolute;
+  content: '-';
+  font-size: 32px;
+  color: #858585;
+}
