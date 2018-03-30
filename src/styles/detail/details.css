@@ -1,0 +1,60 @@
+/**
+ * 開閉パネル
+ */
+details {
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  color: var(--clr-darkgray);
+  border: 3px solid var(--clr-silver);
+  border-radius: 4px;
+}
+
+summary {
+  text-indent: -1.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  padding: 1.6rem 32px;
+}
+
+summary:before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 100%;
+  background: var(--clr-white);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+details[open] {
+  padding: 0 32px 1.6rem;
+}
+
+details[open] summary {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  margin: 0 -32px 3.6rem;
+}
+
+summary:after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  content: '+';
+  font-size: 28px;
+  color: var(--clr-lightgray);
+  height: 100%;
+  display: inline-block;
+  width: 32px;
+  text-align: center;
+}
+details[open] > summary:after {
+  position: absolute;
+  content: '-';
+  font-size: 32px;
+  color: var(--clr-lightgray);
+}

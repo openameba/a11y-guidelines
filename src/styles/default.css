@@ -1,15 +1,15 @@
 @charset "utf-8";
 
 /**
- * Colors
+ * Custom Properties
  * https://app.frontify.com/d/WNaMzU7K3G6y/amebablog-style-guide#/basics/colors
  */
 @import "ameba-color-palette.css";
 
 /**
- * Common css
+ * Common
  */
-@import "common.css";
+@import "common/index.css";
 
 /**
  * For default.css

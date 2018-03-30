@@ -1,0 +1,74 @@
+/**
+ * base
+ */
+html {
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  font-family: "ヒラギノ角ゴ Pro W6", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--clr-darkgray);
+}
+
+a {
+  color: var(--clr-gray);
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-darkgray);
+  text-decoration: none;
+  background-color: var(--clr-silver);
+}
+
+/* ヘッダー以外のアウトラインは不要 */
+article a {
+  outline: none;
+}
+
+ol,
+ul {
+  padding-left: 28px;
+  margin: 1.6rem 0
+}
+
+ol > li {
+  padding-left: 1.4rem;
+}
+
+ol > li ul {
+  padding: 0;
+}
+
+ol > li ul li {
+  list-style: none;
+}
+ol > li ul li::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 2px;
+  background: var(--clr-gray);
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+li {
+  font-size: 1.4rem;
+  margin: 1.1rem 0;
+}
+
+iframe {
+  overflow: hidden;
+  border: 0;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.71;
+  margin: 12px 0;
+}
