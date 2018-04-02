@@ -1,0 +1,15 @@
+<figure
+  {{ if .Get "class" }} class="{{ .Get "class" }}"  {{ end }} >
+  <div>
+    <img
+      src="{{ .Get "src" }}"
+      alt="{{ .Get "alt" }}"
+    />
+  </div>
+  {{ if or (.Get "caption") (.Get "rule") }}
+    <figcaption>
+      {{ if .Get "rule" }} <span>{{ .Get "rule" }}</span> {{ end }}
+      {{ .Get "caption" }}
+    </figcaption>
+  {{ end }}
+</figure>

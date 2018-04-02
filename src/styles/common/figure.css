@@ -1,0 +1,65 @@
+/**
+ * figure
+ *
+ */
+figure {
+  display: inline-block;
+  margin: 0;
+  max-width: 334px;
+  vertical-align: top;
+}
+
+figure > div {
+  background-color: var(--clr-lightsilver);
+  box-sizing: border-box;
+  border: 1px solid var(--clr-silver);
+  padding: 2.4rem 48px 0;
+}
+
+figure img {
+  width: 100%;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+  font-size: 12px;
+}
+
+figure span {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 16px 0 8px;
+}
+
+.Figure-single,
+.Figure-single > div {
+  max-width: 720px;
+}
+
+.Figure-single > div {
+  padding: 0;
+}
+
+.Figure-good span {
+  color: var(--clr-green);
+}
+
+.Figure-bad span {
+  color: var(--clr-755);
+}
+
+.Figure-good span:before,
+.Figure-bad span:before {
+  padding-right: 12px;
+  line-height: 1;
+}
+
+.Figure-good span:before {
+  content: "\025cb";
+}
+
+.Figure-bad span:before {
+  content: "\02715";
+  font-size: 18px;
+}
