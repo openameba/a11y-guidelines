@@ -7,11 +7,6 @@
 @import "ameba-color-palette.css";
 
 /**
- * Utility
- */
-@import "util/index.css";
-
-/**
  * Common
  */
 @import "common/index.css";

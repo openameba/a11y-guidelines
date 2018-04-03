@@ -44,17 +44,15 @@ summary:after {
   right: 0;
   top: 0;
   bottom: 0;
-  content: '+';
-  font-size: 28px;
-  color: var(--clr-lightgray);
+  content: '';
   height: 100%;
-  display: inline-block;
   width: 32px;
-  text-align: center;
+  background: url('/a11y-guidelines//img/open.svg') no-repeat 0 center;
+  background-size: 12px;
 }
 details[open] > summary:after {
   position: absolute;
-  content: '-';
-  font-size: 32px;
-  color: var(--clr-lightgray);
+  content: '';
+  background: url('/a11y-guidelines//img/close.svg') no-repeat 0 center;
+  background-size: 12px;
 }
