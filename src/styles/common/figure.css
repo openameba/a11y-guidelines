@@ -27,9 +27,9 @@ figure:nth-of-type(2) {
   }
 }
 
-figure img {
+figure img,
+figure video {
   border: 1px solid var(--clr-silver);
-  max-width: 334px;
   max-width: 100%;
 }
 
