@@ -32,3 +32,17 @@
   line-height: 1.16;
   font-weight: bold;
 }
+
+@media (max-width: 414px) {
+  .Header {
+    margin-bottom: 3.6rem;
+  }
+  .Header__Logo {
+    margin-top: 3.2rem;
+    margin-bottom: 2.4rem;
+  }
+  .Header__title {
+    font-size: 3.6rem;
+    padding-left: 24px;
+  }
+}

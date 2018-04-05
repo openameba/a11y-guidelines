@@ -8,9 +8,9 @@
 }
 
 /* PCとSPで基準値かえるならつかう */
-@media (max-width: 414px) {
+@media (max-width: 800px) {
   .Container {
-    padding: 0 3.125vw; /* = 10px viewport-width: 320px */
+    padding: 0 5vw; /* = 16px viewport-width: 320px */
   }
 }
 
