@@ -1,0 +1,17 @@
+<figure {{ if .Get "figureBlock" }} class="{{ .Get "figureBlock" }}" {{ end }}>
+  <img
+    src="{{ .Get "src" }}"
+    alt="{{ .Get "alt" }}"
+  />
+  {{ if or (.Get "caption") (.Get "rule") }}
+    <figcaption>
+      {{ if .Get "rule" }}
+        <span class="RuleLabel RuleLabel--{{ .Get "rule" }}">
+          <img src="{{ .Site.BaseURL }}/img/{{ .Get "rule" }}.svg" width="16" height="16" alt="" />
+          {{ if .Get "rule" | eq "bad" }}Bad{{ else if .Get "rule" | eq "good" }}Good{{ end }}
+        </span>
+      {{ end }}
+      {{ .Get "caption" }}
+    </figcaption>
+  {{ end }}
+</figure>

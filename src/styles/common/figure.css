@@ -1,0 +1,46 @@
+/**
+ * figure
+ *
+ */
+figure {
+  display: inline-block;
+  margin: 0;
+  max-width: 334px;
+  vertical-align: top;
+  margin-top: 4.8rem;
+}
+
+figure:nth-of-type(even) {
+  margin-left: 48px;
+}
+
+figure:first-of-type,
+figure:nth-of-type(2) {
+  margin-top: 0;
+}
+
+@media (max-width: 800px) {
+  figure { display: block; }
+  figure:nth-of-type(even) {
+    margin-left: 0;
+    margin-top: 4.8rem;
+  }
+}
+
+figure img {
+  border: 1px solid var(--clr-silver);
+  max-width: 334px;
+  max-width: 100%;
+}
+
+figure.expand {
+  display: block;
+  max-width: 720px;
+  margin-top: 3.2rem;
+  margin-bottom: 4.8rem;
+}
+
+figcaption {
+  font-size: 12px;
+  margin-top: 0.8rem;
+}
