@@ -6,7 +6,7 @@
   {{ if or (.Get "caption") (.Get "rule") }}
     <figcaption>
       {{ if .Get "rule" }}
-        <span {{ if .Get "class" }} class="{{ .Get "class" }}" {{ end }} >
+        <span {{ if .Get "class" }} class="RuleLabel {{ .Get "class" }}" {{ end }} >
           <img src="{{ .Site.BaseURL }}/img/{{ if .Get "rule" | eq "Bad" }}bad{{ else if .Get "rule" | eq "Good" }}good{{ end }}.svg" width="16" height="16" alt="" />
           {{ .Get "rule" }}
         </span>

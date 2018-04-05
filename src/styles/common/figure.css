@@ -10,10 +10,6 @@ figure {
   margin-top: 4.8rem;
 }
 
-figure.single {
-  max-width: 720px;
-}
-
 figure:nth-of-type(even) {
   margin-left: 48px;
 }
@@ -37,33 +33,14 @@ figure img {
   max-width: 100%;
 }
 
+figure.expand {
+  display: block;
+  max-width: 720px;
+  margin-top: 3.2rem;
+  margin-bottom: 4.8rem;
+}
+
 figcaption {
   font-size: 12px;
   margin-top: 0.8rem;
-}
-
-.Figure-single {
-  max-width: 720px;
-}
-
-.Rule-label {
-  display: block;
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 1;
-  margin: 16px 0 8px;
-  padding-right: 12px;
-}
-
-.Rule-label > img {
-  border: none;
-  vertical-align: bottom;
-}
-
-.Rule-label--good {
-  color: var(--clr-green);
-}
-
-.Rule-label--bad {
-  color: var(--clr-755);
 }
