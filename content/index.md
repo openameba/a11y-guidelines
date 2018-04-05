@@ -39,9 +39,8 @@ WCAG2.0に記載の項目のうち、Amebaブランドのサービスで準拠�
 
 #### 1.2 動画・音声に代替コンテンツを提供する
 
-- [1.2.1 収録済みの音声のみ・映像のみのコンテンツに代替コンテンツを提供する](/a11y-guidelines/1/2/1)<span class="Label">A</span>
+- [1.2.1 収録済みの動画に代替コンテンツを提供する](/a11y-guidelines/1/2/1)<span class="Label">A</span>
 - [1.2.2 収録済みの動画に字幕を提供する](/a11y-guidelines/1/2/2)<span class="Label">A</span>
-- [1.2.3 収録済みの動画に音声解説や代替コンテンツを提供する](/a11y-guidelines/1/2/3)<span class="Label">A</span>
 
 #### 1.3 様々な方法・環境で利用できる
 
