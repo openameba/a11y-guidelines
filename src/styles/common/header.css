@@ -35,14 +35,18 @@
 
 @media (max-width: 414px) {
   .Header {
-    margin-bottom: 3.6rem;
+    margin-bottom: 9.6rem;
   }
   .Header__Logo {
     margin-top: 3.2rem;
-    margin-bottom: 2.4rem;
+    margin-bottom: 2.1rem;
   }
   .Header__title {
     font-size: 3.6rem;
-    padding-left: 24px;
+    padding-left: 0;
+    border-left: 0;
+  }
+  .Header a {
+    padding-bottom: 0;
   }
 }
