@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="500px" height="160px" viewBox="0 0 500 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>2.4.8_ok</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.4.8_ok">
+            <rect id="Rectangle-6" stroke="#CCCCCC" stroke-width="2" x="9" y="47.4945055" width="482" height="65.2967033"></rect>
+            <text id="ホーム" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.111111112" fill="#333333">
+                <tspan x="40" y="88.1428571">ホーム</tspan>
+            </text>
+            <text id="ニュース" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.111111112" fill="#333333">
+                <tspan x="151" y="88.1428571">ニュース</tspan>
+            </text>
+            <text id="特集" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.111111112" fill="#333333">
+                <tspan x="409" y="88.1428571">特集</tspan>
+            </text>
+            <rect id="Rectangle-8" fill="#CCCCCC" x="129" y="61.1538462" width="2" height="37.978022"></rect>
+            <rect id="Rectangle-8" fill="#CCCCCC" x="249" y="61.1538462" width="2" height="37.978022"></rect>
+            <rect id="Rectangle-8" fill="#CCCCCC" x="369" y="61.1538462" width="2" height="37.978022"></rect>
+            <rect id="Rectangle" fill="#2D8C3C" x="237" y="39" width="148" height="82.2857143"></rect>
+            <rect id="Rectangle-2" fill="#2D8C3C" transform="translate(311.000000, 117.065934) rotate(45.000000) translate(-311.000000, -117.065934) " x="299" y="104.406593" width="24" height="25.3186813"></rect>
+            <text id="ランキング" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.111111112" fill="#FFFFFF">
+                <tspan x="260" y="86.032967">ランキング</tspan>
+            </text>
+            <rect id="Rectangle-3" fill="#FFFFFF" x="260" y="94.9120879" width="101" height="2.10989011"></rect>
+        </g>
+    </g>
+</svg>
