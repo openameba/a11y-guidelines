@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="500px" height="400px" viewBox="0 0 500 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #EFEFEF;">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>2.2.4_ng</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="40" y="50" width="420" height="300" rx="8"></rect>
+        <filter x="-7.4%" y="-9.7%" width="114.8%" height="120.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="2.2.4_ng" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle-9">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <text id="アップデートのお知らせ" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.1111111" fill="#333333">
+            <tspan x="139" y="108">アップデートのお知らせ</tspan>
+        </text>
+        <text id="・不具合を修正しました。" font-family="HiraginoSans-W3, Hiragino Sans" font-size="16" font-weight="300" letter-spacing="0.1111111" fill="#333333">
+            <tspan x="130" y="156">・不具合を修正しました。</tspan>
+        </text>
+        <text id="・一部デザインを変更しました。" font-family="HiraginoSans-W3, Hiragino Sans" font-size="16" font-weight="300" letter-spacing="0.1111111" fill="#333333">
+            <tspan x="130" y="188">・一部デザインを変更しました。</tspan>
+        </text>
+        <text id="最新のバージョンに更新します。" font-family="HiraginoSans-W3, Hiragino Sans" font-size="16" font-weight="300" letter-spacing="0.1111111" fill="#333333">
+            <tspan x="135" y="236">最新のバージョンに更新します。</tspan>
+        </text>
+        <rect id="Rectangle-11" fill="#2D8C3C" x="100" y="262" width="300" height="48" rx="8"></rect>
+        <text id="OK" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.1111111" fill="#FFFFFF">
+            <tspan x="234" y="294">OK</tspan>
+        </text>
+    </g>
+</svg>

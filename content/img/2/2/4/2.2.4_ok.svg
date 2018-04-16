@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="500px" height="400px" viewBox="0 0 500 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #EFEFEF;">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>2.2.4_ok</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="40" y="44" width="420" height="312" rx="8"></rect>
+        <filter x="-7.4%" y="-9.3%" width="114.8%" height="119.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="2.2.4_ok" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle-9">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <text id="アップデートのお知らせ" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.1111111" fill="#333333">
+            <tspan x="139" y="102">アップデートのお知らせ</tspan>
+        </text>
+        <text id="・不具合を修正しました。" font-family="HiraginoSans-W3, Hiragino Sans" font-size="16" font-weight="300" letter-spacing="0.1111111" fill="#333333">
+            <tspan x="130" y="150">・不具合を修正しました。</tspan>
+        </text>
+        <text id="・一部デザインを変更しました。" font-family="HiraginoSans-W3, Hiragino Sans" font-size="16" font-weight="300" letter-spacing="0.1111111" fill="#333333">
+            <tspan x="130" y="182">・一部デザインを変更しました。</tspan>
+        </text>
+        <rect id="Rectangle-11" fill="#2D8C3C" x="100" y="208" width="300" height="48" rx="8"></rect>
+        <text id="アップデート" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.1111111" fill="#FFFFFF">
+            <tspan x="190" y="240">アップデート</tspan>
+        </text>
+        <rect id="Rectangle-11" stroke="#2D8C3C" stroke-width="2" x="99" y="267" width="302" height="50" rx="8"></rect>
+        <text id="あとで更新" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.1111111" fill="#2D8C3C">
+            <tspan x="198" y="300">あとで更新</tspan>
+        </text>
+        <g id="Group" transform="translate(422.324116, 82.324116) rotate(45.000000) translate(-422.324116, -82.324116) translate(409.824116, 70.324116)" fill="#AAAAAA">
+            <rect id="Rectangle" x="11" y="0" width="3" height="24"></rect>
+            <rect id="Rectangle" transform="translate(12.500000, 12.000000) rotate(90.000000) translate(-12.500000, -12.000000) " x="11" y="0" width="3" height="24"></rect>
+        </g>
+    </g>
+</svg>
