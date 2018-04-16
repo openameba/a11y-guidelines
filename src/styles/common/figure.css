@@ -46,6 +46,24 @@ figcaption {
   margin: 0;
 }
 
+
+/**
+ * 4.1.2のように画像を2枚並べる図に使う。
+ */
+.FigureMulti {
+  position: relative;
+}
+
+.FigureMulti img {
+  width: 52%;
+}
+
+.FigureMulti img + img {
+  bottom: -1rem;
+  right: 0;
+  position: absolute;
+}
+
 @media (max-width: 800px) {
   .Figurelist {
     margin-left: -8px;

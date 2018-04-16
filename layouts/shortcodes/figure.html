@@ -1,9 +1,17 @@
 {{ if .Get "isList" }}<li>{{ end }}
   <figure>
+    {{ if .Get "src2" }}<div class="FigureMulti">{{ end }}
     <img
       src="{{ .Get "src" }}"
       alt="{{ .Get "alt" }}"
     />
+    {{ if .Get "src2" }}
+      <img
+        src="{{ .Get "src2" }}"
+        alt="{{ .Get "alt2" }}"
+      />
+    {{ end  }}
+    {{ if .Get "src2" }}</div>{{ end }}
     {{ if or (.Get "caption") (.Get "rule") }}
       <figcaption>
         {{ if .Get "rule" }}
