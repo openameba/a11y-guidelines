@@ -46,13 +46,13 @@ summary:after {
   bottom: 0;
   content: '';
   height: 100%;
-  width: 32px;
-  background: url('/a11y-guidelines//img/open.svg') no-repeat 0 center;
-  background-size: 12px;
+  width: 36px;
+  background: url('/a11y-guidelines/img/icon/open.svg') no-repeat 0 center;
+  background-size: 16px;
 }
 details[open] > summary:after {
   position: absolute;
   content: '';
-  background: url('/a11y-guidelines//img/close.svg') no-repeat 0 center;
-  background-size: 12px;
+  background: url('/a11y-guidelines/img/icon/close.svg') no-repeat 0 center;
+  background-size: 16px;
 }
