@@ -12,7 +12,7 @@
 
 .RuleLabel > img {
   border: none;
-  vertical-align: bottom;
+  vertical-align: -0.5em;
 }
 
 .RuleLabel--good {
