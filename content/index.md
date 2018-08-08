@@ -85,6 +85,9 @@ WCAG2.0に記載の項目のうち、Amebaブランドのサービスで準拠�
 - [2.4.8 現在位置を確認することができる](/a11y-guidelines/2/4/8)<span class="Label">AAA</span>
 - [2.4.10 各セクションに見出しをつける](/a11y-guidelines/2/4/10)<span class="Label">AAA</span>
 
+#### 2.5 入力方法
+- [2.5.2 ポインタ操作のキャンセルができる](/a11y-guidelines/2/5/2)<span class="Label">A</span>
+
 ### 3. 理解可能
 
 #### 3.1 読みやすい
