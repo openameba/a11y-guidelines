@@ -46,7 +46,7 @@ WCAG2.0に記載の項目のうち、Amebaブランドのサービスで準拠�
 - [1.3.1 情報や関係性を明確にする](/a11y-guidelines/1/3/1)<span class="Label">A</span>
 - [1.3.2 意味のある順序でコンテンツを表現する](/a11y-guidelines/1/3/2)<span class="Label">A</span>
 - [1.3.3 感覚的な特徴だけで説明しない](/a11y-guidelines/1/3/3)<span class="Label">A</span>
-- [1.3.4 好みの傾きで画面を表示できる](/a11y-guidelines/1/3/4)<span class="Label">AA</span>
+- [1.3.4 表示の向きを固定しない](/a11y-guidelines/1/3/4)<span class="Label">AA</span>
 
 #### 1.4 判別できる（見やすく、聞きやすく、区別しやすく）
 
