@@ -118,3 +118,4 @@ WCAG2.1に記載の項目のうち、Amebaブランドのサービスで準拠�
 
 - [4.1.1 HTMLを正しく記述する](/a11y-guidelines/4/1/1)<span class="Label">A</span>
 - [4.1.2 HTMLの要素や属性を正しい役割で使用する](/a11y-guidelines/4/1/2)<span class="Label">A</span>
+- [4.1.3 コンテンツの変更をユーザーに知らせる](/a11y-guidelines/4/1/3)<span class="Label">AA</span>
