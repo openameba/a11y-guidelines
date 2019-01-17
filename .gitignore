@@ -3,3 +3,5 @@ node_modules/
 npm-debug.log
 public
 static/css/*
+.idea/
+*.iml
