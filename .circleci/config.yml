@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  test:
+    working_directory: ~/a11y-guidelines
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - node-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-cache-{{ .Branch }}
+            - node-cache-master
+            - node-cache-
+      - run: npm install
+      - run: npm run test
+workflows:
+  version: 2
+  build_flow:
+    jobs:
+      - test
