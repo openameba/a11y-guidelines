@@ -15,7 +15,7 @@ jobs:
       - run: npm install
       - run: npm run test
       - save_cache:
-          keys: node-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: node-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - ~/node_modules
 workflows:
