@@ -57,6 +57,7 @@ WCAG2.1に記載の項目のうち、Amebaブランドのサービスで準拠�
 - [1.4.4 テキストサイズを拡大縮小できる](/a11y-guidelines/1/4/4)<span class="Label">AA</span>
 - [1.4.7 音声コンテンツを背景音で邪魔しない](/a11y-guidelines/1/4/7)<span class="Label">AAA</span>
 - [1.4.8 テキストの可読性を担保する](/a11y-guidelines/1/4/8)<span class="Label">AAA</span>
+- [1.4.10 リフローできる](/a11y-guidelines/1/4/10)<span class="Label">AA</span>
 - [1.4.13 ホバーまたはフォーカスで表示されるコンテンツを制御できる](/a11y-guidelines/1/4/13)<span class="Label">AA</span>
 
 ### 2. 操作可能
