@@ -75,7 +75,7 @@ WCAG2.1に記載の項目のうち、Amebaブランドのサービスで準拠�
 #### 2.3 発作を防止する
 
 - [2.3.1 画面の点滅を防止する](/a11y-guidelines/2/3/1)<span class="Label">A</span>
-- [2.3.3 モーションアニメーションを無効にできる](/a11y-guidelines/2/3/3)<span class="Label">AAA</span>
+- [2.3.3 インタラクションによるアニメーションを無効にできる](/a11y-guidelines/2/3/3)<span class="Label">AAA</span>
 
 #### 2.4 ナビゲーションできる
 
