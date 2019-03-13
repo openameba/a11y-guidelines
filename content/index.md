@@ -94,9 +94,8 @@ WCAG2.1に記載の項目のうち、Amebaブランドのサービスで準拠�
 #### 2.5 入力方法
 - [2.5.1 ポインタジェスチャを必須としない](/a11y-guidelines/2/5/1)<span class="Label">A</span>
 - [2.5.2 ポインタ操作のキャンセルができる](/a11y-guidelines/2/5/2)<span class="Label">A</span>
-
-- [2.5.4 動作による起動](/a11y-guidelines/2/5/4)<span class="Label">A</span>
 - [2.5.3 目に見えるテキストと支援技術で読み上げるテキストの内容が一致している](/a11y-guidelines/2/5/3)<span class="Label">A</span>
+- [2.5.4 動作による起動](/a11y-guidelines/2/5/4)<span class="Label">A</span>
 
 ### 3. 理解可能
 
