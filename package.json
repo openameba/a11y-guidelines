@@ -3,6 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "description": "Ameba Accessibility Guidelines",
+  "engines": {
+    "node": "12.2.0",
+    "npm": "6.9.0"
+  },
   "scripts": {
     "build": "npm run styles",
     "styles": "npm run styles:default && npm run styles:detail",
@@ -13,37 +17,42 @@
     "start": "hugo serve",
     "test": "npm run textlint",
     "textlint": "textlint content src",
-    "textlint:fix": "textlint --fix content src",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.@(md)": [
-      "textlint --fix",
-      "git add"
-    ]
+    "textlint:fix": "textlint --fix content src"
   },
   "repository": "openameba/a11y-guidelines",
   "keywords": [
     "accessibility"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.@(md)": [
+      "test",
+      "textlint --fix",
+      "git add"
+    ]
+  },
   "author": "CyberAgent, Inc.",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^8.2.0",
-    "cssnano": "^3.10.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^6.0.0",
-    "onchange": "^3.3.0",
-    "postcss-cli": "^5.0.0",
-    "postcss-custom-properties": "^7.0.0",
-    "postcss-import": "^11.1.0",
+    "autoprefixer": "^9.5.1",
+    "cssnano": "^4.1.10",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.6",
+    "onchange": "^5.2.0",
+    "postcss-cli": "^6.1.2",
+    "postcss-custom-properties": "^8.0.10",
+    "postcss-import": "^12.0.1",
     "postcss-single-charset": "^2.0.0",
-    "textlint": "^10.0.1",
-    "textlint-rule-preset-japanese": "^2.0.0",
-    "textlint-rule-preset-jtf-style": "^2.2.5",
-    "textlint-rule-prh": "^5.0.1"
+    "textlint": "^11.2.5",
+    "textlint-rule-preset-japanese": "^2.0.1",
+    "textlint-rule-preset-jtf-style": "^2.3.3",
+    "textlint-rule-prh": "^5.2.0"
   },
   "dependencies": {
-    "ameba-color-palette.css": "^2.2.0"
+    "ameba-color-palette.css": "^2.3.0"
   }
 }
