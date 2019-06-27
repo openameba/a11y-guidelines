@@ -1,42 +1,11 @@
 {
   "name": "a11y-guidelines",
-  "private": true,
-  "version": "0.0.0",
   "description": "Ameba Accessibility Guidelines",
-  "engines": {
-    "node": "12.2.0",
-    "npm": "6.9.0"
-  },
-  "scripts": {
-    "build": "npm run styles",
-    "styles": "npm run styles:default && npm run styles:detail",
-    "styles:default": "postcss -c ./postcss.config.js ./src/styles/default.css -o ./static/css/default.css",
-    "styles:detail": "postcss -c ./postcss.config.js ./src/styles/detail.css -o ./static/css/detail.css",
-    "watch:styles": "onchange ./src/styles/**/*.css -- npm run styles",
-    "watch": "npm run watch:styles",
-    "start": "hugo serve",
-    "test": "npm run textlint",
-    "textlint": "textlint content src",
-    "textlint:fix": "textlint --fix content src"
-  },
-  "repository": "openameba/a11y-guidelines",
-  "keywords": [
-    "accessibility"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.@(md)": [
-      "test",
-      "textlint --fix",
-      "git add"
-    ]
-  },
+  "version": "0.0.0",
   "author": "CyberAgent, Inc.",
-  "license": "MIT",
+  "dependencies": {
+    "ameba-color-palette.css": "^2.3.0"
+  },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
     "cssnano": "^4.1.10",
@@ -52,7 +21,39 @@
     "textlint-rule-preset-jtf-style": "^2.3.3",
     "textlint-rule-prh": "^5.2.0"
   },
-  "dependencies": {
-    "ameba-color-palette.css": "^2.3.0"
+  "engines": {
+    "node": "12.2.0",
+    "npm": "6.9.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "keywords": [
+    "accessibility"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.@(md)": [
+      "test",
+      "textlint --fix",
+      "git add"
+    ]
+  },
+  "private": true,
+  "repository": "openameba/a11y-guidelines",
+  "scripts": {
+    "build": "npm run styles",
+    "fixpack": "npx fixpack",
+    "start": "hugo serve",
+    "styles": "npm run styles:default && npm run styles:detail",
+    "styles:default": "postcss -c ./postcss.config.js ./src/styles/default.css -o ./static/css/default.css",
+    "styles:detail": "postcss -c ./postcss.config.js ./src/styles/detail.css -o ./static/css/detail.css",
+    "test": "npm run textlint",
+    "textlint": "textlint content src",
+    "textlint:fix": "textlint --fix content src",
+    "watch": "npm run watch:styles",
+    "watch:styles": "onchange ./src/styles/**/*.css -- npm run styles"
   }
 }
