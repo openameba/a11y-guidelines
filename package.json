@@ -39,6 +39,10 @@
       "test",
       "textlint --fix",
       "git add"
+    ],
+    "package.json": [
+      "npm run fixpack",
+      "git diff --exit-code --quiet"
     ]
   },
   "private": true,
