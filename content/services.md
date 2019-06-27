@@ -7,7 +7,7 @@ title: 対象となるサービス
 ## 対象となるサービス
 
 - [アメブロ](/a11y-guidelines/services/#アメブロ)
-- [読書のお時間です](/a11y-guidelines/services/#読書のお時間です)
+- [REQU](/a11y-guidelines/services/#REQU)
 
 ### アメブロ
 
@@ -34,6 +34,21 @@ SPブラウザで閲覧する
 
 PCブラウザやネイティブアプリなどの他端末など、対象範囲は徐々に広げていくものとする。
 
-### 読書のお時間です
+### REQU
 
-WIP
+#### プロジェクトの目的
+
+一人でも多くのお客様がいつでも、迷わず「買える」と「売れる」ができる状態を目指す
+
+#### 対象範囲
+
+括弧内の数字は優先度を表している。
+
+- **買える**
+  - （1）商品詳細ページ (https://requ.ameba.jp/products/{productId})
+  - （2）取引メッセージ (https://requ.ameba.jp/messages/orders/{orderId})
+  - （4）注文履歴ページ (https://requ.ameba.jp/customers/orders/{orderId})
+
+- **売れる**
+  - （3）商品登録ページ (https://requ.ameba.jp/manage/products/services/{productId}/edit)
+  - （5）注文管理系ダッシュボード (https://requ.ameba.jp/manage/dashboard)
