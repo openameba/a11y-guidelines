@@ -16,7 +16,7 @@ Amebaのサービスに携わるコンテンツや開発者は、高品質なサ
 各サービス毎に、アクセシビリティ改善プロジェクトの目的と対象とする範囲を定義する。
 
 - [アメブロ](/a11y-guidelines/services#アメブロ)
-- [REQU](/a11y-guidelines/services#REQU)
+- [REQU](/a11y-guidelines/services#requ)
 
 ## 各項目の構成
 

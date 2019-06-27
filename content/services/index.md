@@ -7,7 +7,7 @@ title: 対象となるサービス
 ## 対象となるサービス
 
 - [アメブロ](/a11y-guidelines/services/#アメブロ)
-- [REQU](/a11y-guidelines/services/#REQU)
+- [REQU](/a11y-guidelines/services/#requ)
 
 ### アメブロ
 
