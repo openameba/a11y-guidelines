@@ -9,3 +9,6 @@ uglyUrls: false
 metaDataFormat: "yaml"
 permalinks:
   post: "/:title"
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
