@@ -59,6 +59,8 @@ cmake-build-*/
 
 # IntelliJ
 out/
+.idea*
+*.iml
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -90,7 +92,8 @@ fabric.properties
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
