@@ -6,7 +6,7 @@ build:
         name: build
         code: npm run build
     - arjen/hugo-build:
-        version: "0.24.1"
+        version: "0.55.6"
 deploy:
   steps:
     - lukevivier/gh-pages@0.2.1:
