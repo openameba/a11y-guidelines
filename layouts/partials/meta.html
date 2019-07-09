@@ -14,18 +14,36 @@
 {{ else }}
   <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/detail.css">
 {{ end }}
-
-<meta property="og:description" content="{{ .Site.Params.description }}">
+{{ if .IsHome }} {{/* トップページ */}}
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <meta property="og:description" content="{{ .Site.Params.description }}">
+{{ end }}
+{{ if .IsPage }} {{/* 記事ページ */}}
+  {{ if .Description }} {{/* .md の description */}}
+  <meta name="description" content="{{ .Description }}">
+  <meta property="og:description" content="{{ .Description }}">
+  {{ else }} {{/* 記事のサマリ */}}
+  <meta name="description" content="{{ .Summary }}">
+  <meta property="og:description" content="{{ .Summary }}">
+  {{ end }}
+{{ end }}
 <meta property="og:image" content="{{ .Site.BaseURL }}/favicon.png">
 <meta property="og:type" content="article">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
-<meta property="og:title" content="{{ .Title }}">
-
+{{ if isset .Params "title" }}
+  <meta property="og:title" content="{{ .Params.Title }} - {{ .Site.Title }}">
+{{ else }}
+  <meta property="og:title" content="{{ .Site.Title }}">
+{{ end }}
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ameba_official">
 <meta name="twitter:url" content="{{ .Permalink }}">
-<meta name="twitter:title" content="{{ .Title }}">
+{{ if isset .Params "title" }}
+  <meta property="twitter:title" content="{{ .Params.Title }} - {{ .Site.Title }}">
+{{ else }}
+  <meta property="twitter:title" content="{{ .Site.Title }}">
+{{ end }}
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
