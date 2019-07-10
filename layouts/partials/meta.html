@@ -28,7 +28,12 @@
   {{ end }}
 {{ end }}
 <meta property="og:image" content="{{ .Site.BaseURL }}/favicon.png">
-<meta property="og:type" content="article">
+{{ if .IsHome }} {{/* トップページ */}}
+  <meta property="og:type" content="website">
+{{ end }}
+{{ if .IsPage }} {{/* 記事ページ */}}
+  <meta property="og:type" content="article">
+{{ end }}
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 {{ if isset .Params "title" }}
