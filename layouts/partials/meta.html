@@ -1,7 +1,5 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-{{/* TODO: エディタとの互換性を保つためbaseを設定している。トリッキーな手法のため、公開時に削除する */}}
-<base href="{{ .Site.BaseURL }}content/docs/">
 {{ if isset .Params "title" }}
   <title>{{ .Params.Title }} - {{ .Site.Title }}</title>
 {{ else }}
