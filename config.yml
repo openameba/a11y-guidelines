@@ -11,3 +11,5 @@ permalinks:
   post: "/:title"
 params:
   description: Ameba Accessibility Guidelinesは、Amebaのサービスのアクセシビリティを高めるために設けた制作指針集である。「誰もがいつでも迷わずコンテンツを楽しむことができる」ようにするため、WCAG2.1を要約・和訳し、事例などを掲載している。
+hasCJKLanguage: true
+summaryLength: 130
