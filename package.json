@@ -49,8 +49,10 @@
   "repository": "openameba/a11y-guidelines",
   "scripts": {
     "build": "npm run styles",
+    "docker:build": "docker build -t ${npm_package_name} --build-arg WWW=${npm_package_name} .",
+    "docker:run": "docker run --rm --name ${npm_package_name} -p 1313:1313 -v \"${PWD}:/var/www/${npm_package_name}\" ${npm_package_name}",
     "fixpack": "npx fixpack",
-    "start": "hugo serve",
+    "start": "hugo serve || npm run docker:build && npm run docker:run",
     "styles": "npm run styles:default && npm run styles:detail",
     "styles:default": "postcss -c ./postcss.config.js ./src/styles/default.css -o ./static/css/default.css",
     "styles:detail": "postcss -c ./postcss.config.js ./src/styles/detail.css -o ./static/css/detail.css",
