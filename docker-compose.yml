@@ -1,0 +1,22 @@
+version: '3.4'
+
+x-base: &base
+  build:
+    args:
+      WWW: a11y-guidelines
+    context: .
+    dockerfile: Dockerfile
+  image: openameba/a11y-guidelines
+  volumes:
+    - .:/var/www/a11y-guidelines
+
+services:
+  serve:
+    <<: *base
+    ports:
+      - '1313:1313'
+  sh:
+    <<: *base
+    command:
+      - sh
+    tty: true
