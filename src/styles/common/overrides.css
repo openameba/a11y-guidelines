@@ -1,11 +1,22 @@
 /**
  * Overrides
  * ライブラリの上書きしたいもの
+ * A11y lightスタイルをベースに、Amebaカラーパレットに近い配色になるよう拡張する
+ * @see https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/a11y-light.min.css
+ * @see https://highlightjs.org/
  */
 
 /* highlight.jsの上書き */
 .hljs {
-  padding: 3.2rem 32px;
+  background-color: var(--clr-whitesmoke);
+  color: var(--clr-darkgray);
   font-size: 1.4rem;
+  padding: 3.2rem 32px;
   line-height: 2.28;
+}
+
+/* 背景色を変えたことでコントラスト比が4.5:1を満たせなくなる組み合わせ */
+.hljs-title,
+.hljs-section {
+  color: #057AAD;
 }
