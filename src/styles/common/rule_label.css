@@ -16,9 +16,9 @@
 }
 
 .RuleLabel--good {
-  color: var(--clr-green);
+  color: var(--clr-darkgreen);
 }
 
 .RuleLabel--bad {
-  color: var(--clr-755);
+  color: var(--clr-red);
 }
