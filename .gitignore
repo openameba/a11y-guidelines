@@ -160,3 +160,6 @@ typings/
 ### a11y-guidelines
 
 /static/css/*
+
+# Lighthouse CI
+.lighthouseci/
