@@ -48,7 +48,8 @@
   "private": true,
   "repository": "openameba/a11y-guidelines",
   "scripts": {
-    "build": "npm run build:css && npm run build:html",
+    "build": "npm run build:assets && npm run build:html",
+    "build:assets": "npm run build:css",
     "build:css": "npm run styles",
     "build:html": "hugo --gc || docker-compose run --rm sh hugo --gc",
     "fixpack": "npx fixpack",
