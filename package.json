@@ -45,6 +45,14 @@
       "git diff --exit-code --quiet"
     ]
   },
+  "postcss": {
+    "plugins": {
+      "postcss-custom-properties": {},
+      "postcss-import": {},
+      "autoprefixer": {},
+      "postcss-single-charset": {}
+    }
+  },
   "private": true,
   "repository": "openameba/a11y-guidelines",
   "scripts": {
@@ -55,8 +63,8 @@
     "fixpack": "npx fixpack",
     "start": "hugo serve || docker-compose run --rm --service-ports serve",
     "styles": "npm run styles:default && npm run styles:detail",
-    "styles:default": "postcss -c ./postcss.config.js ./src/styles/default.css -o ./static/css/default.css",
-    "styles:detail": "postcss -c ./postcss.config.js ./src/styles/detail.css -o ./static/css/detail.css",
+    "styles:default": "postcss ./src/styles/default.css -o ./static/css/default.css",
+    "styles:detail": "postcss ./src/styles/detail.css -o ./static/css/detail.css",
     "test": "npm run textlint",
     "textlint": "textlint content src",
     "textlint:fix": "textlint --fix content src",
