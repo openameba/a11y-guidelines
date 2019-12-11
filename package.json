@@ -35,13 +35,12 @@
   ],
   "license": "MIT",
   "lint-staged": {
-    "*.@(md)": [
-      "test",
-      "textlint --fix",
-      "git add"
+    "*.md": [
+      "npm run textlint",
+      "git diff --exit-code --quiet"
     ],
     "package.json": [
-      "npm run fixpack",
+      "npx fixpack",
       "git diff --exit-code --quiet"
     ]
   },
