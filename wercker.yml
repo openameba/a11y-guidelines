@@ -7,6 +7,7 @@ build:
         code: npm run build:assets
     - arjen/hugo-build:
         version: "0.55.6"
+        flags: --minify
 deploy:
   steps:
     - lukevivier/gh-pages@0.2.1:
