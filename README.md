@@ -1,6 +1,7 @@
 # Ameba Accessibility Guidelines
 
 [![test](https://github.com/openameba/a11y-guidelines/workflows/test/badge.svg)](https://github.com/openameba/a11y-guidelines/actions?query=workflow%3Atest)
+[![renovate](https://badges.renovateapi.com/github/openameba/a11y-guidelines)](https://renovatebot.com)
 
 Work in Progress
 
