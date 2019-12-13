@@ -1,0 +1,96 @@
+name: Publish Web Bundle
+
+on:
+  # Our web bundle is published manually now,
+  # but this trigger is going to be changed to an event that guideline has been updated
+  push:
+    branches:
+    - publish-webbundle
+
+jobs:
+  build-publish:
+    runs-on: ubuntu-18.04
+    env:
+      TZ: Asia/Tokyo
+      BUNDLE_NAME: ameba-accessibility-guidelines.wbn
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        ref: ${{ github.ref }}
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2.3.0
+      with:
+        hugo-version: 0.55.6
+
+    - name: Build Site
+      run: |
+        npm install
+        npm run build
+    
+    - name: Build Hugo
+      run: hugo --minify
+
+    - name: Install go/bundle CLI
+      run: |
+        # Go has been installed at the setup hugo step,
+        # you can run setup-go action if you want to install specific version
+        go get -u github.com/WICG/webpackage/go/bundle/cmd/gen-bundle
+        # Add path to run the package
+        echo "::add-path::$HOME/go/bin"
+    
+    - name: Generate Web Bundle 📦
+      run: |
+        # Create URL list from the files built by Hugo
+        #   - directory index: replacing /index.html with ''
+        #     - URL should be exactly the same with the link text in the document
+        #   - remove empty lines
+        #   - add hosting domain
+        find public -type f | sed -e 's|/index.html||g' -e '/^$/d' -e 's|public|https://openameba.github.io/a11y-guidelines|g' > urls.txt
+        # Add extra dependencies
+        echo -e 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/a11y-light.min.css \nhttps://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js' >> urls.txt
+        # Generate web bundle from URL list by following reasons:
+        #   - static directory is different from a web server implementation e.g. directory index
+        #   - to ensure HTTP response headers
+        gen-bundle -URLList urls.txt -primaryURL https://openameba.github.io/a11y-guidelines -o ${{ env.BUNDLE_NAME }}
+    
+    - name: Generate Release ID
+      id: generate-release-id
+      run: |
+        d=`date +%Y%m%d%H%M%S`
+        echo "::set-output name=release_id::$d"
+
+    - name: Create Release
+      id: create-release
+      uses: actions/create-release@v1.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: webbundle-${{ steps.generate-release-id.outputs.release_id }}
+        # I am waiting for https://github.com/actions/create-release/pull/19 has been merged
+        target_commitish: ${{ github.ref }}
+        release_name: Release Web Bundle ${{ steps.generate-release-id.outputs.release_id }}
+        body: |
+          📦 New version of web bundle has been published. This means
+
+          - you can read our accessibility guideline **offline**
+          - you can send our accessibility guideline to your a11y friends
+
+          Please download our web bundle named ${{ env.BUNDLE_NAME }} from the link below and check [web.dev](https://web.dev/web-bundles/#playing-around-with-web-bundles) to try out this bundle.
+        draft: false
+        prerelease: false
+    
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create-release.outputs.upload_url }}
+        asset_path: ./${{ env.BUNDLE_NAME }}
+        asset_name: ${{ env.BUNDLE_NAME }}
+        asset_content_type: application/webbundle
