@@ -6,7 +6,7 @@
         <track label="Japan" kind="captions" srclang="ja" src="{{ .Get "captionSrc" }}" />
       {{ end }}
     </video>
-    {{ if or (.Get "caption") (.Get "rule") }}
+    {{ if or (.Get .Inner) (.Get "rule") }}
       <figcaption>
         {{ if .Get "rule" }}
           <span class="RuleLabel RuleLabel--{{ .Get "rule" }}">
@@ -14,7 +14,7 @@
             {{ if .Get "rule" | eq "bad" }}Bad{{ else if .Get "rule" | eq "good" }}Good{{ end }}
           </span>
         {{ end }}
-        {{ .Get "caption" }}
+        {{ .Inner }}
       </figcaption>
     {{ end }}
   </figure>

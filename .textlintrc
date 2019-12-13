@@ -6,6 +6,9 @@
          "preferInBody": "である",
          "preferInList": "である",
          "strict": false
+       },
+       "sentence-length": {
+         "max": 300
        }
     },
     "preset-jtf-style": {
