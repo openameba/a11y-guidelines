@@ -28,7 +28,7 @@ jobs:
       with:
         hugo-version: 0.55.6
 
-    - name: Build CSS
+    - name: Build Site
       run: |
         npm install
         npm run build
