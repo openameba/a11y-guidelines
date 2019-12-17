@@ -6,12 +6,5 @@
     ":label(renovate)",
     ":preserveSemverRanges",
     ":timezone(Asia/Tokyo)"
-  ],
-  "assignees": [
-    "herablog",
-    "hrfmmymt",
-    "nagatsukey",
-    "sasaplus1",
-    "tokimari"
   ]
 }
