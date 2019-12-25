@@ -16,3 +16,4 @@ summaryLength: 130
 disableKinds:
   - taxonomy
   - taxonomyTerm
+DefaultContentLanguage: ja
