@@ -1,0 +1,33 @@
+name: pick assignees randomly
+
+on:
+  - pull_request
+
+jobs:
+  pick-assignees:
+    name: pick assignees randomly
+    runs-on: ubuntu-latest
+    env:
+      MEMBERS: |-
+        herablog
+        hrfmmymt
+        nagatsukey
+        sasaplus1
+        tokimari
+      PEOPLES: 2
+    steps:
+      - id: pick
+        run: |
+          echo -n "$MEMBERS" | sort -R | head -n "$PEOPLES" > assignees.txt
+          echo "::set-output name=assignees::$(cat assignees.txt)"
+      - uses: actions/github-script@0.3.0
+        if: startsWith(github.head_ref, 'renovate/')
+        env:
+          ASSIGNEES: ${{ steps.pick.outputs.assignees }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.issues.addAssignees({
+              ...context.issue,
+              assignees: process.env.ASSIGNEES.trim().split('\n'),
+            });
