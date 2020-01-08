@@ -13,7 +13,7 @@
     "lint-staged": "^9.0.0",
     "onchange": "^6.0.0",
     "postcss-cli": "^6.1.2",
-    "postcss-custom-properties": "^8.0.10",
+    "postcss-custom-properties": "^9.0.0",
     "postcss-import": "^12.0.1",
     "postcss-single-charset": "^2.0.0",
     "textlint": "^11.2.5",
