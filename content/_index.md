@@ -66,7 +66,7 @@ WCAG2.1に記載の項目のうち、Amebaブランドのサービスで準拠�
 
 - [2.1.1 キーボード、タッチデバイスで操作できる](/a11y-guidelines/2/1/1)<span class="Label">A</span>
 - [2.1.2 キーボード操作を可能にする](/a11y-guidelines/2/1/2)<span class="Label">A</span>
-- [2.1.4 文字キーのショートカットを操作できる](/a11y-guidelines/2/1/4)<span class="Label">A</span>
+- [2.1.4 単一文字キーのショートカットを解除、回避、限定できる](/a11y-guidelines/2/1/4)<span class="Label">A</span>
 
 #### 2.2 十分な時間がある
 
