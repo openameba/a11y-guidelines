@@ -12,16 +12,14 @@
       />
     {{ end  }}
     {{ if .Get "src2" }}</div>{{ end }}
-    {{ if or (.Get .Inner) (.Get "rule") }}
-      <figcaption>
-        {{ if .Get "rule" }}
-          <span class="RuleLabel RuleLabel--{{ .Get "rule" }}">
-            <img src="{{ .Site.BaseURL }}/img/icon/{{ .Get "rule" }}.svg" width="24" height="24" alt="" />
-            {{ if .Get "rule" | eq "bad" }}Bad{{ else if .Get "rule" | eq "good" }}Good{{ end }}
-          </span>
-        {{ end }}
-        {{ .Inner }}
-      </figcaption>
-    {{ end }}
+    <figcaption>
+      {{ if .Get "rule" }}
+        <span class="RuleLabel RuleLabel--{{ .Get "rule" }}">
+          <img src="{{ .Site.BaseURL }}/img/icon/{{ .Get "rule" }}.svg" width="24" height="24" alt="" />
+          {{ if .Get "rule" | eq "bad" }}Bad{{ else if .Get "rule" | eq "good" }}Good{{ end }}
+        </span>
+      {{ end }}
+      {{ .Inner }}
+    </figcaption>
   </figure>
 {{ if .Get "isList" }}</li>{{ end }}
