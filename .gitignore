@@ -163,3 +163,7 @@ typings/
 
 # Lighthouse CI
 .lighthouseci/
+
+# Hugo
+vendor/*
+!vendor/.gitkeep
