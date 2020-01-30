@@ -22,29 +22,12 @@ But, pull requests or issues to fix links, typos, missunderstanding of WCAG are 
 
 お手元のマシンで確認する方法について記載しています。
 
-### Hugo
-
 https://nodejs.org/en/ から node.js をダウンロードしインストールします。
-
-加えて、 https://gohugo.io/getting-started/installing/ を参考に hugo をインストールします。
 
 インストールができたら、以下のコマンドを実行します。
 
 ```console
-$ npm start
-```
-
-するとHTTPサーバーが起動するので、 http://localhost:1313/a11y-guidelines にブラウザからアクセスすると確認ができます。
-
-### Docker
-
-https://nodejs.org/en/ から node.js をダウンロードしインストールします。
-
-加えて、 https://docs.docker.com/install/ を参考に Docker をインストールします。
-
-インストールができたら、以下のコマンドを実行します。
-
-```console
+$ npm ci
 $ npm start
 ```
 
