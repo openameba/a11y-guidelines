@@ -108,7 +108,7 @@ WCAG2.1に記載の項目のうち、Amebaブランドのサービスで準拠�
 #### 3.2 予測できる
 
 - [3.2.1 フォーカス時にコンテンツを大きく変更しない](/a11y-guidelines/3/2/1)<span class="Label">A</span>
-- [3.2.2 予測できない変化を起こさない](/a11y-guidelines/3/2/2)<span class="Label">A</span>
+- [3.2.2 入力時に予測できない変化を起こさない](/a11y-guidelines/3/2/2)<span class="Label">A</span>
 - [3.2.3 ナビゲーションの位置を統一する](/a11y-guidelines/3/2/3)<span class="Label">AA</span>
 - [3.2.4 一貫した識別性を持たせる](/a11y-guidelines/3/2/4)<span class="Label">AA</span>
 
