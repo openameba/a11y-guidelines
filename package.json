@@ -12,7 +12,7 @@
     "cssnano": "^4.1.10",
     "husky": "^4.0.0",
     "lint-staged": "^10.0.0",
-    "onchange": "^6.0.0",
+    "onchange": "^7.0.0",
     "postcss-cli": "^7.0.0",
     "postcss-custom-properties": "^9.0.0",
     "postcss-import": "^12.0.1",
