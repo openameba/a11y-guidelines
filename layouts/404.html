@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{ .Lang }}">
+  <head>
+    {{ partial "meta.html" . }}
+  </head>
+
+  <body>
+    {{ partial "header.html" . }}
+
+    <main class="Main">
+      <div class="Container">
+        <article class="Article">
+          <h1>ページが見つかりませんでした。</h1>
+          <p>ページのURLが変更されたか、ページが削除された可能性があります。</p>
+          <p>お手数ですが、<a href="{{ .Site.BaseURL }}">トップページ</a>から該当のページをお探しください。</p>
+        </article>
+      </div>
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    {{ partial "script.html" . }}
+  </body>
+</html>
