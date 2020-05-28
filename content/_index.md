@@ -127,3 +127,14 @@ WCAG2.1に記載の項目のうち、Amebaブランドのサービスで準拠�
 - [4.1.1 HTMLを正しく記述する](/a11y-guidelines/4/1/1)<span class="Label">A</span>
 - [4.1.2 HTMLの要素や属性を正しい役割で使用する](/a11y-guidelines/4/1/2)<span class="Label">A</span>
 - [4.1.3 コンテンツの変更をユーザーに知らせる](/a11y-guidelines/4/1/3)<span class="Label">AA</span>
+
+## ライセンス
+
+Copyright © 2017 CyberAgent, Inc.  
+
+この文書は、[FRESH! LIVE Accessibility Guidelines](https://openfresh.github.io/a11y-guidelines/)を元に、[Web Content Accessibility Guidelines（WCAG）2.1](https://openfresh.github.io/a11y-guidelines/)の内容を簡易的に翻訳し加筆修正したものである。ウェブアクセシビリティ基盤委員会（WAIC）による[WCAG 2.1翻訳文書](https://waic.jp/docs/WCAG21/)を併せて参考にしている。
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+  <img alt="クリエイティブ・コモンズ・ライセンス" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+</a>  
+この文書は<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">クリエイティブ・コモンズ 表示 4.0 国際 ライセンス</a>の下に提供されている。
