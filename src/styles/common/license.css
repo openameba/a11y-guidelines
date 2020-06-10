@@ -1,0 +1,12 @@
+.License p {
+  font-size: 1.2rem;
+  margin-top: 1.6rem;
+}
+
+.License p:first-child {
+  margin-top: 0;
+}
+
+.License__Anchor {
+  display: block;
+}
