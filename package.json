@@ -23,7 +23,7 @@
     "textlint-rule-prh": "^5.2.0"
   },
   "engines": {
-    "node": "12.18.2",
+    "node": "12.18.3",
     "npm": "6.14.7"
   },
   "husky": {
