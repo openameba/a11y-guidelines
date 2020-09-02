@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-{{ if isset .Params "title" }}
-  <title>{{ .Params.Title }} - {{ .Site.Title }}</title>
+{{ if (and (isset .Params "title") (isset .Params "number")) }}
+  <title>{{ .Params.number }} {{ .Params.Title }} - {{ .Site.Title }}</title>
 {{ else }}
   <title>{{ .Site.Title }}</title>
 {{ end }}
