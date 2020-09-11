@@ -27,9 +27,9 @@
 {{ end }}
 
 {{ if isset .Params "number" }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}img/ogp/ogp_{{ .Params.Number }}.png">
+  <meta property="og:image" content="{{ .Site.BaseURL }}/img/ogp/ogp_{{ .Params.Number }}.png">
 {{ else }} {{/* 記事のサマリ */}}
-  <meta property="og:image" content="{{ .Site.BaseURL }}img/ogp/default.png">
+  <meta property="og:image" content="{{ .Site.BaseURL }}/img/ogp/default.png">
 {{ end }}
 
 {{ if .IsHome }} {{/* トップページ */}}
