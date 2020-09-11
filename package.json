@@ -34,7 +34,7 @@
   "keywords": [
     "accessibility"
   ],
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE.md",
   "lint-staged": {
     "*.md": [
       "npm run textlint",
