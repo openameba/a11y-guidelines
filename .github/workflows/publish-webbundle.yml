@@ -24,7 +24,7 @@ jobs:
         node-version: 12
 
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2.3.0
+      uses: peaceiris/actions-hugo@v2.3.2
       with:
         hugo-version: 0.55.6
 
