@@ -50,9 +50,14 @@ summary:after {
   background: url('/a11y-guidelines/img/icon/open.svg') no-repeat 0 center;
   background-size: 16px;
 }
+
 details[open] > summary:after {
   position: absolute;
   content: '';
   background: url('/a11y-guidelines/img/icon/close.svg') no-repeat 0 center;
   background-size: 16px;
+}
+
+summary:focus {
+  outline-offset: 1px;
 }
