@@ -2,10 +2,9 @@
  * Footer
  */
 .Footer {
-  border-top: solid 1px var(--clr-silver);
+  border-top: solid 1px var(--color-border-low-emphasis);
   margin-top: 30px;
   padding: 3.2rem 0;
-  color: var(--clr-darkgray);
   font-size: 1rem;
 }
 

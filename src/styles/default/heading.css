@@ -18,7 +18,7 @@ h3 {
   line-height: 1.75;
   margin: 4.8rem 0 3.2rem;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--clr-silver);
+  border-bottom: 1px solid var(--color-border-low-emphasis);
 }
 
 h4 {
@@ -28,7 +28,7 @@ h4 {
 }
 
 h5 {
-  border-left: 4px solid var(--clr-gray);
+  border-left: 4px solid var(--color-border-medium-emphasis);
   font-size: 1.4rem;
   line-height: 1.71;
   margin: 3.2rem 0 2.4rem;

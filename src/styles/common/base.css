@@ -11,23 +11,22 @@ html {
 }
 
 body {
-  color: var(--clr-darkgray);
+  background-color: var(--color-base-background);
+  color: var(--color-base-text);
   margin: 0;
 }
 
 a {
-  color: var(--clr-gray);
+  color: var(--color-link);
 }
 
-a:hover,
 a:focus {
-  color: var(--clr-darkgray);
-  text-decoration: none;
-  background-color: var(--clr-silver);
+  color: inherit;
+  background-color: var(--color-surface-accent-primary-light);
+  box-shadow: 0 0 0 4px var(--color-surface-accent-primary-light);
 }
 
-/* ヘッダー以外のアウトラインは不要 */
-article a {
+article a:focus {
   outline: none;
 }
 
@@ -53,7 +52,7 @@ ol > li ul li::before {
   display: inline-block;
   width: 8px;
   height: 2px;
-  background: var(--clr-gray);
+  background-color: currentColor;
   vertical-align: middle;
   margin-right: 8px;
 }

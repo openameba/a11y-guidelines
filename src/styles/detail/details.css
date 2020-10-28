@@ -4,8 +4,7 @@
 details {
   box-sizing: border-box;
   font-size: 1.4rem;
-  color: var(--clr-darkgray);
-  border: 3px solid var(--clr-silver);
+  border: 3px solid var(--color-border-low-emphasis);
   border-radius: 4px;
 }
 
@@ -22,7 +21,7 @@ summary:before {
   display: block;
   width: 32px;
   height: 100%;
-  background: var(--clr-white);
+  background-color: var(--color-base-background);
   position: absolute;
   left: 0;
   top: 0;
