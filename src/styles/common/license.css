@@ -1,6 +1,5 @@
 .License p {
-  font-size: calc(12 / 16 * 1rem);
-  margin-top: 16px
+  margin-top: 2em
 }
 
 .License p:first-child {

@@ -2,9 +2,7 @@
  * base
  */
 html {
-  overflow-wrap: break-word;
   box-sizing: border-box;
-  word-wrap: break-word;
   font-family: Meiryo, "Yu Gothic Medium", system-ui, -apple-system, BlinkMacSystemFont, sans-serif ;
   line-height: 1.5;
 }
@@ -16,22 +14,24 @@ body {
 }
 
 a {
+  overflow-wrap: break-word;
   color: var(--color-link);
+  text-underline-position: under;
 }
 
-a:focus {
-  color: inherit;
-  background-color: var(--color-surface-accent-primary-light);
-  box-shadow: 0 0 0 4px var(--color-surface-accent-primary-light);
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-focus-clarity);
 }
 
 article a:focus {
-  outline: none;
+  color: inherit;
+  background-color: var(--color-focus-ambiguous);
+  box-shadow: 0 0 0 3px var(--color-focus-ambiguous);
 }
 
 ol,
 ul {
-  font-size: calc(14 / 16 * 1rem);
   padding-left: 2em;
   margin: 16px 0
 }
@@ -68,7 +68,6 @@ iframe {
 }
 
 p {
-  font-size: calc(14 / 16 * 1rem);
   line-height: 1.71;
-  margin: 12px 0;
+  margin: calc(1.5em - (0.71 / 2 * 1em)) 0; /* 1.4.8 line-height を含めて1.5文字分の余白 */
 }

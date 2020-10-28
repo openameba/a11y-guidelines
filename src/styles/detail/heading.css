@@ -2,13 +2,13 @@
  * heading
  */
 h1 {
-  font-size: calc(26 / 16 * 1rem);
+  font-size: calc(28 / 16 * 1rem);
   line-height: 1.5;
   margin: 64px 0 24px;
 }
 
 h2 {
-  font-size: calc(22 / 16 * 1rem);
+  font-size: calc(24 / 16 * 1rem);
   line-height: 1.75;
   margin: 48px 0 32px;
   padding-bottom: 8px;
@@ -16,14 +16,14 @@ h2 {
 }
 
 h3 {
-  font-size: calc(16 / 16 * 1rem);
+  font-size: calc(18 / 16 * 1rem);
   line-height: 1.71;
   margin: 32px 0 16px;
 }
 
 h4 {
   border-left: 4px solid var(--color-border-medium-emphasis);
-  font-size: calc(14 / 16 * 1rem);
+  font-size: calc(16 / 16 * 1rem);
   line-height: 1.71;
   margin: 32px 0 24px;
   padding-left: 16px;
