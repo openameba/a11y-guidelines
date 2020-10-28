@@ -10,8 +10,8 @@
 .hljs {
   background-color: var(--color-surface-secondary);
   color: var(--color-body-text);
-  font-size: 1.4rem;
-  padding: 3.2rem 32px;
+  font-size: calc(14 / 16 * 1rem);
+  padding: 32px 32px;
   line-height: 2.28;
 }
 

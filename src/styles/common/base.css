@@ -7,7 +7,6 @@ html {
   word-wrap: break-word;
   font-family: Meiryo, "Yu Gothic Medium", system-ui, -apple-system, BlinkMacSystemFont, sans-serif ;
   line-height: 1.5;
-  font-size: 62.5%;
 }
 
 body {
@@ -32,12 +31,13 @@ article a:focus {
 
 ol,
 ul {
-  padding-left: 28px;
-  margin: 1.6rem 0
+  font-size: calc(14 / 16 * 1rem);
+  padding-left: 2em;
+  margin: 16px 0
 }
 
 ol > li {
-  padding-left: 1.4rem;
+  padding-left: 1em;
 }
 
 ol > li ul {
@@ -47,6 +47,7 @@ ol > li ul {
 ol > li ul li {
   list-style: none;
 }
+
 ol > li ul li::before {
   content: '';
   display: inline-block;
@@ -58,8 +59,7 @@ ol > li ul li::before {
 }
 
 li {
-  font-size: 1.4rem;
-  margin: 1.1rem 0;
+  margin: 12px 0;
 }
 
 iframe {
@@ -68,7 +68,7 @@ iframe {
 }
 
 p {
-  font-size: 1.4rem;
+  font-size: calc(14 / 16 * 1rem);
   line-height: 1.71;
   margin: 12px 0;
 }

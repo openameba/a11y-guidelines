@@ -6,7 +6,7 @@ figure {
   margin: 0;
   max-width: 100%;
   vertical-align: top;
-  margin: 3.2rem 0 4.8rem;
+  margin: 32px 0 48px;
 }
 
 figure img,
@@ -16,12 +16,12 @@ figure video {
 }
 
 figcaption {
-  font-size: 12px;
-  margin-top: 0.8rem;
+  font-size: calc(12 / 16 * 1rem);
+  margin-top: 8px;
 }
 
 .Figurelist {
-  margin: 3.2rem -24px 4.8rem;
+  margin: 32px -24px 48px;
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -31,7 +31,7 @@ figcaption {
 .Figurelist li {
   list-style: none;
   vertical-align: top;
-  margin: 3.2rem 0 0;
+  margin: 32px 0 0;
   padding: 0 24px;
   box-sizing: border-box;
   width: 50%;
@@ -46,22 +46,19 @@ figcaption {
   margin: 0;
 }
 
-
 /**
  * 4.1.2のように画像を2枚並べる図に使う。
  */
 .FigureMulti {
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 12px;
+  align-items: flex-end;
 }
 
 .FigureMulti img {
-  width: 52%;
-}
-
-.FigureMulti img + img {
-  bottom: -1rem;
-  right: 0;
-  position: absolute;
+  max-width: 100%;
 }
 
 @media (max-width: 800px) {
@@ -74,6 +71,7 @@ figcaption {
     padding-right: 8px;
   }
 }
+
 /* for smartphone */
 @media (max-width: 414px) {
   .Figurelist {
@@ -83,7 +81,7 @@ figcaption {
     width: 100%;
   }
   .Figurelist li:nth-child(2) {
-    margin-top: 3.2rem;
+    margin-top: 32px;
   }
 }
 

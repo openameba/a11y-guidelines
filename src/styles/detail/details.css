@@ -3,17 +3,17 @@
  */
 details {
   box-sizing: border-box;
-  font-size: 1.4rem;
+  font-size: calc(14 / 16 * 1rem);
   border: 3px solid var(--color-border-low-emphasis);
   border-radius: 4px;
 }
 
 summary {
-  text-indent: -1.4rem;
+  text-indent: -1em;
   cursor: pointer;
   font-weight: bold;
   position: relative;
-  padding: 1.6rem 32px;
+  padding: 16px 32px;
 }
 
 summary:before {
@@ -29,13 +29,13 @@ summary:before {
 }
 
 details[open] {
-  padding: 0 32px 1.6rem;
+  padding: 0 32px 16px;
 }
 
 details[open] summary {
-  padding-top: 1.6rem;
-  padding-bottom: 1.6rem;
-  margin: 0 -32px 1.6rem;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin: 0 -32px 16px;
 }
 
 summary:after {

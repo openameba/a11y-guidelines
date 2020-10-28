@@ -5,9 +5,9 @@
   border-radius: 8px;
   border: solid 1px currentColor;
   color: inherit;
-  font-size: 1rem;
+  font-size: calc(10 / 16 * 1rem);
   font-weight: bold;
   margin-left: 8px;
-  padding: 0.2rem 8px;
+  padding: 2px 8px;
   vertical-align: text-bottom;
 }
