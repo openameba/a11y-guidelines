@@ -5,7 +5,7 @@ html {
   overflow-wrap: break-word;
   box-sizing: border-box;
   word-wrap: break-word;
-  font-family: "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", Helvetica, Arial, sans-serif;
+  font-family: Meiryo, "Yu Gothic Medium", system-ui, -apple-system, BlinkMacSystemFont, sans-serif ;
   line-height: 1.5;
   font-size: 62.5%;
 }
