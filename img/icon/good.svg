@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1250px" height="2048px" viewBox="0 0 1250 2048" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>good</title>
+    <defs></defs>
+    <g id="for_export" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_good" fill="#298538" fill-rule="nonzero">
+            <path d="M625,1241.5 C797.588984,1241.5 937.5,1101.58898 937.5,929 C937.5,756.411016 797.588984,616.5 625,616.5 C452.411016,616.5 312.5,756.411016 312.5,929 C312.5,1101.58898 452.411016,1241.5 625,1241.5 Z M625,1554 C279.822031,1554 0,1274.17797 0,929 C0,583.822031 279.822031,304 625,304 C970.177969,304 1250,583.822031 1250,929 C1250,1274.17797 970.177969,1554 625,1554 Z" id="Oval"></path>
+        </g>
+    </g>
+</svg>
