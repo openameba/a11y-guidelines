@@ -71,3 +71,7 @@ p {
   line-height: 1.71;
   margin: calc(1.5em - (0.71 / 2 * 1em)) 0; /* 1.4.8 line-height を含めて1.5文字分の余白 */
 }
+
+strong {
+  color: var(--color-text-high-emphasis);
+}

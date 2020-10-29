@@ -1,6 +1,16 @@
 /**
  * heading
  */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   color: var(--color-heading-text);
+}
+
 h1 {
   font-size: calc(28 / 16 * 1rem);
   line-height: 1.5;

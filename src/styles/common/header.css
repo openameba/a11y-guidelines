@@ -7,7 +7,6 @@
 }
 
 .Header a {
-  color: inherit;
   text-decoration: none;
   display: block;
   padding-bottom: 8px;
@@ -30,6 +29,7 @@
   padding-left: 32px;
   font-size: calc(48 / 16 * 1rem);
   line-height: 1.16;
+  color: var(--color-heading-text);
   font-weight: bold;
 }
 
