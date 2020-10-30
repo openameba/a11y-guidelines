@@ -97,6 +97,15 @@
   --caution-red-vivid-20-alpha: rgba(255, 106, 89, 0.2);
   --caution-red-vivid-5-alpha: rgba(255, 106, 89, 0.05);
 
+  /* Expressive Colors */
+  --expressive-blue: #4795c8;
+  --expressive-green: #4ac3aa;
+  --expressive-purple: #ca5ce6;
+  --expressive-lavender: #755ce6;
+  --expressive-orange: #e6815c;
+  --expressive-yellow: #e6ac5c;
+  --expressive-pink: #e6456a;
+
   /* Third Party Colors */
   --facebook-blue: #1877f2;
   --twitter-blue: #1da1f2;
@@ -165,48 +174,6 @@
   --color-third-party-facebook-blue: var(--facebook-blue);
   --color-third-party-twitter-blue: var(--twitter-blue);
   --color-third-party-instagram-pink: var(--instagram-pink);
-
-  /**
-   * Ameba Color Palette v2
-   */
-
-  /* Grayscale */
-  --clr-black-a80: rgba(0, 0, 0, 0.8);
-  --clr-black-a50: rgba(0, 0, 0, 0.5);
-  --clr-black-a10: rgba(0, 0, 0, 0.1);
-  --clr-black-a5: rgba(0, 0, 0, 0.05);
-  --clr-darkgray: #333;
-  --clr-gray: #757575;
-  --clr-lightgray: #858585;
-  --clr-darksilver: #aaa;
-  --clr-dimsilver: #ccc;
-  --clr-silver: #e2e2e2;
-  --clr-lightsilver: #efefef;
-  --clr-whitesmoke: #f8f8f8;
-  --clr-white: #fff;
-
-  /* Colors */
-  --clr-darkgreen: #298538;
-  --clr-green: #2d8c3c;
-  --clr-lightgreen: #49c755;
-  --clr-blue: #4290c6;
-  --clr-lightblue: #58b8ef;
-  --clr-pink: #ff547c;
-  --clr-red: #f24c3b;
-  --clr-orange: #fe9019;
-  --clr-yellow: #f8cd21;
-  --clr-lightyellow: #fcfae8;
-  --clr-gold: #cea65c;
-  --clr-bronze: #b98353;
-
-  /* Brand Colors */
-  --clr-twitter: #1da1f2;
-  --clr-facebook: #3b5998;
-  --clr-line: #00b900;
-  --clr-hatebu: #008fde;
-  --clr-755: #fb4c42;
-  --clr-dotmoney: #00bd9e;
-  --clr-amebanews: #3890f1;
 }
 
 /**
