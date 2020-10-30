@@ -1,0 +1,8 @@
+/* color.css define semantic color */
+
+:root {
+  --color-base-background: var(--color-surface-primary);
+  --color-base-text: var(--color-text-medium-emphasis);
+  --color-heading-text: var(--color-text-high-emphasis);
+  --color-link: var(--color-base-text);
+}

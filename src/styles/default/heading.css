@@ -1,36 +1,46 @@
 /**
  * heading
  */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-heading-text);
+}
+
 h1 {
-  font-size: 2.6rem;
+  font-size: calc(28 / 16 * 1rem);
   line-height: 1.5;
-  margin: 6.4rem 0 2.4rem;
+  margin: 64px 0 24px;
 }
 
 h2 {
-  font-size: 2.6rem;
+  font-size: calc(28 / 16 * 1rem);
   line-height: 1.5;
-  margin: 6.4rem 0 2.4rem;
+  margin: 64px 0 24px;
 }
 
 h3 {
-  font-size: 2.2rem;
+  font-size: calc(24 / 16 * 1rem);
   line-height: 1.75;
-  margin: 4.8rem 0 3.2rem;
+  margin: 48px 0 32px;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--clr-silver);
+  border-bottom: 1px solid var(--color-border-low-emphasis);
 }
 
 h4 {
-  font-size: 1.6rem;
+  font-size: calc(18 / 16 * 1rem);
   line-height: 1.71;
-  margin: 3.2rem 0 1.6rem;
+  margin: 32px 0 16px;
 }
 
 h5 {
-  border-left: 4px solid var(--clr-gray);
-  font-size: 1.4rem;
+  border-left: 4px solid var(--color-border-medium-emphasis);
+  font-size: calc(16 / 16 * 1rem);
   line-height: 1.71;
-  margin: 3.2rem 0 2.4rem;
+  margin: 32px 0 24px;
   padding-left: 16px;
 }

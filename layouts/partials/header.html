@@ -1,11 +1,13 @@
 <header class="Header">
   {{ if eq .Params.isTop true }}
-    <h1 class="Container">
-      <a href="{{ .Site.BaseURL }}">
-        <img src="{{ .Site.BaseURL }}/img/logo.svg" class="Header__Logo" alt="Ameba" />
-        <span class="Header__title">Accessibility<br>Guidelines</span>
-      </a>
-    </h1>
+    <div class="Container">
+      <h1>
+        <a href="{{ .Site.BaseURL }}">
+          <img src="{{ .Site.BaseURL }}/img/logo.svg" class="Header__Logo" alt="Ameba" />
+          <span class="Header__title">Accessibility<br>Guidelines</span>
+        </a>
+      </h1>
+    </div>
   {{ else }}
     <p class="Container">
       <a href="{{ .Site.BaseURL }}">

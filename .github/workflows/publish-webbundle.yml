@@ -14,7 +14,7 @@ jobs:
       TZ: Asia/Tokyo
       BUNDLE_NAME: ameba-accessibility-guidelines.wbn
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
       with:
         ref: ${{ github.ref }}
 
@@ -24,7 +24,7 @@ jobs:
         node-version: 12
 
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2.3.0
+      uses: peaceiris/actions-hugo@v2.4.13
       with:
         hugo-version: 0.55.6
 
@@ -67,7 +67,7 @@ jobs:
 
     - name: Create Release
       id: create-release
-      uses: actions/create-release@v1.0.0
+      uses: actions/create-release@v1.1.4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -86,7 +86,7 @@ jobs:
         prerelease: false
     
     - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1.0.1
+      uses: actions/upload-release-asset@v1.0.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:

@@ -1,12 +1,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-{{ if isset .Params "title" }}
-  <title>{{ .Params.Title }} - {{ .Site.Title }}</title>
+{{ if (and (isset .Params "title") (isset .Params "number")) }}
+  <title>{{ .Params.number }} {{ .Params.Title }} - {{ .Site.Title }}</title>
 {{ else }}
   <title>{{ .Site.Title }}</title>
 {{ end }}
 <link rel="icon" href="{{ .Site.BaseURL }}/favicon.ico">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/a11y-light.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/styles/a11y-light.min.css">
 {{ if eq .Params.pageType "default" }}
   <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/default.css">
 {{ else }}
@@ -25,7 +25,13 @@
   <meta property="og:description" content="{{ .Summary }}">
   {{ end }}
 {{ end }}
-<meta property="og:image" content="{{ .Site.BaseURL }}/favicon.png">
+
+{{ if isset .Params "number" }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}/img/ogp/ogp_{{ .Params.Number }}.png">
+{{ else }} {{/* 記事のサマリ */}}
+  <meta property="og:image" content="{{ .Site.BaseURL }}/img/ogp/default.png">
+{{ end }}
+
 {{ if .IsHome }} {{/* トップページ */}}
   <meta property="og:type" content="website">
 {{ end }}
@@ -40,7 +46,7 @@
   <meta property="og:title" content="{{ .Site.Title }}">
 {{ end }}
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@ameba_official">
 
 <link rel="canonical" href="{{ .Permalink }}">
@@ -48,3 +54,11 @@
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
 <link rel="apple-touch-icon-precomposed" href="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176911771-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'UA-176911771-1');
+</script>
