@@ -58,6 +58,7 @@
     "extends": [
       "config:base",
       "group:linters",
+      "group:postcss",
       ":automergePatch",
       ":label(renovate)",
       ":preserveSemverRanges",
