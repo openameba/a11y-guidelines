@@ -2,11 +2,9 @@
  * Footer
  */
 .Footer {
-  border-top: solid 1px var(--clr-silver);
-  margin-top: 30px;
-  padding: 3.2rem 0;
-  color: var(--clr-darkgray);
-  font-size: 1rem;
+  border-top: 1px solid var(--color-border-low-emphasis);
+  margin-top: 64px;
+  padding: 64px 0;
 }
 
 .Footer__Credit a {
@@ -23,5 +21,5 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 2.8rem;
+  margin-top: 28px;
 }

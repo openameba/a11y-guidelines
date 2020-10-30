@@ -2,6 +2,7 @@
  * ページ共通　style
  */
 @import "./base.css";
+@import "./color.css";
 @import "./overrides.css";
 
 @import "./container.css";

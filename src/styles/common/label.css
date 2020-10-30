@@ -2,12 +2,12 @@
  * label
  */
 .Label {
-  border-radius: 8px;
-  border: solid 1px var(--clr-gray);
-  color: var(--clr-gray);
-  font-size: 10px;
+  border-radius: 1000px;
+  border: solid 1px currentColor;
+  color: inherit;
+  font-size: calc(12 / 16 * 1rem);
   font-weight: bold;
   margin-left: 8px;
-  padding: 0.2rem 8px;
+  padding: 2px 8px;
   vertical-align: text-bottom;
 }
