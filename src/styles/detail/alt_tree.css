@@ -1,0 +1,36 @@
+/**
+ * AltTree
+ */
+.AltTree {
+  border-collapse: collapse;
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.AltTree table {
+  width: 100%;
+  position: relative;
+}
+
+.AltTree table tbody {
+  position: relative;
+}
+
+.AltTree table thead th,
+.AltTree table thead td {
+  padding: 8px;
+  margin: 0;
+  text-align: left;
+  font-size: calc(16 / 16 * 1rem);
+}
+
+.AltTree table tbody th,
+.AltTree table tbody td {
+  padding: 8px;
+  margin: 0;
+  border-top: 1px solid var(--color-border-low-emphasis);
+  text-align: left;
+  font-size: calc(12 / 16 * 1rem);
+}
