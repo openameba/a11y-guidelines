@@ -167,3 +167,7 @@ typings/
 # Hugo
 vendor/*
 !vendor/.gitkeep
+
+# reg-suit
+.reg-suit/actual_images/*
+!.reg-suit/actual_images/.gitkeep

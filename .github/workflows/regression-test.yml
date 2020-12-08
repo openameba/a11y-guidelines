@@ -1,0 +1,65 @@
+name: regression test
+
+on:
+  - push
+  - pull_request_target
+  - workflow_dispatch
+
+jobs:
+  regression-test:
+    name: regression test
+    strategy:
+      matrix:
+        node:
+          - 12
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ matrix.node }}
+      - id: npm-cache
+        run: echo "::set-output name=dir::$(npm config get cache)"
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.npm-cache.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+      - run: npm ci
+      - run: >
+          npm install -D
+          puppeteer
+          reg-keygen-git-hash-plugin
+          reg-notify-github-plugin
+          reg-publish-gcs-plugin
+      - run: npm run build
+      - run: npm start &
+      - name: take screenshots
+        run: >
+          find public -type f -name '*.html' |
+          sed -e 's|public|a11y-guidelines|' |
+          xargs node ./npm_scripts/scrape.js "${PWD}/.reg-suit/actual_images" http://localhost:1313
+      - name: checkout branch when push
+        if: github.event_name == 'push'
+        run: |
+          git checkout "${GITHUB_REF#refs/heads/}"
+      - name: checkout branch when create Pull-request
+        if: github.event_name == 'pull_request'
+        env:
+          REF: ${{ github.head_ref }}
+        run: |
+          git checkout "${REF}"
+      # NOTE: Don't execute if sent Pull-request from openameba/a11y-guidelines
+      - if: |
+          !(github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == 'openameba/a11y-guidelines')
+        env:
+          GCS_BUCKET_NAME_REG_SUIT: ${{ secrets.GCS_BUCKET_NAME_REG_SUIT }}
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
+          REG_SUIT_NOTIFY_CLIENT_ID: ${{ secrets.REG_SUIT_NOTIFY_CLIENT_ID }}
+        run: |
+          printf -- '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > "${PWD}/storage-key.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/storage-key.json"
+          npx reg-suit run
