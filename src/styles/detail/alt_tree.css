@@ -9,6 +9,16 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.AltTree + .AltTree {
+  margin-top: 32px;
+}
+
+.AltTree caption {
+  font-size: calc(18 / 16 * 1rem);
+  line-height: 1.71;
+  text-align: left;
+}
+
 .AltTree table {
   width: 100%;
   position: relative;
