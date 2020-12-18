@@ -29,7 +29,14 @@ async function capture(pathnames) {
 
     await fs.mkdir(dir, { recursive: true });
 
-    await page.goto(url.toString(), { waitUntil: 'load' });
+    await page.goto(url.toString(), { waitUntil: 'networkidle0' });
+
+    const videos = await page.$$('video');
+
+    if (videos.length > 0) {
+      await page.waitForTimeout(1000);
+    }
+
     await page.screenshot({
       fullPage: true,
       path: output
