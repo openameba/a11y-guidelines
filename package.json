@@ -10,10 +10,10 @@
   "devDependencies": {
     "autoprefixer": "^10.0.0",
     "bin-wrapper": "^4.1.0",
+    "@11ty/eleventy": "^0.11.1",
     "cssnano": "^4.1.10",
     "husky": "^5.0.0",
     "lint-staged": "^10.0.0",
-    "onchange": "^7.0.0",
     "postcss-cli": "^8.0.0",
     "postcss-custom-properties": "^11.0.0",
     "postcss-import": "^14.0.0",
@@ -24,8 +24,8 @@
     "textlint-rule-prh": "^5.2.0"
   },
   "engines": {
-    "node": "12.19.1",
-    "npm": "6.14.11"
+    "node": "15.4.0",
+    "npm": "7.0.15"
   },
   "husky": {
     "hooks": {
@@ -77,20 +77,17 @@
   },
   "repository": "openameba/a11y-guidelines",
   "scripts": {
-    "build": "npm run build:assets && npm run build:html",
+    "build": "npm run build:html & npm run build:assets ",
     "build:assets": "npm run build:css",
-    "build:css": "npm run styles",
-    "build:html": "hugo --gc",
+    "build:css": "postcss src/styles/*.css --dir public/css",
+    "build:html": "NODE_ENV=production eleventy",
     "fixpack": "npx fixpack",
-    "postinstall": "type hugo >/dev/null 2>&1 && true || node ./npm_scripts/install.js 0.55.6",
-    "start": "hugo serve",
-    "styles": "npm run styles:default && npm run styles:detail",
-    "styles:default": "postcss ./src/styles/default.css -o ./static/css/default.css",
-    "styles:detail": "postcss ./src/styles/detail.css -o ./static/css/detail.css",
+    "start": "eleventy --serve & npm run watch",
+    "styles": "postcss src/styles/*.css --dir public/a11y-guidelines/css",
     "test": "npm run textlint",
     "textlint": "textlint content src",
     "textlint:fix": "textlint --fix content src",
     "watch": "npm run watch:styles",
-    "watch:styles": "onchange ./src/styles/**/*.css -- npm run styles"
+    "watch:styles": "npm run styles --watch"
   }
 }
