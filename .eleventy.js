@@ -1,4 +1,6 @@
 module.exports = (eleventyConfig) => {
+  const site = require("./src/_data/site")();
+
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
   eleventyConfig.addPassthroughCopy("src/.nojekyll");
@@ -29,6 +31,14 @@ module.exports = (eleventyConfig) => {
   }
   eleventyConfig.addFilter("scNumberToPath", scNumberToPath);
 
+  const label = (content, label) => {
+    return `<span class="RuleLabel RuleLabel--${label}">
+<img src="${ site.dir }/img/icon/${label}.svg" width="24" height="24" alt="" />
+${label.charAt(0).toUpperCase() + label.slice(1)}
+</span>${content}`
+}
+  eleventyConfig.addPairedShortcode("label", label);
+
   return {
     dir: {
       input: "src",
@@ -37,6 +47,7 @@ module.exports = (eleventyConfig) => {
           ? "public"
           : "public/a11y-guidelines",
     },
+    templateFormats: ["md", "njk"],
     markdownTemplateEngine: "njk",
   };
 };
