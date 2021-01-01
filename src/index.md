@@ -37,58 +37,58 @@ WCAG2.1に記載の項目のうち、Amebaブランドのサービスで準拠�
 
 #### 1.1 代替テキストを提供する
 
-{{ scs.scList(collections.sc, "1.1")}}
+{{ scs.scList(collections.sc, "1.1") }}
 
 #### 1.2 動画・音声に代替コンテンツを提供する
 
-{{ scs.scList(collections.sc, "1.2")}}
+{{ scs.scList(collections.sc, "1.2") }}
 
 #### 1.3 様々な方法・環境で利用できる
 
-{{ scs.scList(collections.sc, "1.3")}}
+{{ scs.scList(collections.sc, "1.3") }}
 
 #### 1.4 判別できる（見やすく、聞きやすく、区別しやすく）
 
-{{ scs.scList(collections.sc, "1.4")}}
+{{ scs.scList(collections.sc, "1.4") }}
 
 ### 2. 操作可能
 
 #### 2.1 キーボードで操作ができる
 
-{{ scs.scList(collections.sc, "2.1")}}
+{{ scs.scList(collections.sc, "2.1") }}
 
 #### 2.2 十分な時間がある
 
-{{ scs.scList(collections.sc, "2.2")}}
+{{ scs.scList(collections.sc, "2.2") }}
 
 #### 2.3 発作を防止する
 
-{{ scs.scList(collections.sc, "2.3")}}
+{{ scs.scList(collections.sc, "2.3") }}
 
 #### 2.4 ナビゲーションできる
 
-{{ scs.scList(collections.sc, "2.4")}}
+{{ scs.scList(collections.sc, "2.4") }}
 
 #### 2.5 入力方法
 
-{{ scs.scList(collections.sc, "2.5")}}
+{{ scs.scList(collections.sc, "2.5") }}
 
 ### 3. 理解可能
 
 #### 3.1 読みやすい
 
-{{ scs.scList(collections.sc, "3.1")}}
+{{ scs.scList(collections.sc, "3.1") }}
 
 #### 3.2 予測できる
 
-{{ scs.scList(collections.sc, "3.2")}}
+{{ scs.scList(collections.sc, "3.2") }}
 
 #### 3.3 入力しやすい、間違いにくい
 
-{{ scs.scList(collections.sc, "3.3")}}
+{{ scs.scList(collections.sc, "3.3") }}
 
 ### 4. 堅牢性
 
 #### 4.1 互換性を保つ
 
-{{ scs.scList(collections.sc, "4.1")}}
+{{ scs.scList(collections.sc, "4.1") }}
