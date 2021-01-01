@@ -7,8 +7,27 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.setBrowserSyncConfig({
     server: "public",
-    port: "3000"
+    port: "3000",
+    startPath: "/a11y-guidelines"
   });
+
+  /**
+   * @param {string} guidelineNumber
+   * @return {[]}
+   */
+  const filterByGuidelineNumber = (post, guidelineNumber) => {
+    return post.filter(p => p.data.number.startsWith(guidelineNumber));
+  }
+  eleventyConfig.addFilter("filterByGuidelineNumber", filterByGuidelineNumber);
+
+  /**
+   * @param {string} scNumber
+   * @returns {string}
+   */
+  const scNumberToPath = (scNumber) => {
+    return scNumber.replace(/\./g, "/");
+  }
+  eleventyConfig.addFilter("scNumberToPath", scNumberToPath);
 
   return {
     dir: {
