@@ -20,6 +20,18 @@ module.exports = (eleventyConfig) => {
   const labelShortCode = require("./src/_shortcodes/label");
   eleventyConfig.addPairedShortcode("label", labelShortCode);
 
+  const scToNumberForCompare = require("./src/_utils/scToNumberForCompare");
+
+  eleventyConfig.addCollection("SC", (collectionApi) => {
+    const SC = collectionApi.getFilteredByTag("sc").sort((a, b) => {
+      return (
+        scToNumberForCompare(a.data.number) -
+        scToNumberForCompare(b.data.number)
+      );
+    });
+    return SC;
+  });
+
   return {
     dir: {
       input: "src",
