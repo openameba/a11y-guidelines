@@ -1,14 +1,14 @@
 /**
  * ページ共通　style
  */
-@import "./base.css";
-@import "./color.css";
-@import "./overrides.css";
+@import './base.css';
+@import './color.css';
+@import './overrides.css';
 
-@import "./container.css";
-@import "./footer.css";
-@import "./header.css";
-@import "./label.css";
-@import "./license.css";
-@import "./figure.css";
-@import "./rule_label.css";
+@import './container.css';
+@import './footer.css';
+@import './header.css';
+@import './label.css';
+@import './license.css';
+@import './figure.css';
+@import './rule_label.css';

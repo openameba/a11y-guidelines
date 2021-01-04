@@ -20,6 +20,7 @@
     "postcss-custom-properties": "^11.0.0",
     "postcss-import": "^14.0.0",
     "postcss-single-charset": "^2.0.0",
+    "prettier": "^2.2.1",
     "textlint": "^11.2.5",
     "textlint-filter-rule-allowlist": "^2.0.1",
     "textlint-rule-preset-japanese": "^5.0.0",
@@ -43,6 +44,9 @@
     "*.md": [
       "npm run textlint",
       "git diff --exit-code --quiet"
+    ],
+    "*.{js,css}": [
+      "npm run format"
     ],
     "package.json": [
       "npx fixpack",
@@ -84,10 +88,12 @@
     "build:css": "postcss src/styles/*.css --dir public/css",
     "build:html": "NODE_ENV=production eleventy",
     "fixpack": "npx fixpack",
+    "format": "prettier --write {src,npm_scripts,.eleventy.js,package.json}",
+    "lint:format": "prettier -c {src,npm_scripts,.eleventy.js,package.json}",
     "start": "npm-run-all -p serve watch",
     "serve": "DEBUG=Eleventy* eleventy --serve watch",
     "styles": "postcss src/styles/*.css --dir public/a11y-guidelines/css",
-    "test": "npm run textlint",
+    "test": "npm-run-all textlint lint:*",
     "textlint": "textlint content src",
     "textlint:fix": "textlint --fix content src",
     "watch": "npm run watch:styles",

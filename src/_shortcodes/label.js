@@ -1,4 +1,4 @@
-const site = require("../_data/site")();
+const site = require('../_data/site')();
 
 /**
  *
