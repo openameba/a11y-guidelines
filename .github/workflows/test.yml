@@ -1,11 +1,13 @@
 name: test
 
 on:
-  - push
-  - pull_request
+  push:
+    branches: [master]
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Tokyo
@@ -23,6 +25,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-npm-
       - run: npm ci
-      - run: npm test
+      - run: npm run lint
       - run: npm run build
       - uses: treosh/lighthouse-ci-action@v7
