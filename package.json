@@ -10,7 +10,7 @@
     "autoprefixer": "^9.5.1",
     "bin-wrapper": "^4.1.0",
     "cssnano": "^4.1.10",
-    "husky": "^4.0.0",
+    "husky": "^5.0.0",
     "lint-staged": "^10.0.0",
     "onchange": "^7.0.0",
     "postcss-cli": "^8.0.0",
