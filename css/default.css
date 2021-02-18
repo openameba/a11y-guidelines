@@ -336,12 +336,9 @@ strong {
 }
 
 .Footer__Credit {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
   margin-top: 28px;
 }
 
@@ -452,10 +449,8 @@ figcaption {
 .Figurelist {
   margin: 32px -24px 48px;
   padding: 0;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -486,8 +481,7 @@ figcaption {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   gap: 12px;
-  -webkit-box-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
 }
 
 .FigureMulti img {
