@@ -4,18 +4,19 @@
   "version": "0.0.0",
   "author": "CyberAgent, Inc.",
   "dependencies": {
-    "ameba-color-palette.css": "^4.0.0"
+    "ameba-color-palette.css": "^4.0.0",
+    "postcss": "^8.2.6"
   },
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^10.0.0",
     "bin-wrapper": "^4.1.0",
     "cssnano": "^4.1.10",
     "husky": "^4.0.0",
     "lint-staged": "^10.0.0",
     "onchange": "^7.0.0",
     "postcss-cli": "^8.0.0",
-    "postcss-custom-properties": "^10.0.0",
-    "postcss-import": "^12.0.1",
+    "postcss-custom-properties": "^11.0.0",
+    "postcss-import": "^14.0.0",
     "postcss-single-charset": "^2.0.0",
     "textlint": "^11.2.5",
     "textlint-rule-preset-japanese": "^5.0.0",
