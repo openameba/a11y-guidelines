@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "author": "CyberAgent, Inc.",
   "dependencies": {
-    "ameba-color-palette.css": "^4.0.0"
+    "ameba-color-palette.css": "^4.0.0",
+    "postcss": "^8.2.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.0",
