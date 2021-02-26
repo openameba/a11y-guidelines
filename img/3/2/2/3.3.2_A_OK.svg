@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>3.3.2_A_OK</title>
+    <desc>Created with Sketch.</desc>
+    <g id="3.3.2_A_OK" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#EFEFEF" x="0" y="0" width="500" height="500"></rect>
+        <g id="window">
+            <rect id="Rectangle-5" fill="#FFFFFF" x="0" y="0" width="500" height="500"></rect>
+            <rect id="Rectangle-2" fill="#D8D8D8" x="0" y="0" width="500" height="36"></rect>
+            <g id="close" transform="translate(481.142136, 18.142136) rotate(-315.000000) translate(-481.142136, -18.142136) translate(471.142136, 8.142136)" fill="#333333">
+                <rect id="Rectangle-3" x="9" y="0" width="2" height="20"></rect>
+                <rect id="Rectangle-3" transform="translate(10.000000, 10.000000) rotate(-270.000000) translate(-10.000000, -10.000000) " x="9" y="0" width="2" height="20"></rect>
+            </g>
+            <rect id="Rectangle" stroke="#333333" stroke-width="2" x="440" y="9" width="18" height="18"></rect>
+            <rect id="Rectangle" fill="#333333" x="405" y="25" width="20" height="3"></rect>
+            <g id="link" transform="translate(32.000000, 278.000000)">
+                <text id="企業情報" font-family="HiraKakuProN-W3, Hiragino Kaku Gothic ProN" font-size="16" font-weight="300" fill="#333333" text-decoration="underline">
+                    <tspan x="2" y="14">企業情報</tspan>
+                </text>
+                <text id="ニュース" font-family="HiraKakuProN-W3, Hiragino Kaku Gothic ProN" font-size="16" font-weight="300" fill="#333333" text-decoration="underline">
+                    <tspan x="2" y="46">ニュース</tspan>
+                </text>
+                <text id="お問い合わせ" font-family="HiraKakuProN-W3, Hiragino Kaku Gothic ProN" font-size="16" font-weight="300" fill="#333333" text-decoration="underline">
+                    <tspan x="2" y="78">お問い合わせ</tspan>
+                </text>
+                <text id="ショッピング" font-family="HiraKakuProN-W3, Hiragino Kaku Gothic ProN" font-size="16" font-weight="300" fill="#333333" text-decoration="underline">
+                    <tspan x="2" y="111">ショッピング</tspan>
+                </text>
+                <g id="icon_window" transform="translate(106.000000, 97.000000)">
+                    <g>
+                        <rect id="Rectangle" stroke="#333333" stroke-width="2" x="4.63636364" y="1" width="14.3636364" height="12.5454545"></rect>
+                        <rect id="Rectangle-6" fill="#333333" x="10" y="3.63636364" width="5.45454545" height="1.81818182"></rect>
+                        <rect id="Rectangle-6" fill="#333333" transform="translate(14.545455, 6.363636) rotate(-90.000000) translate(-14.545455, -6.363636) " x="11.8181818" y="5.45454545" width="5.45454545" height="1.81818182"></rect>
+                        <rect id="Rectangle-6" fill="#333333" x="0" y="16.3636364" width="14.5454545" height="1.81818182"></rect>
+                        <rect id="Rectangle-6" fill="#333333" transform="translate(0.909091, 10.909091) rotate(-90.000000) translate(-0.909091, -10.909091) " x="-6.36363636" y="10" width="14.5454545" height="1.81818182"></rect>
+                        <rect id="Rectangle-7" fill="#333333" transform="translate(11.395940, 7.759576) rotate(-315.000000) translate(-11.395940, -7.759576) " x="10.486849" y="4.12321264" width="1.81818182" height="7.27272727"></rect>
+                    </g>
+                </g>
+                <text id="※新しいウィンドウが開きます" font-family="HiraKakuPro-W3, Hiragino Kaku Gothic Pro" font-size="12" font-weight="300" fill="#757575">
+                    <tspan x="0" y="132">※新しいウィンドウが開きます</tspan>
+                </text>
+            </g>
+            <g id="li" transform="translate(33.000000, 69.000000)">
+                <rect id="Rectangle-16" fill="#E2E2E2" x="1" y="40" width="436" height="146"></rect>
+                <rect id="Rectangle-16" fill="#E2E2E2" x="273" y="202" width="164" height="57"></rect>
+                <rect id="Rectangle-16" fill="#E2E2E2" x="273" y="267" width="164" height="57"></rect>
+                <text id="XXXXXX株式会社" font-family="HiraginoSans-W3, Hiragino Sans" font-size="24" font-weight="300" fill="#333333">
+                    <tspan x="0" y="21"> XXXXXX株式会社</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="500px" height="160px" viewBox="0 0 500 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>2.4.8_ng</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="480" height="60"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.4.8_ng">
+            <g id="Group-2" transform="translate(10.000000, 50.000000)">
+                <g id="Rectangle-6">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#CCCCCC" stroke-width="2" x="-1" y="-1" width="482" height="62"></rect>
+                </g>
+                <text id="ホーム" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.111111112" fill="#333333">
+                    <tspan x="30" y="38">ホーム</tspan>
+                </text>
+                <text id="ニュース" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.111111112" fill="#333333">
+                    <tspan x="141" y="38">ニュース</tspan>
+                </text>
+                <text id="ランキング" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.111111112" fill="#2D8C3C">
+                    <tspan x="250" y="38">ランキング</tspan>
+                </text>
+                <text id="特集" font-family="HiraginoSans-W6, Hiragino Sans" font-size="20" font-weight="500" letter-spacing="0.111111112" fill="#333333">
+                    <tspan x="399" y="38">特集</tspan>
+                </text>
+                <rect id="Rectangle-8" fill="#CCCCCC" x="119" y="12" width="2" height="36"></rect>
+                <rect id="Rectangle-8" fill="#CCCCCC" x="239" y="12" width="2" height="36"></rect>
+                <rect id="Rectangle-8" fill="#CCCCCC" x="359" y="12" width="2" height="36"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
