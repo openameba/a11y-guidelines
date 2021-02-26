@@ -7,6 +7,11 @@ on:
 
 jobs:
   regression-test:
+    name: regression test
+    strategy:
+      matrix:
+        node:
+          - 12
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt-get --yes install fonts-noto
@@ -15,7 +20,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '14.x'
+          node-version: ${{ matrix.node }}
       - id: npm-cache
         run: echo "::set-output name=dir::$(npm config get cache)"
       - uses: actions/cache@v2
@@ -37,7 +42,7 @@ jobs:
         run: >
           find public -type f -name '*.html' |
           sed -e 's|public|a11y-guidelines|' |
-          xargs node ./npm_scripts/scrape.js "${PWD}/.reg-suit/actual_images" http://localhost:3000
+          xargs node ./npm_scripts/scrape.js "${PWD}/.reg-suit/actual_images" http://localhost:1313
       - name: checkout branch when push
         if: github.event_name == 'push'
         run: |
