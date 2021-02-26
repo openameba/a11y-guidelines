@@ -1,0 +1,5 @@
+*.njk
+*.md
+src/img
+src/favcon.ico
+src/_includes

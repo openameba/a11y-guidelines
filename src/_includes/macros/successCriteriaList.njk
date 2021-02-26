@@ -1,0 +1,7 @@
+{% macro scList(scs, guidelineNumber) %}
+<ul>
+{%- for sc in scs | filterByGuidelineNumber(guidelineNumber) -%}
+  <li><a href="{{ site.dir }}{{ sc.url }}">{{ sc.data.number }} {{ sc.data.title }}</a><span class="Label">{{ sc.data.level}}</span></li>
+{%- endfor -%}
+</ul>
+{% endmacro %}

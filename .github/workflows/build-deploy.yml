@@ -6,26 +6,24 @@ on:
       - master
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2.4.13
+      - uses: actions/setup-node@v2
         with:
-          hugo-version: 0.55.6
+          node-version: '14.x'
+      - name: Install dependencies
+        run: npm ci
+      - run: npm run build
 
-      - name: Build Site
-        run: |
-          npm ci
-          npm run build
-
-      - name: Build Hugo
-        run: hugo --minify
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Tokyo
+    needs: build
+    steps:
+      - uses: peaceiris/actions-gh-pages@v3
         with:
           forceOrphan: true
           github_token: ${{ secrets.GITHUB_TOKEN }}

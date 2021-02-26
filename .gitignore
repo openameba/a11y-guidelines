@@ -1,15 +1,3 @@
-### https://raw.github.com/github/gitignore/7aec8fdf3287f253ddfd91b9fa18199f415eb87e/community/Golang/Hugo.gitignore
-
-# Generated files by hugo
-/public/
-/resources/_gen/
-
-# Executable may be added to repository
-hugo.exe
-hugo.darwin
-hugo.linux
-
-
 ### https://raw.github.com/github/gitignore/7aec8fdf3287f253ddfd91b9fa18199f415eb87e/Global/JetBrains.gitignore
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
@@ -164,10 +152,9 @@ typings/
 # Lighthouse CI
 .lighthouseci/
 
-# Hugo
-vendor/*
-!vendor/.gitkeep
-
 # reg-suit
 .reg-suit/actual_images/*
 !.reg-suit/actual_images/.gitkeep
+
+# Output
+/public/

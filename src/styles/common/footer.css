@@ -13,7 +13,8 @@
   line-height: 1;
 }
 
-.Footer a:hover, .Footer a:focus {
+.Footer a:hover,
+.Footer a:focus {
   background-color: inherit;
 }
 

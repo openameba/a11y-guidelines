@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ lang }}">
+  <head>
+    {% include "partials/meta.njk" %}
+  </head>
+
+  <body>
+    {% include "partials/header.njk" %}
+
+    <main class="Main">
+      <div class="Container">
+        <article class="Article">
+          {{ content | safe }}
+        </article>
+      </div>
+    </main>
+
+    {% include "partials/footer.njk" %}
+
+    {% include "partials/script.njk" %}
+  </body>
+</html>
