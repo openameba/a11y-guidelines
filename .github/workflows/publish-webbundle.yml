@@ -21,12 +21,20 @@ jobs:
     - name: Setup Node
       uses: actions/setup-node@v2
       with:
-        node-version: '14.x'
+        node-version: 12
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2.4.13
+      with:
+        hugo-version: 0.55.6
 
     - name: Build Site
       run: |
         npm install
         npm run build
+    
+    - name: Build Hugo
+      run: hugo --minify
 
     - name: Install go/bundle CLI
       run: |
@@ -35,7 +43,7 @@ jobs:
         go get -u github.com/WICG/webpackage/go/bundle/cmd/gen-bundle
         # Add path to run the package
         echo "::add-path::$HOME/go/bin"
-
+    
     - name: Generate Web Bundle 📦
       run: |
         # Create URL list from the files built by Hugo
@@ -45,12 +53,12 @@ jobs:
         #   - add hosting domain
         find public -type f | sed -e 's|/index.html||g' -e '/^$/d' -e 's|public|https://openameba.github.io/a11y-guidelines|g' > urls.txt
         # Add extra dependencies
-        echo -e 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/a11y-light.min.css \nhttps://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js' >> urls.txt
+        echo -e 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/a11y-light.min.css \nhttps://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js' >> urls.txt
         # Generate web bundle from URL list by following reasons:
         #   - static directory is different from a web server implementation e.g. directory index
         #   - to ensure HTTP response headers
         gen-bundle -URLList urls.txt -primaryURL https://openameba.github.io/a11y-guidelines -o ${{ env.BUNDLE_NAME }}
-
+    
     - name: Generate Release ID
       id: generate-release-id
       run: |
@@ -76,7 +84,7 @@ jobs:
           Please download our web bundle named ${{ env.BUNDLE_NAME }} from the link below and check [web.dev](https://web.dev/web-bundles/#playing-around-with-web-bundles) to try out this bundle.
         draft: false
         prerelease: false
-
+    
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1.0.2
       env:

@@ -2,29 +2,18 @@
   "rules": {
     "preset-japanese": {
       "no-mix-dearu-desumasu": {
-        "preferInHeader": "である",
-        "preferInBody": "である",
-        "preferInList": "である",
-        "strict": false
-      },
-      "sentence-length": false
+         "preferInHeader": "である",
+         "preferInBody": "である",
+         "preferInList": "である",
+         "strict": false
+       },
+       "sentence-length": false
     },
     "preset-jtf-style": {
       "3.1.1.全角文字と半角文字の間": false
     },
     "prh": {
-      "rulePaths": [
-        "prh.yml"
-      ]
-    }
-  },
-  "filters": {
-    "allowlist": {
-      "allow": [
-        "/\\{\\{[\\s\\S]*?\\}\\}/",
-        "/\\{%[\\s\\S]*?%\\}/",
-        "/\\[[\\s\\S]*?\\]\\([\\s\\S]*?\\)/"
-      ]
+      "rulePaths" :["prh.yml"]
     }
   }
 }

@@ -3,8 +3,7 @@
  */
 html {
   box-sizing: border-box;
-  font-family: Meiryo, 'Yu Gothic Medium', system-ui, -apple-system,
-    BlinkMacSystemFont, sans-serif;
+  font-family: Meiryo, "Yu Gothic Medium", system-ui, -apple-system, BlinkMacSystemFont, sans-serif ;
   line-height: 1.5;
 }
 
@@ -34,7 +33,7 @@ article a:focus {
 ol,
 ul {
   padding-left: 2em;
-  margin: 16px 0;
+  margin: 16px 0
 }
 
 ol > li {

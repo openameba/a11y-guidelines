@@ -4,14 +4,14 @@
  * Custom Properties
  * https://app.frontify.com/d/WNaMzU7K3G6y/amebablog-style-guide#/basics/colors
  */
-@import 'ameba-color-palette.css';
+@import "ameba-color-palette.css";
 
 /**
  * Common
  */
-@import 'common/index.css';
+@import "common/index.css";
 
 /**
  * For default.css
  */
-@import 'default/index.css';
+@import "default/index.css";
