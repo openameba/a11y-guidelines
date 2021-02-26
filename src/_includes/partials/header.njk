@@ -1,0 +1,19 @@
+<header class="Header">
+  {% if isTop %}
+    <div class="Container">
+      <h1>
+        <a href="{{ site.baseURL }}">
+          <img src="{{ site.baseURL }}/img/logo.svg" class="Header__Logo" alt="Ameba" />
+          <span class="Header__title">Accessibility<br>Guidelines</span>
+        </a>
+      </h1>
+    </div>
+  {% else %}
+    <p class="Container">
+      <a href="{{ site.baseURL }}">
+        <img src="{{ site.baseURL }}/img/logo.svg" class="Header__Logo" alt="Ameba" />
+        <span class="Header__title">Accessibility<br>Guidelines</span>
+      </a>
+    </p>
+  {% endif %}
+</header>
