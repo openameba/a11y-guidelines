@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+
+  
+
+
+<title>3.1.5 難しい文章表現を避ける - Ameba Accessibility Guidelines</title>
+
+<link rel="icon" href="https://openameba.github.io/a11y-guidelines/favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/a11y-light.min.css">
+
+
+  <link rel="stylesheet" href="https://openameba.github.io/a11y-guidelines/css/detail.css">
+
+
+<meta property="og:title" content="3.1.5 難しい文章表現を避ける - Ameba Accessibility Guidelines" />
+
+
+  <meta name="description" content="Ameba Accessibility Guidelinesは、Amebaのサービスのアクセシビリティを高めるために設けた制作指針集である。「誰もがいつでも迷わずコンテンツを楽しむことができる」ようにするため、WCAG 2.1を要約・和訳し、事例などを掲載している。">
+  <meta property="og:description" content="Ameba Accessibility Guidelinesは、Amebaのサービスのアクセシビリティを高めるために設けた制作指針集である。「誰もがいつでも迷わずコンテンツを楽しむことができる」ようにするため、WCAG 2.1を要約・和訳し、事例などを掲載している。">
+
+
+
+  <meta property="og:image" content="https://openameba.github.io/a11y-guidelines/img/ogp/ogp_3.1.5.png">
+
+
+
+  <meta property="og:type" content="article">
+
+
+<meta property="og:url" content="{{ number | scNumberToPath }}/">
+<meta property="og:site_name" content="Ameba Accessibility Guidelines">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ameba_official">
+
+<link rel="canonical" href="{{ number | scNumberToPath }}/">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176911771-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'UA-176911771-1');
+</script>
+
+  </head>
+
+  <body>
+    <header class="Header">
+  
+    <p class="Container">
+      <a href="https://openameba.github.io/a11y-guidelines">
+        <img src="https://openameba.github.io/a11y-guidelines/img/logo.svg" class="Header__Logo" alt="Ameba" />
+        <span class="Header__title">Accessibility<br>Guidelines</span>
+      </a>
+    </p>
+  
+</header>
+
+
+    <main class="Main">
+      <div class="Container">
+        <article class="Article">
+          <h1 id="3.1.5-%E9%9B%A3%E3%81%97%E3%81%84%E6%96%87%E7%AB%A0%E8%A1%A8%E7%8F%BE%E3%82%92%E9%81%BF%E3%81%91%E3%82%8B">3.1.5 難しい文章表現を避ける</h1>
+<p>コンテンツは、できる限りわかりやすく簡潔に書かれているべきである。固有名詞や題名以外のテキストで、難解な言い回しや表現を避けるべきである。読解レベルは中学3年生が読めるものであれば問題ないと言えるが、その評価は難しい。</p>
+<p>もし難解な表現を使わざるを得ない場合は、要約や図解、音声を利用できるなどの補足があると良い。</p>
+<p>読みやすいテキストや図解があると、ほとんどのユーザーにとっても理解しやすくなる。そのなかでも、ディスレクシアなどの読字障害のユーザーには特に効果がある。</p>
+<h2 id="%E3%83%86%E3%82%B9%E3%83%88%E3%83%BB%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E6%96%B9%E6%B3%95">テスト・チェック方法</h2>
+<h3 id="1.-textlint%E3%81%AA%E3%81%A9%E3%81%AE%E6%A0%A1%E6%AD%A3%E3%83%84%E3%83%BC%E3%83%AB%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B">1. <a href="https://textlint.github.io/">textlint</a>などの校正ツールを使用する</h3>
+<p>Atomエディタなどにtextlintをインストールしておく。文章作成時に、日本語として不適切な表現を指摘してくれるため、文章校正に用いることができる。</p>
+<p>ほかにも、機械的に判断できる日本語の文章難易度の評価には<a href="https://jreadability.net/ja/">jReadability</a>などのツールがある。</p>
+<figure>
+<img src="/a11y-guidelines/img/3/1/5/1.png" />
+<figcaption>textlintを設定しているAtomエディタの使用イメージ。文法的に不適切な箇所にエラーが表示されている。</figcaption>
+</figure>
+<h3 id="2.-%E6%96%87%E7%AB%A0%E4%BD%9C%E6%88%90%E5%BE%8C%E3%81%AB%E8%A4%87%E6%95%B0%E4%BA%BA%E3%81%AB%E7%A2%BA%E8%AA%8D%E3%81%97%E3%81%A6%E3%82%82%E3%82%89%E3%81%86">2. 文章作成後に複数人に確認してもらう</h3>
+<p>次のような確認項目を挙げることはできるが、適切なテスト手法はない。文章作成後、複数人に確認してもらうなどのフローを挟むことを推奨する。</p>
+<ol>
+<li>段落、文章、単語を短くする。長い文は分割を検討する</li>
+<li>専門的な用語や俗語などの言い回しを避け、一般的な単語を選ぶ</li>
+</ol>
+<ul>
+<li>対象ユーザーに適した単語の選択かどうかの視点も重要である</li>
+</ul>
+<ol start="3">
+<li>冗長な単語を取り除く</li>
+<li>単語やフレーズを複数並べる場合、文章よりもリストの方が読みやすくならないかを検討する</li>
+<li>受動態の文は能動態にできないかを検討する</li>
+<li>名前やラベルに一貫性を持たせる</li>
+</ol>
+<h2 id="%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</h2>
+<ul>
+<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-supplements.html">Understanding Success Criterion 3.1.5 | Understanding WCAG 2.0</a></li>
+<li><a href="https://waic.jp/docs/UNDERSTANDING-WCAG20/meaning-supplements.html#lowseceddef">達成基準 3.1.5 を理解する | WCAG 2.0解説書</a></li>
+<li><a href="https://waic.jp/docs/WCAG-TECHS/G86.html">G86: 前期中等教育レベルを超えた読解力を必要としないテキストで要約を提供する | WCAG 2.0 達成方法集</a></li>
+<li><a href="https://waic.jp/docs/WCAG-TECHS/G103.html">G103: アイデア、事象及びプロセスの説明を理解しやすくするために、視覚的な図画、写真及びシンボルを提供する | WCAG 2.0 達成方法集</a></li>
+<li><a href="https://waic.jp/docs/WCAG-TECHS/G153.html">G153: テキストを読みやすくする | WCAG 2.0 達成方法集</a></li>
+</ul>
+
+        </article>
+      </div>
+    </main>
+
+    <footer class="Footer">
+  <div class="Container">
+    <div class="Footer__License License">
+      <p>この文書は、<a href="https://openfresh.github.io/a11y-guidelines/">FRESH! LIVE Accessibility Guidelines</a>を元に、<a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines（WCAG）2.1</a>の内容を簡易的に翻訳し加筆修正したものである。ウェブアクセシビリティ基盤委員会（WAIC）による<a href="https://waic.jp/docs/WCAG21/">WCAG 2.1翻訳文書</a>を併せて参考にしている。</p>
+      <p>この文書は<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">クリエイティブ・コモンズ表示 4.0 国際ライセンス</a>の下に提供されている。</p>
+      <a class="License__Anchor" rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="クリエイティブ・コモンズ・ライセンス" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+      </a>
+      <p>当サイトではサイトの利用動向調査のためGoogle Analyticsを利用しており、IPアドレスなどの特定の情報が自動的にGoogle, Incに送信される。このためにCookieを利用するが、これらは匿名で収集されており個人を特定するものではない。詳細は <a href="https://policies.google.com/technologies/partner-sites?hl=ja">Google のサービスを使用するサイトやアプリから収集した情報の Google による使用 – ポリシーと規約 – Google</a> を参照のこと。</p>
+    </div>
+    <small class="Footer__Credit">
+      Copyright © 2017 CyberAgent, Inc. All Rights Reserved.
+      <a href="https://www.cyberagent.co.jp/">
+        <img src="https://openameba.github.io/a11y-guidelines/img/cyberagent.png" alt="CyberAgent" width="113" height="20">
+      </a>
+    </small>
+  </div>
+</footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const blocks = document.querySelectorAll('pre code');
+  for (const block of blocks) {
+    hljs.highlightBlock(block);
+  }
+});
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+
+  
+
+
+<title>3.3.3 エラーの修正を提案する - Ameba Accessibility Guidelines</title>
+
+<link rel="icon" href="https://openameba.github.io/a11y-guidelines/favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/a11y-light.min.css">
+
+
+  <link rel="stylesheet" href="https://openameba.github.io/a11y-guidelines/css/detail.css">
+
+
+<meta property="og:title" content="3.3.3 エラーの修正を提案する - Ameba Accessibility Guidelines" />
+
+
+  <meta name="description" content="Ameba Accessibility Guidelinesは、Amebaのサービスのアクセシビリティを高めるために設けた制作指針集である。「誰もがいつでも迷わずコンテンツを楽しむことができる」ようにするため、WCAG 2.1を要約・和訳し、事例などを掲載している。">
+  <meta property="og:description" content="Ameba Accessibility Guidelinesは、Amebaのサービスのアクセシビリティを高めるために設けた制作指針集である。「誰もがいつでも迷わずコンテンツを楽しむことができる」ようにするため、WCAG 2.1を要約・和訳し、事例などを掲載している。">
+
+
+
+  <meta property="og:image" content="https://openameba.github.io/a11y-guidelines/img/ogp/ogp_3.3.3.png">
+
+
+
+  <meta property="og:type" content="article">
+
+
+<meta property="og:url" content="{{ number | scNumberToPath }}/">
+<meta property="og:site_name" content="Ameba Accessibility Guidelines">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ameba_official">
+
+<link rel="canonical" href="{{ number | scNumberToPath }}/">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176911771-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'UA-176911771-1');
+</script>
+
+  </head>
+
+  <body>
+    <header class="Header">
+  
+    <p class="Container">
+      <a href="https://openameba.github.io/a11y-guidelines">
+        <img src="https://openameba.github.io/a11y-guidelines/img/logo.svg" class="Header__Logo" alt="Ameba" />
+        <span class="Header__title">Accessibility<br>Guidelines</span>
+      </a>
+    </p>
+  
+</header>
+
+
+    <main class="Main">
+      <div class="Container">
+        <article class="Article">
+          <h1 id="3.3.3-%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AE%E4%BF%AE%E6%AD%A3%E3%82%92%E6%8F%90%E6%A1%88%E3%81%99%E3%82%8B">3.3.3 エラーの修正を提案する</h1>
+<p>入力エラーを機械的に検出でき、修正方法がある場合、エラーの修正方法をユーザーに表示する。ただし、提示することでセキュリティやコンテンツの目的を損なう場合は除く。</p>
+<h2 id="%E5%85%B7%E4%BD%93%E4%BE%8B">具体例</h2>
+<ul>
+<li>悪い例：「〇〇エラー」</li>
+<li>良い例：「〇〇エラーです。××を△△に修正してください」</li>
+</ul>
+<h3 id="%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E3%82%A8%E3%83%A9%E3%83%BC%E4%BE%8B%E3%81%A8%E4%BF%AE%E6%AD%A3%E6%96%B9%E6%B3%95%E4%BE%8B">よくあるエラー例と修正方法例</h3>
+<p>次によくある例を示す。サービスごとに統一した文言があるとなお良い。</p>
+<ul>
+<li>必須項目の入力漏れ：〇〇は必須項目です</li>
+<li>入力可能な文字以外を入力したエラー：〇〇は半角英数字のみで入力してください
+<ul>
+<li>注釈：プログラムで置換可能なものは、エラーを出すよりもプログラム側で変換することが望ましい</li>
+</ul>
+</li>
+<li>サーバーエラー：しばらく時間をおいてから再度お試しください</li>
+</ul>
+<h3 id="%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E7%9A%84%E3%81%AA%E4%BE%8B%E5%A4%96">セキュリティ的な例外</h3>
+<p>ID・パスワード入力の回避方法を入れてはいけない。どちらかが存在していることがわかってしまうからである。その場合は「IDまたはパスワードが間違っています」と表現をぼかすようにする。</p>
+<h2 id="%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%83%BB%E3%83%86%E3%82%B9%E3%83%88%E6%96%B9%E6%B3%95">レビュー・テスト方法</h2>
+<ul>
+<li>企画時</li>
+<li>デザインレビュー</li>
+<li>実装後</li>
+</ul>
+<h2 id="%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95">実装方法</h2>
+<p><code>type</code>, <code>required</code>, <code>pattern</code>, <code>min</code>, <code>max</code>属性など用いると、JavaScriptを使わなくてもフォーム検証を行うことができる。
+<a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Forms/Data_form_validation">フォームデータの検証 - ウェブ開発を学ぶ | MDN</a>や<a href="https://developer.mozilla.org/ja/docs/Web/HTML/HTML5/Constraint_validation">制約の検証 - HTML | MDN</a>が参考になる。</p>
+<h3 id="pattern%E5%B1%9E%E6%80%A7%E3%81%AB%E3%82%88%E3%82%8B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E6%A4%9C%E8%A8%BC">pattern属性によるフォーム検証</h3>
+<p><code>pattern</code>属性に含めた文字列（正規表現可）のみ送信できる。</p>
+<pre><code>&lt;form&gt;
+  &lt;label for=&quot;choose&quot;&gt;What's name is this blog service?&lt;/label&gt;
+  &lt;input id=&quot;choose&quot; name=&quot;service_name&quot; required pattern=&quot;ameba blog|ameblo&quot;&gt;
+  &lt;button&gt;submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+<figure>
+<img src="/a11y-guidelines/img/3/3/3/3.3.3_1.png" alt="" />
+<figcaption>
+<span class="RuleLabel RuleLabel--good">
+<img src="/a11y-guidelines/img/icon/good.svg" width="24" height="24" alt="" />
+Good
+</span>
+pattern属性を用いた入力フォームの例。「ameba blog」と「ameblo」のみ送信が可能になる。それ以外の文字列を入力して送信すると「指定されている形式で入力してください」などのvalidationエラーの文言が入力欄付近に表示される。
+</figcaption>
+</figure>
+<h3 id="required%E5%B1%9E%E6%80%A7%E3%81%AB%E3%82%88%E3%82%8B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E6%A4%9C%E8%A8%BC">required属性によるフォーム検証</h3>
+<p><code>required</code>属性を持つ入力項目が空のとき、送信できない。</p>
+<pre><code>&lt;form&gt;
+  &lt;label for=&quot;choose&quot;&gt;What's name is this blog service?&lt;/label&gt;
+  &lt;input id=&quot;choose&quot; name=&quot;service_name&quot; required&gt;
+  &lt;button&gt;submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+<figure>
+<img src="/a11y-guidelines/img/3/3/3/3.3.3_2.png" alt="" />
+<figcaption>
+<span class="RuleLabel RuleLabel--good">
+<img src="/a11y-guidelines/img/icon/good.svg" width="24" height="24" alt="" />
+Good
+</span>
+required属性を用いた入力フォームの例。入力が必須となっており、未入力の状態で送信すると「このフィールドを入力してください」などのvalidationエラーの文言が入力欄付近に表示される。
+</figcaption>
+</figure>
+<h2 id="%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</h2>
+<ul>
+<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-suggestions.html">Understanding Success Criterion 3.3.3 | Understanding WCAG 2.0</a></li>
+<li><a href="https://waic.jp/docs/UNDERSTANDING-WCAG20/minimize-error-suggestions.html">達成基準 3.3.3 を理解する | WCAG 2.0解説書</a></li>
+<li><a href="https://waic.jp/docs/WCAG-TECHS/ARIA2.html">ARIA2: aria-required プロパティによって必須項目を特定する | WCAG 2.0 達成方法集</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Forms/Data_form_validation">フォームデータの検証 - ウェブ開発を学ぶ | MDN</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/HTML/HTML5/Constraint_validation">制約の検証 - HTML | MDN</a></li>
+</ul>
+
+        </article>
+      </div>
+    </main>
+
+    <footer class="Footer">
+  <div class="Container">
+    <div class="Footer__License License">
+      <p>この文書は、<a href="https://openfresh.github.io/a11y-guidelines/">FRESH! LIVE Accessibility Guidelines</a>を元に、<a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines（WCAG）2.1</a>の内容を簡易的に翻訳し加筆修正したものである。ウェブアクセシビリティ基盤委員会（WAIC）による<a href="https://waic.jp/docs/WCAG21/">WCAG 2.1翻訳文書</a>を併せて参考にしている。</p>
+      <p>この文書は<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">クリエイティブ・コモンズ表示 4.0 国際ライセンス</a>の下に提供されている。</p>
+      <a class="License__Anchor" rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="クリエイティブ・コモンズ・ライセンス" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+      </a>
+      <p>当サイトではサイトの利用動向調査のためGoogle Analyticsを利用しており、IPアドレスなどの特定の情報が自動的にGoogle, Incに送信される。このためにCookieを利用するが、これらは匿名で収集されており個人を特定するものではない。詳細は <a href="https://policies.google.com/technologies/partner-sites?hl=ja">Google のサービスを使用するサイトやアプリから収集した情報の Google による使用 – ポリシーと規約 – Google</a> を参照のこと。</p>
+    </div>
+    <small class="Footer__Credit">
+      Copyright © 2017 CyberAgent, Inc. All Rights Reserved.
+      <a href="https://www.cyberagent.co.jp/">
+        <img src="https://openameba.github.io/a11y-guidelines/img/cyberagent.png" alt="CyberAgent" width="113" height="20">
+      </a>
+    </small>
+  </div>
+</footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const blocks = document.querySelectorAll('pre code');
+  for (const block of blocks) {
+    hljs.highlightBlock(block);
+  }
+});
+</script>
+
+  </body>
+</html>
