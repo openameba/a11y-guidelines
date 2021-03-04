@@ -10,7 +10,7 @@ const pathnames = process.argv.slice(4);
 async function capture(pathnames) {
   const browser = await puppeteer.launch({
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();
 
@@ -39,7 +39,7 @@ async function capture(pathnames) {
 
     await page.screenshot({
       fullPage: true,
-      path: output
+      path: output,
     });
   }
 

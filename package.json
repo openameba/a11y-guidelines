@@ -10,22 +10,26 @@
   "devDependencies": {
     "autoprefixer": "^10.0.0",
     "bin-wrapper": "^4.1.0",
+    "@11ty/eleventy": "^0.11.1",
     "cssnano": "^4.1.10",
     "husky": "^5.0.0",
     "lint-staged": "^10.0.0",
-    "onchange": "^7.0.0",
+    "markdown-it-anchor": "^6.0.1",
+    "npm-run-all": "^4.1.5",
     "postcss-cli": "^8.0.0",
     "postcss-custom-properties": "^11.0.0",
     "postcss-import": "^14.0.0",
     "postcss-single-charset": "^2.0.0",
+    "prettier": "^2.2.1",
     "textlint": "^11.2.5",
+    "textlint-filter-rule-allowlist": "^2.0.1",
     "textlint-rule-preset-japanese": "^5.0.0",
     "textlint-rule-preset-jtf-style": "^2.3.3",
     "textlint-rule-prh": "^5.2.0"
   },
   "engines": {
-    "node": "12.19.1",
-    "npm": "6.14.11"
+    "node": "14.15.4",
+    "npm": "7.0.15"
   },
   "husky": {
     "hooks": {
@@ -40,6 +44,9 @@
     "*.md": [
       "npm run textlint",
       "git diff --exit-code --quiet"
+    ],
+    "*.{js,css}": [
+      "npm run format"
     ],
     "package.json": [
       "npx fixpack",
@@ -77,20 +84,20 @@
   },
   "repository": "openameba/a11y-guidelines",
   "scripts": {
-    "build": "npm run build:assets && npm run build:html",
-    "build:assets": "npm run build:css",
-    "build:css": "npm run styles",
-    "build:html": "hugo --gc",
+    "build": "npm-run-all build:*",
+    "build:css": "postcss src/styles/*.css --dir public/css",
+    "build:html": "NODE_ENV=production eleventy",
     "fixpack": "npx fixpack",
-    "postinstall": "type hugo >/dev/null 2>&1 && true || node ./npm_scripts/install.js 0.55.6",
-    "start": "hugo serve",
-    "styles": "npm run styles:default && npm run styles:detail",
-    "styles:default": "postcss ./src/styles/default.css -o ./static/css/default.css",
-    "styles:detail": "postcss ./src/styles/detail.css -o ./static/css/detail.css",
-    "test": "npm run textlint",
-    "textlint": "textlint content src",
-    "textlint:fix": "textlint --fix content src",
+    "format": "run-p format:*",
+    "format:prettier": "prettier --write {src,npm_scripts,.eleventy.js,package.json}",
+    "format:text": "textlint --fix content src",
+    "lint": "run-p lint:*",
+    "lint:prettier": "prettier -c {src,npm_scripts,.eleventy.js,package.json}",
+    "lint:text": "textlint content src",
+    "serve": "DEBUG=Eleventy* eleventy --serve watch",
+    "start": "npm-run-all -p serve watch",
+    "styles": "postcss src/styles/*.css --dir public/a11y-guidelines/css",
     "watch": "npm run watch:styles",
-    "watch:styles": "onchange ./src/styles/**/*.css -- npm run styles"
+    "watch:styles": "npm run styles --watch"
   }
 }
