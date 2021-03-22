@@ -20,7 +20,6 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setBrowserSyncConfig({
     server: 'public',
     port: '3000',
-    startPath: '/a11y-guidelines',
   });
 
   // Filters
@@ -50,10 +49,7 @@ module.exports = (eleventyConfig) => {
   return {
     dir: {
       input: 'src',
-      output:
-        process.env.NODE_ENV === 'production'
-          ? 'public'
-          : 'public/a11y-guidelines',
+      output: 'public',
     },
     templateFormats: ['md', 'njk'],
     markdownTemplateEngine: 'njk',

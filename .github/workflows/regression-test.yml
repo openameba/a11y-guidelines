@@ -36,7 +36,7 @@ jobs:
       - name: take screenshots
         run: >
           find public -type f -name '*.html' |
-          sed -e 's|public|a11y-guidelines|' |
+          sed -e 's/public//' |
           xargs node ./npm_scripts/scrape.js "${PWD}/.reg-suit/actual_images" http://localhost:3000
       - name: checkout branch when push
         if: github.event_name == 'push'
