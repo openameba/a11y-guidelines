@@ -10,7 +10,7 @@
   "devDependencies": {
     "autoprefixer": "^10.0.0",
     "bin-wrapper": "^4.1.0",
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^0.12.0",
     "cssnano": "^4.1.10",
     "husky": "^5.0.0",
     "lint-staged": "^10.0.0",
