@@ -3,7 +3,7 @@ module.exports = function (eleventyConfig) {
     dir: '',
     baseURL:
       process.env.NODE_ENV === 'production'
-        ? `https://openameba.github.io/a11y-guidelines`
+        ? 'https://a11y-guidelines.ameba.design'
         : 'http://localhost:3000',
     title: 'Ameba Accessibility Guidelines',
     description:
