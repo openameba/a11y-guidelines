@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "ameba-a11y-guidelines",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
