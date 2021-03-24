@@ -43,13 +43,13 @@ jobs:
         #     - URL should be exactly the same with the link text in the document
         #   - remove empty lines
         #   - add hosting domain
-        find public -type f | sed -e 's|/index.html||g' -e '/^$/d' -e 's|public|https://a11y-guidelines.ameba.design|g' > urls.txt
+        find public -type f | sed -e 's|/index.html||g' -e '/^$/d' -e 's|public|https://openameba.github.io/a11y-guidelines|g' > urls.txt
         # Add extra dependencies
         echo -e 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/a11y-light.min.css \nhttps://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js' >> urls.txt
         # Generate web bundle from URL list by following reasons:
         #   - static directory is different from a web server implementation e.g. directory index
         #   - to ensure HTTP response headers
-        gen-bundle -URLList urls.txt -primaryURL https://a11y-guidelines.ameba.design -o ${{ env.BUNDLE_NAME }}
+        gen-bundle -URLList urls.txt -primaryURL https://openameba.github.io/a11y-guidelines -o ${{ env.BUNDLE_NAME }}
 
     - name: Generate Release ID
       id: generate-release-id
