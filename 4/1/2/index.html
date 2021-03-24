@@ -10,11 +10,11 @@
 
 <title>4.1.2 HTMLの要素や属性を正しい役割で使用する - Ameba Accessibility Guidelines</title>
 
-<link rel="icon" href="https://a11y-guidelines.ameba.design/favicon.ico">
+<link rel="icon" href="https://openameba.github.io/a11y-guidelines/favicon.ico">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/a11y-light.min.css">
 
 
-  <link rel="stylesheet" href="/css/detail.css">
+  <link rel="stylesheet" href="https://openameba.github.io/a11y-guidelines/css/detail.css">
 
 
 <meta property="og:title" content="4.1.2 HTMLの要素や属性を正しい役割で使用する - Ameba Accessibility Guidelines" />
@@ -25,7 +25,7 @@
 
 
 
-  <meta property="og:image" content="https://a11y-guidelines.ameba.design/img/ogp/ogp_4.1.2.png">
+  <meta property="og:image" content="https://openameba.github.io/a11y-guidelines/img/ogp/ogp_4.1.2.png">
 
 
 
@@ -39,10 +39,10 @@
 <meta name="twitter:site" content="@ameba_official">
 
 <link rel="canonical" href="{{ number | scNumberToPath }}/">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://a11y-guidelines.ameba.design/img/apple-touch-icon.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://a11y-guidelines.ameba.design/img/apple-touch-icon.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://a11y-guidelines.ameba.design/img/apple-touch-icon.png">
-<link rel="apple-touch-icon-precomposed" href="https://a11y-guidelines.ameba.design/img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" href="https://openameba.github.io/a11y-guidelines/img/apple-touch-icon.png">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176911771-1"></script>
@@ -59,8 +59,8 @@
     <header class="Header">
   
     <p class="Container">
-      <a href="/">
-        <img src="/img/logo.svg" class="Header__Logo" alt="Ameba" width="157" height="60" />
+      <a href="https://openameba.github.io/a11y-guidelines">
+        <img src="https://openameba.github.io/a11y-guidelines/img/logo.svg" class="Header__Logo" alt="Ameba" width="157" height="60" />
         <span class="Header__title">Accessibility<br>Guidelines</span>
       </a>
     </p>
@@ -78,11 +78,11 @@
 <figure>
 <figcaption>
 <div class="FigureMulti">
-<img src="/img/4/1/2/4.1.2_ok_1.svg" alt="見出しタグを、見出しレベルに応じて適切に適用しているマークアップ例。">
-<img src="/img/4/1/2/4.1.2_ok_2.svg" alt="適切なマークアップのHTMLが描画されている図。想定通りの見出しが想定通りの階層（レベル）で列挙されている。">
+<img src="/a11y-guidelines/img/4/1/2/4.1.2_ok_1.svg" alt="見出しタグを、見出しレベルに応じて適切に適用しているマークアップ例。">
+<img src="/a11y-guidelines/img/4/1/2/4.1.2_ok_2.svg" alt="適切なマークアップのHTMLが描画されている図。想定通りの見出しが想定通りの階層（レベル）で列挙されている。">
 </div>
 <span class="RuleLabel RuleLabel--good">
-<img src="/img/icon/good.svg" width="24" height="24" alt="" />
+<img src="/a11y-guidelines/img/icon/good.svg" width="24" height="24" alt="" />
 Good
 </span>
 見出しタグを正しく使用している場合。支援技術で、見出しを一覧化して表示する機能を使っても、全ての見出しを表示できるため、必要な情報を選んで読みやすい。
@@ -90,12 +90,12 @@ Good
 </figure>
 <figure>
 <div class="FigureMulti">
-<img src="/img/4/1/2/4.1.2_ng_1.svg" alt="見出しレベル1の要素のみh1要素でマークアップされ、その他の見出しはpタグでマークアップされている。">
-<img src="/img/4/1/2/4.1.2_ng_2.svg" alt="不適切なマークアップのHTMLが描画されている図。h1要素でマークアップされた見出しのみ表示されているが、pタグでマークアップされた見出しは表示されていない。">
+<img src="/a11y-guidelines/img/4/1/2/4.1.2_ng_1.svg" alt="見出しレベル1の要素のみh1要素でマークアップされ、その他の見出しはpタグでマークアップされている。">
+<img src="/a11y-guidelines/img/4/1/2/4.1.2_ng_2.svg" alt="不適切なマークアップのHTMLが描画されている図。h1要素でマークアップされた見出しのみ表示されているが、pタグでマークアップされた見出しは表示されていない。">
 </div>
 <figcaption>
 <span class="RuleLabel RuleLabel--bad">
-<img src="/img/icon/bad.svg" width="24" height="24" alt="" />
+<img src="/a11y-guidelines/img/icon/bad.svg" width="24" height="24" alt="" />
 Bad
 </span>
 見出しタグを適切に使用していない場合。CSSでスタイリングしているため、仕上がりは見出しのように見えていたが、見出しタグを使っていないために、見出し一覧機能を使うと見出しとして表示されない。
@@ -139,7 +139,7 @@ Bad
     <small class="Footer__Credit">
       Copyright © 2017 CyberAgent, Inc. All Rights Reserved.
       <a href="https://www.cyberagent.co.jp/">
-        <img src="/img/cyberagent.png" alt="CyberAgent" width="113" height="20">
+        <img src="https://openameba.github.io/a11y-guidelines/img/cyberagent.png" alt="CyberAgent" width="113" height="20">
       </a>
     </small>
   </div>
