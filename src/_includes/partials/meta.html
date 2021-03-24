@@ -8,9 +8,9 @@
 <link rel="icon" href="{{ .Site.BaseURL }}/favicon.ico">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/a11y-light.min.css">
 {{ if eq .Params.pageType "default" }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/default.css">
+  <link rel="stylesheet" href="/css/default.css">
 {{ else }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/detail.css">
+  <link rel="stylesheet" href="/css/detail.css">
 {{ end }}
 {{ if .IsHome }} {{/* トップページ */}}
   <meta name="description" content="{{ .Site.Params.description }}">

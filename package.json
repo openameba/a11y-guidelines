@@ -96,7 +96,7 @@
     "lint:text": "textlint content src",
     "serve": "DEBUG=Eleventy* eleventy --serve watch",
     "start": "npm-run-all -p serve watch",
-    "styles": "postcss src/styles/*.css --dir public/a11y-guidelines/css",
+    "styles": "postcss src/styles/*.css --dir public/css",
     "watch": "npm run watch:styles",
     "watch:styles": "npm run styles --watch"
   }
