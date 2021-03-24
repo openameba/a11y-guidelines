@@ -46,14 +46,14 @@ summary:after {
   content: '';
   height: 100%;
   width: 36px;
-  background: url('/a11y-guidelines/img/icon/open.svg') no-repeat 0 center;
+  background: url('/img/icon/open.svg') no-repeat 0 center;
   background-size: 16px;
 }
 
 details[open] > summary:after {
   position: absolute;
   content: '';
-  background: url('/a11y-guidelines/img/icon/close.svg') no-repeat 0 center;
+  background: url('/img/icon/close.svg') no-repeat 0 center;
   background-size: 16px;
 }
 
