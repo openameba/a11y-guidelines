@@ -1,6 +1,5 @@
 module.exports = function (eleventyConfig) {
   return {
-    dir: '',
     baseURL:
       process.env.NODE_ENV === 'production'
         ? 'https://a11y-guidelines.ameba.design'
