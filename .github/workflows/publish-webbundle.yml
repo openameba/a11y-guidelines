@@ -34,7 +34,7 @@ jobs:
         # you can run setup-go action if you want to install specific version
         go get -u github.com/WICG/webpackage/go/bundle/cmd/gen-bundle
         # Add path to run the package
-        echo "::add-path::$HOME/go/bin"
+        echo "$HOME/go/bin" >> $GITHUB_PATH
 
     - name: Generate Web Bundle 📦
       run: |
