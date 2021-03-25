@@ -6,8 +6,8 @@ title: 対象となるサービス
 
 ## 対象となるサービス
 
-- [アメブロ](/{{ site.dir }}/services/#アメブロ)
-- [REQU](/{{ site.dir }}/services/#requ)
+- [アメブロ](/services/#アメブロ)
+- [REQU](/services/#requ)
 
 ### アメブロ
 
