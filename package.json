@@ -8,9 +8,9 @@
     "postcss": "^8.2.6"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^0.12.0",
     "autoprefixer": "^10.0.0",
     "bin-wrapper": "^4.1.0",
-    "@11ty/eleventy": "^0.12.0",
     "cssnano": "^4.1.10",
     "husky": "^6.0.0",
     "lint-staged": "^10.0.0",
@@ -30,11 +30,6 @@
   "engines": {
     "node": "14.15.4",
     "npm": "7.7.6"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "keywords": [
     "accessibility"
@@ -94,6 +89,7 @@
     "lint": "run-p lint:*",
     "lint:prettier": "prettier -c {src,npm_scripts,.eleventy.js,package.json}",
     "lint:text": "textlint content src",
+    "prepare": "[ -n \"$CI\" ] || husky install",
     "serve": "DEBUG=Eleventy* eleventy --serve watch",
     "start": "npm-run-all -p serve watch",
     "styles": "postcss src/styles/*.css --dir public/css",
