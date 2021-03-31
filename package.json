@@ -36,17 +36,9 @@
   ],
   "license": "SEE LICENSE IN LICENSE.md",
   "lint-staged": {
-    "*.md": [
-      "npm run textlint",
-      "git diff --exit-code --quiet"
-    ],
-    "*.{js,css}": [
-      "npm run format"
-    ],
-    "package.json": [
-      "npx fixpack",
-      "git diff --exit-code --quiet"
-    ]
+    "*.md": "textlint --dry-run",
+    "*.+(css|js)": "prettier --check",
+    "package.json": "npx fixpack --dryRun"
   },
   "postcss": {
     "plugins": {
