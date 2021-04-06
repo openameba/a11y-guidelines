@@ -45,7 +45,7 @@ jobs:
         #   - add hosting domain
         find public -type f | sed -e 's|/index.html||g' -e '/^$/d' -e 's|public|https://a11y-guidelines.ameba.design|g' > urls.txt
         # Add extra dependencies
-        echo -e 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/a11y-light.min.css \nhttps://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js' >> urls.txt
+        echo -e 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/a11y-light.min.css \nhttps://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/a11y-dark.min.css \nhttps://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js' >> urls.txt
         # Generate web bundle from URL list by following reasons:
         #   - static directory is different from a web server implementation e.g. directory index
         #   - to ensure HTTP response headers
