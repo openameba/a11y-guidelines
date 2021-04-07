@@ -7,3 +7,67 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+<script type="module">
+const STORAGE_KEY = 'theme-switch';
+const themeEl = document.getElementById('js-theme-switch');
+const lightCss = document.querySelectorAll('link[media*="prefers-color-scheme"][media*="light"]');
+const darkCss = document.querySelectorAll('link[media*="prefers-color-scheme"][media*="dark"]');
+
+document.addEventListener('DOMContentLoaded', () => {
+  const prefarance = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  const storedTheme = loadStoredTheme();
+
+  if (themeEl) {
+    // Display current theme in <select> (theme switch)
+    themeEl.value = storedTheme || prefarance;
+
+    themeEl.addEventListener('change', handleThemeChange, false);
+  }
+  
+  if (storedTheme) {
+    updateTheme(storedTheme);
+  }
+});
+
+function updateTheme (theme) {
+  // ameba-color-palette.css detects this
+  document.documentElement.dataset.theme = theme;
+
+  // Apply appropriate css with media attribute
+  if (theme === 'dark') {
+    [...lightCss].forEach((link) => {
+      link.media = 'not all';
+      link.disabled = true;
+    });
+    [...darkCss].forEach((link) => {
+      link.media = 'all';
+      link.disabled = false;
+    });
+  } else {
+    [...lightCss].forEach((link) => {
+      link.media = 'all';
+      link.disabled = false;
+    });
+    [...darkCss].forEach((link) => {
+      link.media = 'not all';
+      link.disabled = true;
+    });
+  }
+}
+
+function loadStoredTheme () {
+  try {
+    return window.localStorage.getItem(STORAGE_KEY);
+  } catch (err) {
+    return undefined;
+  }
+}
+
+function handleThemeChange (event) {
+  const theme = event.target.value;
+  if (theme) {
+    updateTheme(theme);
+    window.localStorage.setItem(STORAGE_KEY, theme);
+  }
+}
+</script>

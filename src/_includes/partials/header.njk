@@ -1,6 +1,10 @@
 <header class="Header">
   {% if isTop %}
     <div class="Container">
+      <select id="js-theme-switch">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
       <h1>
         <a href="/">
           <img src="/img/logo-ameba.svg" class="Header__Logo" alt="Ameba" width="144" height="44" />
@@ -10,6 +14,10 @@
     </div>
   {% else %}
     <p class="Container">
+      <select id="js-theme-switch">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
       <a href="/">
         <img src="/img/logo-ameba.svg" class="Header__Logo" alt="Ameba" width="144" height="44" />
         <span class="Header__title">Accessibility<br>Guidelines</span>
