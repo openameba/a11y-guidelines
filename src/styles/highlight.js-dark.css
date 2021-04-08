@@ -4,7 +4,7 @@
 ​
 .hljs-comment,
 .hljs-quote {
-  color: #edc488;
+  color: var(--color-text-low-emphasis);
 }
 
 .hljs-deletion,
@@ -15,7 +15,7 @@
 .hljs-tag,
 .hljs-template-variable,
 .hljs-variable {
-  color: var(--color-text-accent-primary);
+  color: var(--color-text-caution);
 }
 
 .hljs-built_in,
@@ -30,7 +30,7 @@
 }
 
 .hljs-attr {
-  color: #f5e100;
+  color: #e19c40;
 }
 
 .hljs-addition,
@@ -47,7 +47,7 @@
 
 .hljs-keyword,
 .hljs-selector-tag {
-  color: #f6e4fa;
+  color: #e9bcf3;
 }
 
 .hljs {
