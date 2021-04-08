@@ -12,9 +12,10 @@ const STORAGE_KEY = 'theme-switch';
 const themeEl = document.getElementById('js-theme-switch');
 const lightCss = document.querySelectorAll('link[media*="prefers-color-scheme"][media*="light"]');
 const darkCss = document.querySelectorAll('link[media*="prefers-color-scheme"][media*="dark"]');
+const mql = matchMedia('(prefers-color-scheme: dark)');
 
 document.addEventListener('DOMContentLoaded', () => {
-  const prefarance = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  const prefarance = mql.matches ? 'dark' : 'light';
   const storedTheme = loadStoredTheme();
 
   if (themeEl) {
@@ -26,6 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (storedTheme) {
     updateTheme(storedTheme);
+  }
+});
+
+// Set value to theme switcher if the value is not stored (not overridden)
+mql.addEventListener('change', (event) => {
+  if (!loadStoredTheme()) {
+    const prefarance = event.matches ? 'dark' : 'light';
+    themeEl.value = prefarance;
   }
 });
 
