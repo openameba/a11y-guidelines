@@ -24,7 +24,7 @@
     "textlint": "^11.2.5",
     "textlint-filter-rule-allowlist": "^2.0.1",
     "textlint-rule-preset-japanese": "^5.0.0",
-    "textlint-rule-preset-jtf-style": "^2.3.3",
+    "textlint-rule-preset-jtf-style": "^2.3.4",
     "textlint-rule-prh": "^5.2.0"
   },
   "engines": {
