@@ -126,18 +126,44 @@
 <pre><code class="language-html">&lt;i class=&quot;icon icon-pen&quot;&gt;&lt;/i&gt;
 </code></pre>
 <h4 id="%E8%89%AF%E3%81%84%E5%AE%9F%E8%A3%85%E4%BE%8B-1">良い実装例</h4>
-<p>ラベルのないアイコンには、WAI-ARIAのaria-label属性を設定している</p>
-<pre><code class="language-html">&lt;i
-  class=&quot;icon icon-pen&quot;
-  aria-label=&quot;ブログを書く&quot;&gt;
-&lt;/i&gt;
-</code></pre>
-<p>※アイコンにラベルが添えられている場合に <code>aria-label</code> 属性を設定すると、支援技術に二重で読み上げられてしまうことがあるため、次のように、<code>aria-hidden</code> 属性を設定する</p>
+<h5 id="%E3%80%90%E6%8E%A8%E5%A5%A8%E3%80%91-%E4%B8%8D%E5%8F%AF%E8%A6%96%E3%81%AE%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E8%A6%81%E7%B4%A0%E3%82%92%E7%94%A8%E6%84%8F%E3%81%97%E3%80%81%E6%94%AF%E6%8F%B4%E6%8A%80%E8%A1%93%E3%81%AB%E3%81%AF%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E8%87%AA%E4%BD%93%E3%82%92%E7%84%A1%E8%A6%96%E3%81%95%E3%81%9B%E3%82%8B%E6%96%B9%E6%B3%95">【推奨】 不可視のテキスト要素を用意し、支援技術にはアイコン自体を無視させる方法</h5>
 <pre><code class="language-html">&lt;button&gt;
-  &lt;i class=&quot;icon icon-pen&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-  ブログを書く
+  &lt;span class=&quot;icon-close&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;閉じる&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;style&gt;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+&lt;/style&gt;
+</code></pre>
+<p><code>.visually-hidden</code> クラスを使用する目的としては</p>
+<ul>
+<li>機械翻訳されやすい</li>
+<li>対応している支援技術が多い</li>
+</ul>
+<p>があるため、上記の実装を推奨とする。</p>
+<h5 id="%E5%AE%9F%E8%A3%85%E4%B8%8A%E3%81%AE%E9%83%BD%E5%90%88%E3%81%A7%E6%8E%A8%E5%A5%A8%E4%BE%8B%E3%81%AE%E5%AE%9F%E8%A3%85%E3%81%8C%E5%9B%B0%E9%9B%A3%E3%81%AA%E5%A0%B4%E5%90%88">実装上の都合で推奨例の実装が困難な場合</h5>
+<details>
+  <summary>親要素にラベルを設定する方法</summary>
+<pre><code class="language-html">&lt;button aria-label=&quot;閉じる&quot;&gt;
+  &lt;span class=&quot;icon-close&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
 &lt;/button&gt;
 </code></pre>
+</details>
+<details>
+  <summary>roleをimgにした上で、ラベルを設定する方法</summary>
+<pre><code class="language-html">&lt;button&gt;
+  &lt;span class=&quot;icon-close&quot; role=&quot;img&quot; aria-label=&quot;閉じる&quot;&gt;&lt;/span&gt;
+&lt;/button&gt;
+</code></pre>
+</details>
 <h3 id="%E6%84%8F%E5%91%B3%E3%81%AE%E3%81%82%E3%82%8B%E7%94%BB%E5%83%8F%E3%82%92%E8%83%8C%E6%99%AF%E7%94%BB%E5%83%8F%E3%81%AB%E3%81%97%E3%81%AA%E3%81%84">意味のある画像を背景画像にしない</h3>
 <h4 id="%E6%82%AA%E3%81%84%E5%AE%9F%E8%A3%85%E4%BE%8B-2">悪い実装例</h4>
 <pre><code class="language-html">&lt;div style=&quot;background-image: url(ameblo.png)&quot;&gt;&lt;/div&gt;
