@@ -8,6 +8,10 @@ details {
   border-radius: 4px;
 }
 
+details + details {
+  margin-top: 16px;
+}
+
 summary {
   text-indent: -1em;
   cursor: pointer;
