@@ -6,7 +6,8 @@
   <title>{{ .Site.Title }}</title>
 {{ end }}
 <link rel="icon" href="{{ .Site.BaseURL }}/favicon.ico">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/a11y-light.min.css">
+<link rel="stylesheet" href="/css/highlight.js-light.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/css/highlight.js-dark.css" media="(prefers-color-scheme: dark)">
 {{ if eq .Params.pageType "default" }}
   <link rel="stylesheet" href="/css/default.css">
 {{ else }}
