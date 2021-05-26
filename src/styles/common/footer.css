@@ -24,3 +24,29 @@
   align-items: center;
   margin-top: 28px;
 }
+
+.Footer__ThemeSwitcher {
+  display: inline-block;
+  height: 44px;
+  margin-top: 28px;
+  position: relative;
+  width: 44px;
+}
+
+.Footer__ThemeSwitcher svg {
+  height: 32px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 32px;
+}
+
+.Footer__ThemeSwitcher input {
+  -webkit-appearance: none;
+  height: 100%;
+  left: calc((44px - 32px) / -2);
+  margin: 0;
+  position: absolute;
+  top: calc((44px - 32px) / -2);
+  width: 100%;
+}

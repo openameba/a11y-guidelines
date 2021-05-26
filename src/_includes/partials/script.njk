@@ -7,3 +7,107 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+<script type="module">
+const LIGHT = 'light';
+const DARK = 'dark';
+// Custom switch
+const themeEl = document.querySelector('#js-theme-switch');
+const themeSwitcher = document.querySelector('spindle-theme-switch');
+themeEl.addEventListener('change', (event) => {
+  const theme = event.target.checked ? DARK : LIGHT;
+  // Apply theme with Spindle theme switch
+  if (theme && themeSwitcher) {
+    themeSwitcher.setAttribute('theme', theme);
+  }
+}, false);
+themeSwitcher.addEventListener('themechange', (event) => {
+  themeEl.checked = event.detail.theme === DARK;
+}, false);
+</script>
+<script type="module">
+const THEME = 'theme';
+const THEME_CHANGE_EVENT = 'themechange';
+const LIGHT = 'light';
+const DARK = 'dark';
+const lightCss = document.querySelectorAll('link[media*="prefers-color-scheme"][media*="light"]');
+const darkCss = document.querySelectorAll('link[media*="prefers-color-scheme"][media*="dark"]');
+const store = localStorage;
+export class SpindleThemeSwitch extends HTMLElement {
+  static get observedAttributes() {
+    return [THEME];
+  }
+  constructor() {
+    super();
+    const mql = matchMedia('(prefers-color-scheme: dark)');
+    const prefarance = mql.matches ? DARK : LIGHT;
+    // Props attached via attributes
+    this.STORAGE_KEY = this.getAttribute('storage-key') || 'spindle-theme-switch';
+    const storedTheme = store.getItem(this.STORAGE_KEY);
+    const themeProp = this.getAttribute('theme');
+    this.theme = themeProp || storedTheme || prefarance;
+    // Update DOM if prefarance is overwritten
+    if (themeProp || storedTheme) {
+      this._updateDOM();
+    }
+    // Store if theme is overwritten via prop (attribute)
+    if (storedTheme && themeProp && storedTheme !== themeProp) {
+      store.setItem(this.STORAGE_KEY, this.theme);
+    }
+    this._dispatchEvent(THEME_CHANGE_EVENT, { theme: this.theme });
+    // Listen device's prefarance chacnges
+    mql.addEventListener('change', (event) => {
+      const prefarance = event.matches ? DARK : LIGHT;
+      if (prefarance !== this.theme) {
+        this.theme = prefarance;
+        this._updateDOM();
+        this._dispatchEvent(THEME_CHANGE_EVENT, { theme: this.theme });
+        store.setItem(this.STORAGE_KEY, this.theme);
+      }
+    });
+  }
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === THEME) {
+      if (![LIGHT, DARK].includes(newValue)) {
+        throw new Error(`Allowed values are ${LIGHT} and ${DARK}`);
+      }
+      if (newValue !== this.theme) {
+        this.theme = newValue;
+        this._updateDOM();
+        store.setItem(this.STORAGE_KEY, this.theme);
+      }
+    }
+  }
+  _dispatchEvent(type, value) {
+    this.dispatchEvent(new CustomEvent(type, {
+      bubbles: true,
+      composed: true,
+      detail: value,
+    }));
+  }
+  _updateDOM() {
+    // ameba-color-palette.css detects this
+    document.documentElement.dataset.theme = this.theme;
+    // Apply appropriate css with media attribute
+    if (this.theme === 'dark') {
+      [...lightCss].forEach((link) => {
+        link.media = 'not all';
+        link.disabled = true;
+      });
+      [...darkCss].forEach((link) => {
+        link.media = 'all';
+        link.disabled = false;
+      });
+    } else {
+      [...lightCss].forEach((link) => {
+        link.media = 'all';
+        link.disabled = false;
+      });
+      [...darkCss].forEach((link) => {
+        link.media = 'not all';
+        link.disabled = true;
+      });
+    }
+  }
+}
+customElements.define('spindle-theme-switch', SpindleThemeSwitch);
+</script>
