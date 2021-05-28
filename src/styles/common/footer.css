@@ -25,28 +25,20 @@
   margin-top: 28px;
 }
 
-.Footer__ThemeSwitcher {
-  display: inline-block;
-  height: 44px;
+.Footer__ThemeSwitch {
+  align-items: center;
+  display: flex;
+  flex-direction: reverse;
   margin-top: 28px;
-  position: relative;
-  width: 44px;
 }
 
-.Footer__ThemeSwitcher svg {
-  height: 32px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 32px;
+.Footer__ThemeSwitch spindle-theme-switch {
+  order: 1;
 }
 
-.Footer__ThemeSwitcher input {
-  -webkit-appearance: none;
-  height: 100%;
-  left: calc((44px - 32px) / -2);
-  margin: 0;
-  position: absolute;
-  top: calc((44px - 32px) / -2);
-  width: 100%;
+.Footer__ThemeSwitch p {
+  font-size: calc(12 / 16 * 1rem);
+  font-weight: bold;
+  margin: 0 0 0 1rem;
+  order: 2;
 }

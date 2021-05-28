@@ -8,75 +8,65 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <script type="module">
-const LIGHT = 'light';
-const DARK = 'dark';
-// Custom switch
-const themeEl = document.querySelector('#js-theme-switch');
-const themeSwitcher = document.querySelector('spindle-theme-switch');
-themeEl.addEventListener('change', (event) => {
-  const theme = event.target.checked ? DARK : LIGHT;
-  // Apply theme with Spindle theme switch
-  if (theme && themeSwitcher) {
-    themeSwitcher.setAttribute('theme', theme);
-  }
-}, false);
-themeSwitcher.addEventListener('themechange', (event) => {
-  themeEl.checked = event.detail.theme === DARK;
-}, false);
-</script>
-<script type="module">
 const THEME = 'theme';
 const THEME_CHANGE_EVENT = 'themechange';
 const LIGHT = 'light';
 const DARK = 'dark';
+const MATCH_MEDIA_CONDITION = '(prefers-color-scheme: dark)';
 const lightCss = document.querySelectorAll('link[media*="prefers-color-scheme"][media*="light"]');
 const darkCss = document.querySelectorAll('link[media*="prefers-color-scheme"][media*="dark"]');
 const store = localStorage;
+const STORE_KEY = 'spindle-theme-switch';
+
 export class SpindleThemeSwitch extends HTMLElement {
   static get observedAttributes() {
     return [THEME];
   }
+
   constructor() {
     super();
-    const mql = matchMedia('(prefers-color-scheme: dark)');
-    const prefarance = mql.matches ? DARK : LIGHT;
+
     // Props attached via attributes
-    this.STORAGE_KEY = this.getAttribute('storage-key') || 'spindle-theme-switch';
-    const storedTheme = store.getItem(this.STORAGE_KEY);
-    const themeProp = this.getAttribute('theme');
-    this.theme = themeProp || storedTheme || prefarance;
-    // Update DOM if prefarance is overwritten
-    if (themeProp || storedTheme) {
-      this._updateDOM();
-    }
-    // Store if theme is overwritten via prop (attribute)
-    if (storedTheme && themeProp && storedTheme !== themeProp) {
-      store.setItem(this.STORAGE_KEY, this.theme);
-    }
-    this._dispatchEvent(THEME_CHANGE_EVENT, { theme: this.theme });
-    // Listen device's prefarance chacnges
-    mql.addEventListener('change', (event) => {
-      const prefarance = event.matches ? DARK : LIGHT;
-      if (prefarance !== this.theme) {
-        this.theme = prefarance;
-        this._updateDOM();
-        this._dispatchEvent(THEME_CHANGE_EVENT, { theme: this.theme });
-        store.setItem(this.STORAGE_KEY, this.theme);
-      }
-    });
+    this.label = this.getAttribute('label') || 'ダークテーマを選択';
+    this.themeProp = this.getAttribute('theme');
+
+    this._handleMediaQueryChange = this._handleMediaQueryChange.bind(this);
+    this._handleInputChange = this._handleInputChange.bind(this);
+
+    // Render switch
+    this.attachShadow({ mode: 'open' });
+    this._render();
   }
+
+  connectedCallback() {
+    this.checkbox = this.shadowRoot.querySelector('#spindle-theme-switch');
+    this.checkbox.addEventListener('change', this._handleInputChange, false);
+
+    // Initialize theme
+    const mql = matchMedia(MATCH_MEDIA_CONDITION);
+    const prefarance = mql.matches ? DARK : LIGHT;
+
+    const storedTheme = store.getItem(STORE_KEY);
+    const theme = this.themeProp || storedTheme || prefarance;
+    this._updateTheme(theme);
+
+    // Listen device's prefarance chacnges
+    mql.addEventListener('change', this._handleMediaQueryChange, false);
+  }
+
+  disconnectedCallback() {
+    mql.removeEventListener('change', this._handleMediaQueryChange, false);
+  }
+
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === THEME) {
       if (![LIGHT, DARK].includes(newValue)) {
         throw new Error(`Allowed values are ${LIGHT} and ${DARK}`);
       }
-      if (newValue !== this.theme) {
-        this.theme = newValue;
-        this._updateDOM();
-        store.setItem(this.STORAGE_KEY, this.theme);
-      }
+      this._updateTheme(newValue);
     }
   }
+
   _dispatchEvent(type, value) {
     this.dispatchEvent(new CustomEvent(type, {
       bubbles: true,
@@ -84,6 +74,7 @@ export class SpindleThemeSwitch extends HTMLElement {
       detail: value,
     }));
   }
+
   _updateDOM() {
     // ameba-color-palette.css detects this
     document.documentElement.dataset.theme = this.theme;
@@ -108,6 +99,149 @@ export class SpindleThemeSwitch extends HTMLElement {
       });
     }
   }
+
+  _updateTheme(newTheme) {
+    if (newTheme === this.theme) {
+      return;
+    }
+
+    this.theme = newTheme;
+    this._updateDOM();
+    this.checkbox.checked = this.theme === DARK;
+    store.setItem(STORE_KEY, this.theme);
+    this._dispatchEvent(THEME_CHANGE_EVENT, { theme: this.theme });
+  }
+
+  _handleMediaQueryChange(event) {
+    const prefarance = event.matches ? DARK : LIGHT;
+    this._updateTheme(prefarance);
+  }
+
+  _handleInputChange(event) {
+    const theme = event.target.checked ? DARK : LIGHT;
+    this._updateTheme(theme);
+  }
+
+  _render() {
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          display: inline-block;
+          height: 34px;
+          -webkit-tap-highlight-color: var(--gray-5-alpha);
+          width: 84px;
+        }
+
+        label {
+          background: var(--color-surface-tertiary);
+          border-radius: 40px;
+          display: inline-block;
+          height: 100%;
+          position: relative;
+          width: 100%;
+        }
+
+        input {
+          -webkit-appearance: none;
+          appearance: none;
+          background: none;
+          border: none;
+          display: inline-block;
+          height: 100%;
+          left: 0;
+          margin: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+
+        .themes {
+          box-sizing: border-box;
+          display: flex;
+          height: 100%;
+          left: 0;
+          list-style: none;
+          margin: 0;
+          padding: 4px;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+
+        .themes::before {
+          background: var(--color-surface-primary);
+          border-radius: 40px;
+          content: '';
+          display: block;
+          height: 26px;
+          left: 4px;
+          position: absolute;
+          top: 4px;
+          transform: translate(100%, 0);
+          transition: transform ease-out 0.3s, background 0.3s;
+          width: 38px;
+        }
+
+        input:checked ~ .themes::before {
+          background: var(--color-surface-quaternary);
+          transform: translate(0, 0);
+        }
+
+        .theme {
+          align-items: center;
+          display: flex;
+          flex: 0 0 50%;
+          justify-content: center;
+          z-index: 1;
+        }
+
+        input:checked ~ .themes .theme-light,
+        input:not(:checked) ~ .themes .theme-dark {
+          color: var(--color-object-disable);
+        }
+
+        .theme-dark {
+          color: var(--ameba-yellow);
+        }
+
+        .theme-light {
+          color: #de4d14;
+        }
+
+        .icon {
+          height: 18px;
+          width: 18px;
+        }
+
+        input:checked ~ .themes .theme-dark .icon-outline,
+        input:not(:checked) ~ .themes .theme-dark .icon-fill,
+        input:checked ~ .themes .theme-light .icon-outline,
+        input:not(:checked) ~ .themes .theme-light .icon-fill {
+          display: none;
+        }
+      </style>
+
+      <label for="spindle-theme-switch">
+        <input aria=label="${this.label}" id="spindle-theme-switch" name="theme-switch" type="checkbox">
+        <ul aria-hidden="true" class="themes">
+          <li class="theme theme-dark">
+            <svg class="icon icon-outline" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M10.86 21a9.03 9.03 0 0 1-5.58-1.92c-.67-.52-.94-1.37-.7-2.17.25-.81.96-1.37 1.82-1.42.75-.05 1.51-.25 2.24-.58 1.98-.9 3.42-2.73 3.76-4.79.22-1.34.04-2.69-.53-3.89-.37-.78-.23-1.67.36-2.29.58-.6 1.45-.77 2.23-.45 3.78 1.62 5.97 5.46 5.46 9.55-.49 3.94-3.56 7.16-7.46 7.82-.53.1-1.07.14-1.6.14zm2.82-15.67.01.04c.75 1.57.99 3.33.7 5.07-.45 2.7-2.33 5.11-4.9 6.28-.96.43-1.94.69-2.94.76 1.56 1.26 3.56 1.76 5.59 1.41 3.04-.51 5.43-3.02 5.81-6.09.39-3.21-1.32-6.21-4.27-7.47z"/></svg>
+            <svg class="icon icon-fill" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M13.07 3c5.17 1.25 8.38 6.98 6.28 12.22-1.33 3.34-4.59 5.66-8.18 5.77-2.75.09-5.23-1.05-6.96-2.9-.62-.67-.04-1.76.86-1.65.78.1 1.59.07 2.43-.09 2.99-.59 5.38-3.03 5.89-6.03.36-2.14-.18-4.16-1.31-5.72-.55-.76.08-1.82.99-1.6z"/></svg>
+          </li>
+          <li class="theme theme-light">
+            <svg class="icon icon-outline" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M16.5 12c0 2.48-2.02 4.5-4.5 4.5S7.5 14.48 7.5 12 9.52 7.5 12 7.5s4.5 2.02 4.5 4.5zM12 5.5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1s-1 .45-1 1v1.5c0 .55.45 1 1 1zm0 13c-.55 0-1 .45-1 1V21c0 .55.45 1 1 1s1-.45 1-1v-1.5c0-.55-.45-1-1-1zm5.3-10.8c.26 0 .51-.1.71-.29l1.06-1.06a.996.996 0 1 0-1.41-1.41L16.6 5.99a.996.996 0 0 0 0 1.41c.19.2.45.3.7.3zM5.99 16.6l-1.06 1.06a.996.996 0 0 0 .71 1.7c.26 0 .51-.1.71-.29l1.06-1.06a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0zM21 11h-1.5c-.55 0-1 .45-1 1s.45 1 1 1H21c.55 0 1-.45 1-1s-.45-1-1-1zM5.5 12c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1s.45 1 1 1h1.5c.55 0 1-.45 1-1zm12.51 4.6a.996.996 0 1 0-1.41 1.41l1.06 1.06c.2.2.45.29.71.29.26 0 .51-.1.71-.29a.996.996 0 0 0 0-1.41l-1.07-1.06zM5.99 7.4c.19.2.45.3.71.3.26 0 .51-.1.7-.3a.996.996 0 0 0 0-1.41L6.34 4.93a.996.996 0 1 0-1.41 1.41L5.99 7.4z"/></svg>
+            <svg class="icon icon-fill" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M12 16.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 7.5 12 7.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5zM12 9c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm1-4.5V3c0-.55-.45-1-1-1s-1 .45-1 1v1.5c0 .55.45 1 1 1s1-.45 1-1zM13 21v-1.5c0-.55-.45-1-1-1s-1 .45-1 1V21c0 .55.45 1 1 1s1-.45 1-1zm5.01-13.6 1.06-1.06a.996.996 0 1 0-1.41-1.41L16.6 5.99a.996.996 0 0 0 .71 1.7c.26 0 .51-.09.7-.29zM6.34 19.07l1.06-1.06a.996.996 0 1 0-1.41-1.41l-1.06 1.06a.996.996 0 0 0 .71 1.7c.26 0 .51-.09.7-.29zM22 12c0-.55-.45-1-1-1h-1.5c-.55 0-1 .45-1 1s.45 1 1 1H21c.55 0 1-.45 1-1zM5.5 12c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1s.45 1 1 1h1.5c.55 0 1-.45 1-1zm13.57 7.07a.996.996 0 0 0 0-1.41l-1.06-1.06a.996.996 0 1 0-1.41 1.41l1.06 1.06c.2.2.45.29.71.29.26 0 .51-.09.7-.29zM7.4 7.4a.996.996 0 0 0 0-1.41L6.34 4.93a.996.996 0 1 0-1.41 1.41L5.99 7.4c.19.2.45.3.71.3.26 0 .51-.1.7-.3z"/></svg>
+          </li>
+        </ul>
+      </label>
+    `;
+  }
 }
 customElements.define('spindle-theme-switch', SpindleThemeSwitch);
+</script>
+<script type="module">
+  // To avoid applying the transition when initial page load
+  window.addEventListener('load', () => {
+    document.body.style.transition = 'background 0.3s ease-out';
+  });
 </script>
