@@ -4,8 +4,11 @@
  * @see https://highlightjs.org/
  */
 
-/* highlight.jsの上書き */
-.hljs {
+/* highlight.jsのスタイルを上書き */
+/* highlight.jsの読み込みが遅かったり失敗した時にレイアウトシフトしないようにする */
+.hljs,
+pre code {
+  display: block;
   font-size: calc(14 / 16 * 1rem);
   padding: 32px 32px;
   line-height: 2.28;

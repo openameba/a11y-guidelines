@@ -1,12 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const blocks = document.querySelectorAll('pre code');
-  for (const block of blocks) {
-    hljs.highlightBlock(block);
-  }
-});
-</script>
 <script type="module">
 const THEME = 'theme';
 const THEME_CHANGE_EVENT = 'themechange';
@@ -244,4 +235,13 @@ customElements.define('spindle-theme-switch', SpindleThemeSwitch);
   window.addEventListener('load', () => {
     document.body.style.transition = 'background 0.3s ease-out';
   });
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  const blocks = document.querySelectorAll('pre code');
+  for (const block of blocks) {
+    hljs.highlightBlock(block);
+  }
+});
 </script>
