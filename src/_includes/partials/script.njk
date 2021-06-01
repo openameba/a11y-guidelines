@@ -210,6 +210,12 @@ export class SpindleThemeSwitch extends HTMLElement {
         input:not(:checked) ~ .themes .theme-light .icon-fill {
           display: none;
         }
+
+        @media (prefers-reduced-motion: reduce) {
+          .themes::before {
+            transition: transform 0.1s, background 0.1s;
+          }
+        }
       </style>
 
       <label for="spindle-theme-switch">
@@ -231,10 +237,16 @@ export class SpindleThemeSwitch extends HTMLElement {
 customElements.define('spindle-theme-switch', SpindleThemeSwitch);
 </script>
 <script type="module">
-  // To avoid applying the transition when initial page load
-  window.addEventListener('load', () => {
-    document.body.style.transition = 'background 0.3s ease-out';
-  });
+const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+function applyThemeTransition () {
+  const transition = !mql || mql.matches ? 'background 0.1s' : 'background 0.3s ease-out';
+  document.body.style.transition = transition;
+}
+
+// To avoid applying the transition when initial page load
+window.addEventListener('load', applyThemeTransition);
+
+mql.addEventListener('change', applyThemeTransition, false);
 </script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
 <script defer>
