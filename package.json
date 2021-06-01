@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "author": "CyberAgent, Inc.",
   "dependencies": {
+    "@openameba/spindle-icons": "^0.13.0",
     "@openameba/spindle-syntax-themes": "^0.1.0",
     "ameba-color-palette.css": "github:openameba/ameba-color-palette.css#feature/dark-mode",
     "postcss": "^8.2.6"
@@ -74,6 +75,7 @@
     "build": "npm-run-all build:*",
     "build:css": "postcss src/styles/*.css --dir public/css",
     "build:html": "NODE_ENV=production eleventy",
+    "build:svg": "npx cpx 'node_modules/@openameba/spindle-icons/dist/svg/+(circle_bold|minus_bold|cross_bold|plus_bold).svg' src/img/icon",
     "fixpack": "npx fixpack",
     "format": "run-p format:*",
     "format:prettier": "prettier --write {src,npm_scripts,.eleventy.js,package.json}",

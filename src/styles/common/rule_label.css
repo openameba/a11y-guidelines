@@ -10,15 +10,30 @@
   padding-right: 12px;
 }
 
-.RuleLabel > img {
-  border: none;
-  vertical-align: -0.5em;
-}
-
 .RuleLabel--good {
   color: var(--color-text-accent-primary);
 }
 
 .RuleLabel--bad {
   color: var(--color-text-caution);
+}
+
+.RuleLabel--good::before,
+.RuleLabel--bad::before {
+  background: currentColor;
+  content: '';
+  display: inline-block;
+  height: 24px;
+  margin-right: 4px;
+  transform: scale(0.833); /* 20 / 24px */
+  vertical-align: -0.45em;
+  width: 24px;
+}
+
+.RuleLabel--good::before {
+  -webkit-mask-image: url('/img/icon/circle_bold.svg');
+}
+
+.RuleLabel--bad::before {
+  -webkit-mask-image: url('/img/icon/cross_bold.svg');
 }
