@@ -35,13 +35,13 @@ export class SpindleThemeSwitch extends HTMLElement {
 
     // Initialize theme
     const mql = matchMedia(MATCH_MEDIA_CONDITION);
-    const prefarance = mql.matches ? DARK : LIGHT;
+    const preference = mql.matches ? DARK : LIGHT;
 
     const storedTheme = store.getItem(STORE_KEY);
-    const theme = this.themeProp || storedTheme || prefarance;
+    const theme = this.themeProp || storedTheme || preference;
     this._updateTheme(theme);
 
-    // Listen device's prefarance chacnges
+    // Listen device's preference changes
     mql.addEventListener('change', this._handleMediaQueryChange, false);
   }
 
@@ -104,8 +104,8 @@ export class SpindleThemeSwitch extends HTMLElement {
   }
 
   _handleMediaQueryChange(event) {
-    const prefarance = event.matches ? DARK : LIGHT;
-    this._updateTheme(prefarance);
+    const preference = event.matches ? DARK : LIGHT;
+    this._updateTheme(preference);
   }
 
   _handleInputChange(event) {
