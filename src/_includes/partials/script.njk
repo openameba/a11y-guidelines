@@ -70,7 +70,7 @@ export class SpindleThemeSwitch extends HTMLElement {
     // ameba-color-palette.css detects this
     document.documentElement.dataset.theme = this.theme;
     // Apply appropriate css with media attribute
-    if (this.theme === 'dark') {
+    if (this.theme === DARK) {
       [...lightCss].forEach((link) => {
         link.media = 'not all';
         link.disabled = true;
