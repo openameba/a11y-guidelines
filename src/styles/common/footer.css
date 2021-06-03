@@ -26,19 +26,5 @@
 }
 
 .Footer__ThemeSwitch {
-  align-items: center;
-  display: flex;
-  flex-direction: reverse;
   margin-top: 28px;
-}
-
-.Footer__ThemeSwitch spindle-theme-switch {
-  order: 1;
-}
-
-.Footer__ThemeSwitch p {
-  font-size: calc(12 / 16 * 1rem);
-  font-weight: bold;
-  margin: 0 0 0 1rem;
-  order: 2;
 }
