@@ -19,7 +19,6 @@ export class SpindleThemeSwitch extends HTMLElement {
 
     // Props attached via attributes
     this.label = this.getAttribute('label');
-    this.themeProp = this.getAttribute('theme');
 
     this._handleMediaQueryChange = this._handleMediaQueryChange.bind(this);
     this._handleInputChange = this._handleInputChange.bind(this);
@@ -38,7 +37,7 @@ export class SpindleThemeSwitch extends HTMLElement {
     const preference = mql.matches ? DARK : LIGHT;
 
     const storedTheme = store.getItem(STORE_KEY);
-    const theme = this.themeProp || storedTheme || preference;
+    const theme = storedTheme || preference;
     this._updateTheme(theme);
 
     // Listen device's preference changes
