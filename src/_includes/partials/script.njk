@@ -41,11 +41,6 @@ export class SpindleThemeSwitch extends HTMLElement {
     const theme = this.themeProp || storedTheme || preference;
     this._updateTheme(theme);
 
-    const radioToCheck = this.form.querySelector(`[value="${theme}"]`);
-    if (radioToCheck) {
-      radioToCheck.checked = true;
-    }
-
     // Listen device's preference changes
     mql.addEventListener('change', this._handleMediaQueryChange, false);
   }
@@ -104,6 +99,7 @@ export class SpindleThemeSwitch extends HTMLElement {
     this.theme = newTheme;
     this._updateDOM();
     this.form.dataset.theme = this.theme;
+    this.form.theme.value = this.theme;
     store.setItem(STORE_KEY, this.theme);
     this._dispatchEvent(THEME_CHANGE_EVENT, { theme: this.theme });
   }
