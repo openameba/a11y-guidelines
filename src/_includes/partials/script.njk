@@ -98,7 +98,8 @@ export class SpindleThemeSwitch extends HTMLElement {
 
     this.theme = newTheme;
     this._updateDOM();
-    this.form.theme.value = this.theme;
+    const radioToCheck = this.form.querySelector(`input[value="${this.theme}"]`);
+    radioToCheck.checked = true;
     store.setItem(STORE_KEY, this.theme);
     this._dispatchEvent(THEME_CHANGE_EVENT, { theme: this.theme });
   }
