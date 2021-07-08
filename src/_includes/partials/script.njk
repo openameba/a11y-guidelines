@@ -98,7 +98,6 @@ export class SpindleThemeSwitch extends HTMLElement {
 
     this.theme = newTheme;
     this._updateDOM();
-    this.form.dataset.theme = this.theme;
     this.form.theme.value = this.theme;
     store.setItem(STORE_KEY, this.theme);
     this._dispatchEvent(THEME_CHANGE_EVENT, { theme: this.theme });
@@ -159,7 +158,7 @@ export class SpindleThemeSwitch extends HTMLElement {
           width: 84px;
         }
 
-        .switch::before {
+        .switch-theme-background {
           background: var(--color-surface-primary);
           border-radius: 40px;
           content: '';
@@ -173,7 +172,7 @@ export class SpindleThemeSwitch extends HTMLElement {
           width: 38px;
         }
 
-        [data-theme="dark"] .switch::before {
+        .theme-dark:checked ~ .switch-theme-background {
           background: var(--color-surface-quaternary);
           transform: translate(0, 0);
         }
@@ -236,6 +235,7 @@ export class SpindleThemeSwitch extends HTMLElement {
             <input class="theme theme-dark" id="spindle-theme-switch-dark" name="theme" type="radio" value="dark">
             <label class="visually-hidden" for="spindle-theme-switch-light">ライトテーマ</label>
             <input class="theme theme-light" id="spindle-theme-switch-light" name="theme" type="radio" value="light">
+            <span class="switch-theme-background"></span>
           </div>
         </fieldset>
         <p aria-hidden="true" class="label" part="label">${label}</p>
