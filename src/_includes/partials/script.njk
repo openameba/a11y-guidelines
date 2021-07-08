@@ -236,8 +236,10 @@ export class SpindleThemeSwitch extends HTMLElement {
         <fieldset>
           <legend class="visually-hidden">${label}</legend>
           <div class="switch">
-            <input aria-label="ダークテーマ" class="theme theme-dark" name="theme" type="radio" value="dark">
-            <input aria-label="ライトテーマ" class="theme theme-light" name="theme" type="radio" value="light">
+            <label class="visually-hidden" for="spindle-theme-switch-dark">ダークテーマ</label>
+            <input class="theme theme-dark" id="spindle-theme-switch-dark" name="theme" type="radio" value="dark">
+            <label class="visually-hidden" for="spindle-theme-switch-light">ライトテーマ</label>
+            <input class="theme theme-light" id="spindle-theme-switch-light" name="theme" type="radio" value="light">
           </div>
         </fieldset>
         <p aria-hidden="true" class="label" part="label">${label}</p>
