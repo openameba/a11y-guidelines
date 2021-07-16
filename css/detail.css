@@ -110,10 +110,15 @@
   --facebook-blue: #1877f2;
   --twitter-blue: #1da1f2;
   --instagram-pink: #f20076;
+  --apple-black: #000;
+  --apple-white: #fff;
+  --youtube-red: #f00;
 
   /* System Colors */
   --focus-blue-100: #0091ff;
   --focus-blue-30-alpha: rgba(0, 145, 255, 0.3);
+  --highlight-yellow-100: #f5e100;
+  --highlight-yellow-30-alpha: rgba(245, 225, 0, 0.3);
 
   /**
    * Ameba Theme
@@ -124,8 +129,9 @@
 
   /* Surface Colors */
   --color-surface-primary: var(--white-100);
-  --color-surface-secondary: var(--gray-5);
-  --color-surface-tertiary: var(--gray-10);
+  --color-surface-secondary: var(--gray-5-alpha);
+  --color-surface-tertiary: var(--gray-10-alpha);
+  --color-surface-quaternary: var(--gray-20-alpha);
   --color-surface-accent-primary: var(--primary-green-70);
   --color-surface-accent-primary-light: var(--primary-green-5);
   --color-surface-accent-secondary: var(--secondary-green-50);
@@ -140,13 +146,13 @@
   --color-text-disabled: var(--gray-30-alpha);
   --color-text-high-emphasis-inverse: var(--white-100);
   --color-text-accent-primary: var(--primary-green-80);
-  --color-text-accent-secondary: var(--secondary-green-70);
+  --color-text-accent-secondary: var(--secondary-green-80);
   --color-text-caution: var(--caution-red-100);
 
   /* Highlight Colors */
   --color-highlight-error: var(--caution-red-20);
   --color-highlight-hover: var(--black-30-alpha);
-  --color-highlight-error: var(--caution-red-20);
+  --color-highlight-yellow: var(--highlight-yellow-100);
 
   /* Object Colors */
   --color-object-high-emphasis: var(--gray-100);
@@ -157,6 +163,7 @@
   --color-object-accent-secondary: var(--secondary-green-70);
   --color-object-caution: var(--caution-red-100);
   --color-object-high-emphasis-inverse: var(--white-100);
+  --color-object-expressive-pink: var(--expressive-pink);
 
   /* Focus Colors */
   --color-focus-clarity: var(--focus-blue-100);
@@ -174,6 +181,104 @@
   --color-third-party-facebook-blue: var(--facebook-blue);
   --color-third-party-twitter-blue: var(--twitter-blue);
   --color-third-party-instagram-pink: var(--instagram-pink);
+}
+
+/* You can apply dark theme even when prefers-color-scheme is not dark.  */
+
+:root[data-theme="dark"] {
+  /* Background Colors */
+  --color-background: var(--gray-100);
+
+  /* Surface Colors */
+  --color-surface-primary: var(--gray-90);
+  --color-surface-secondary: var(--white-5-alpha);
+  --color-surface-tertiary: var(--white-10-alpha);
+  --color-surface-quaternary: var(--white-20-alpha);
+  --color-surface-accent-primary-light: var(--white-5-alpha);
+  --color-surface-accent-secondary: var(--secondary-green-70);
+  --color-surface-accent-secondary-light: var(--white-5-alpha);
+  --color-surface-caution: var(--caution-red-vivid-100);
+  --color-surface-caution-light: var(--white-5-alpha);
+
+  /* Text Colors */
+  --color-text-high-emphasis: var(--white-100);
+  --color-text-medium-emphasis: var(--white-80-alpha);
+  --color-text-low-emphasis: var(--white-60-alpha);
+  --color-text-disabled: var(--white-20-alpha);
+  --color-text-accent-primary: var(--primary-green-50);
+  --color-text-accent-secondary: var(--secondary-green-50);
+  --color-text-caution: var(--caution-red-vivid-100);
+
+  /* Highlight Colors */
+  --color-highlight-error: var(--caution-red-vivid-20-alpha);
+  --color-highlight-hover: var(--white-30-alpha);
+  --color-highlight-yellow: var(--highlight-yellow-30-alpha);
+
+  /* Object Colors */
+  --color-object-high-emphasis: var(--white-100);
+  --color-object-medium-emphasis: var(--white-80-alpha);
+  --color-object-low-emphasis: var(--white-60-alpha);
+  --color-object-disable: var(--white-20-alpha);
+  --color-object-accent-primary: var(--primary-green-50);
+  --color-object-accent-secondary: var(--secondary-green-50);
+  --color-object-caution: var(--caution-red-vivid-100);
+
+  /* Border Colors */
+  --color-border-high-emphasis: var(--white-60-alpha);
+  --color-border-medium-emphasis: var(--white-30-alpha);
+  --color-border-low-emphasis: var(--white-20-alpha);
+  --color-border-accent-primary: var(--primary-green-50);
+  --color-border-caution: var(--caution-red-vivid-100);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* You can disable dark theme even when prefers-color-scheme is dark.  */
+  :root:not([data-theme]),
+  :root[data-theme="dark"] {
+    /* Background Colors */
+    --color-background: var(--gray-100);
+
+    /* Surface Colors */
+    --color-surface-primary: var(--gray-90);
+    --color-surface-secondary: var(--white-5-alpha);
+    --color-surface-tertiary: var(--white-10-alpha);
+    --color-surface-quaternary: var(--white-20-alpha);
+    --color-surface-accent-primary-light: var(--white-5-alpha);
+    --color-surface-accent-secondary: var(--secondary-green-70);
+    --color-surface-accent-secondary-light: var(--white-5-alpha);
+    --color-surface-caution: var(--caution-red-vivid-100);
+    --color-surface-caution-light: var(--white-5-alpha);
+
+    /* Text Colors */
+    --color-text-high-emphasis: var(--white-100);
+    --color-text-medium-emphasis: var(--white-80-alpha);
+    --color-text-low-emphasis: var(--white-60-alpha);
+    --color-text-disabled: var(--white-20-alpha);
+    --color-text-accent-primary: var(--primary-green-50);
+    --color-text-accent-secondary: var(--secondary-green-50);
+    --color-text-caution: var(--caution-red-vivid-100);
+
+    /* Highlight Colors */
+    --color-highlight-error: var(--caution-red-vivid-20-alpha);
+    --color-highlight-hover: var(--white-30-alpha);
+    --color-highlight-yellow: var(--highlight-yellow-30-alpha);
+
+    /* Object Colors */
+    --color-object-high-emphasis: var(--white-100);
+    --color-object-medium-emphasis: var(--white-80-alpha);
+    --color-object-low-emphasis: var(--white-60-alpha);
+    --color-object-disable: var(--white-20-alpha);
+    --color-object-accent-primary: var(--primary-green-50);
+    --color-object-accent-secondary: var(--secondary-green-50);
+    --color-object-caution: var(--caution-red-vivid-100);
+
+    /* Border Colors */
+    --color-border-high-emphasis: var(--white-60-alpha);
+    --color-border-medium-emphasis: var(--white-30-alpha);
+    --color-border-low-emphasis: var(--white-20-alpha);
+    --color-border-accent-primary: var(--primary-green-50);
+    --color-border-caution: var(--caution-red-vivid-100);
+  }
 }
 
 /**
@@ -276,26 +381,25 @@ strong {
 /**
  * Overrides
  * ライブラリの上書きしたいもの
- * A11y lightスタイルをベースに、Amebaカラーパレットに近い配色になるよう拡張する
- * @see https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/styles/a11y-light.min.css
  * @see https://highlightjs.org/
  */
 
-/* highlight.jsの上書き */
+/* highlight.jsのスタイルを上書き */
 
-.hljs {
-  background-color: var(--color-surface-secondary);
-  color: var(--color-body-text);
+/* highlight.jsの読み込みが遅かったり失敗した時にレイアウトシフトしないようにする */
+
+.hljs,
+pre code {
+  display: block;
   font-size: calc(14 / 16 * 1rem);
   padding: 32px 32px;
   line-height: 2.28;
 }
 
-/* 背景色を変えたことでコントラスト比が4.5:1を満たせなくなる組み合わせ */
+/* highlight.jsが読み込まれるまでの背景プレースホルダー */
 
-.hljs-title,
-.hljs-section {
-  color: #017095;
+pre code {
+  background: var(--color-surface-secondary);
 }
 
 /**
@@ -341,6 +445,10 @@ strong {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 28px;
+}
+
+.Footer__ThemeSwitch {
   margin-top: 28px;
 }
 
@@ -527,17 +635,60 @@ figcaption {
   padding-right: 12px;
 }
 
-.RuleLabel > img {
-  border: none;
-  vertical-align: -0.5em;
-}
-
 .RuleLabel--good {
   color: var(--color-text-accent-primary);
 }
 
 .RuleLabel--bad {
   color: var(--color-text-caution);
+}
+
+.RuleLabel--good::before,
+.RuleLabel--bad::before {
+  background: currentColor;
+  content: '';
+  display: inline-block;
+  height: 24px;
+  margin-right: 4px;
+  transform: scale(0.833); /* 20 / 24px */
+  vertical-align: -0.45em;
+  width: 24px;
+}
+
+.RuleLabel--good::before {
+  -webkit-mask-image: url('/img/icon/circle_bold.svg');
+}
+
+.RuleLabel--bad::before {
+  -webkit-mask-image: url('/img/icon/cross_bold.svg');
+}
+
+/**
+ * Theme
+ */
+
+.Theme--dark {
+  display: none;
+}
+
+:root[data-theme='dark'] .Theme--light {
+  display: none;
+}
+
+:root[data-theme='dark'] .Theme--dark {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .Theme--light,
+  :root:not([data-theme='light']) .Theme--light {
+    display: none;
+  }
+
+  :root:not([data-theme]) .Theme--dark,
+  :root:not([data-theme='light']) .Theme--dark {
+    display: block;
+  }
 }
 
 /**
@@ -602,22 +753,18 @@ details[open] summary {
 }
 
 summary:after {
+  background: var(--color-object-low-emphasis);
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  right: 1rem;
+  top: calc(50% - 12px);
   content: '';
-  height: 100%;
-  width: 36px;
-  background: url('/img/icon/open.svg') no-repeat 0 center;
-  background-size: 16px;
+  height: 24px;
+  width: 24px;
+  -webkit-mask-image: url('/img/icon/plus_bold.svg');
 }
 
 details[open] > summary:after {
-  position: absolute;
-  content: '';
-  background: url('/img/icon/close.svg') no-repeat 0 center;
-  background-size: 16px;
+  -webkit-mask-image: url('/img/icon/minus_bold.svg');
 }
 
 summary:focus {
