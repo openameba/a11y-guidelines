@@ -43,22 +43,18 @@ details[open] summary {
 }
 
 summary:after {
+  background: var(--color-object-low-emphasis);
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  right: 1rem;
+  top: calc(50% - 12px);
   content: '';
-  height: 100%;
-  width: 36px;
-  background: url('/img/icon/open.svg') no-repeat 0 center;
-  background-size: 16px;
+  height: 24px;
+  width: 24px;
+  -webkit-mask-image: url('/img/icon/plus_bold.svg');
 }
 
 details[open] > summary:after {
-  position: absolute;
-  content: '';
-  background: url('/img/icon/close.svg') no-repeat 0 center;
-  background-size: 16px;
+  -webkit-mask-image: url('/img/icon/minus_bold.svg');
 }
 
 summary:focus {

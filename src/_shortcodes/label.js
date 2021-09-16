@@ -7,10 +7,9 @@ const site = require('../_data/site')();
  * @returns {string}
  */
 const label = (content, label) => {
-  return `<span class="RuleLabel RuleLabel--${label}">
-<img src="/img/icon/${label}.svg" width="24" height="24" alt="" />
-${label.charAt(0).toUpperCase() + label.slice(1)}
-</span>${content}`;
+  return `<span class="RuleLabel RuleLabel--${label}">${
+    label.charAt(0).toUpperCase() + label.slice(1)
+  }</span>${content}`;
 };
 
 module.exports = label;
