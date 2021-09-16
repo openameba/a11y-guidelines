@@ -1,0 +1,26 @@
+/**
+ * Theme
+ */
+.Theme--dark {
+  display: none;
+}
+
+:root[data-theme='dark'] .Theme--light {
+  display: none;
+}
+
+:root[data-theme='dark'] .Theme--dark {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .Theme--light,
+  :root:not([data-theme='light']) .Theme--light {
+    display: none;
+  }
+
+  :root:not([data-theme]) .Theme--dark,
+  :root:not([data-theme='light']) .Theme--dark {
+    display: block;
+  }
+}
