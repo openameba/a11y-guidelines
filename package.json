@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "author": "CyberAgent, Inc.",
   "dependencies": {
-    "@openameba/spindle-icons": "^0.17.0",
+    "@openameba/spindle-icons": "^0.19.0",
     "@openameba/spindle-syntax-themes": "^0.2.0",
     "ameba-color-palette.css": "github:openameba/ameba-color-palette.css#feature/dark-mode",
     "postcss": "^8.2.6"
