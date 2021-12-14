@@ -16,14 +16,7 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '16.x'
-      - id: npm-cache
-        run: echo "::set-output name=dir::$(npm config get cache)"
-      - uses: actions/cache@v2
-        with:
-          path: ${{ steps.npm-cache.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
+          cache: npm
       - run: npm ci
       - run: >
           npm install -D
