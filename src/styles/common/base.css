@@ -76,3 +76,14 @@ p {
 strong {
   color: var(--color-text-high-emphasis);
 }
+
+dt {
+  color: var(--color-text-high-emphasis);
+  font-size: calc(18 / 16 * 1rem);
+  font-weight: bold;
+  line-height: 1.71;
+}
+
+dd {
+  margin: 0 0 16px;
+}
