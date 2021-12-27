@@ -35,6 +35,15 @@ h6[id] a::before {
   opacity: 0;
 }
 
+h1[id] a:focus::before,
+h2[id] a:focus::before,
+h3[id] a:focus::before,
+h4[id] a:focus::before,
+h5[id] a:focus::before,
+h6[id] a:focus::before {
+  opacity: 1;
+}
+
 @media (hover: hover) {
   h1[id] a:hover::before,
   h2[id] a:hover::before,
