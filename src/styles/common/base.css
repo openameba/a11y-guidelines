@@ -6,6 +6,7 @@ html {
   font-family: Meiryo, 'Yu Gothic Medium', system-ui, -apple-system,
     BlinkMacSystemFont, sans-serif;
   line-height: 1.5;
+  scroll-padding-top: 1.5em;
 }
 
 body {
