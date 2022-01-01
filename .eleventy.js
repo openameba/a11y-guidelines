@@ -10,7 +10,13 @@ module.exports = (eleventyConfig) => {
   const markdownLib = markdownIt({
     html: true,
     linkify: false,
-  }).use(markdownItAnchor, { permalink: false });
+  }).use(markdownItAnchor, {
+    level: [1, 2, 3],
+    tabIndex: false,
+    permalink: markdownItAnchor.permalink.headerLink({
+      safariReaderFix: true,
+    }),
+  });
 
   eleventyConfig.setLibrary('md', markdownLib);
 

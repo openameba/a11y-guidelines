@@ -6,6 +6,7 @@ html {
   font-family: Meiryo, 'Yu Gothic Medium', system-ui, -apple-system,
     BlinkMacSystemFont, sans-serif;
   line-height: 1.5;
+  scroll-padding-top: 1.5em;
 }
 
 body {
@@ -86,4 +87,8 @@ dt {
 
 dd {
   margin: 0 0 16px;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  color: var(--color-heading-text);
 }
