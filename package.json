@@ -30,7 +30,7 @@
     "textlint-rule-prh": "^5.2.0"
   },
   "engines": {
-    "node": "16.13.1"
+    "node": "16.13.2"
   },
   "keywords": [
     "accessibility"
