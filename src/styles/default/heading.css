@@ -40,3 +40,9 @@ h5 {
   margin: 32px 0 24px;
   padding-left: 16px;
 }
+
+h6 {
+  font-size: calc(14 / 16 * 1rem);
+  line-height: 1.71;
+  margin: 24px 0 16px;
+}
