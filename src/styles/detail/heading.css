@@ -37,8 +37,12 @@ h4 {
 
 h5 {
   font-size: calc(14 / 16 * 1rem);
+  line-height: 1.71;
+  margin: 24px 0 16px;
 }
 
 h6 {
   font-size: calc(12 / 16 * 1rem);
+  line-height: 1.71;
+  margin: 16px 0 8px;
 }
