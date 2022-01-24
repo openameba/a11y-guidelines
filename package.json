@@ -10,7 +10,7 @@
     "postcss": "^8.2.6"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.0",
+    "@11ty/eleventy": "^1.0.0",
     "autoprefixer": "^10.0.0",
     "bin-wrapper": "^4.1.0",
     "cssnano": "^5.0.0",
