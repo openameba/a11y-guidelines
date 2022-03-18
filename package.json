@@ -86,7 +86,7 @@
     "lint:prettier": "prettier -c {src,npm_scripts,.eleventy.js,package.json}",
     "lint:text": "textlint content src",
     "prepare": "[ -n \"$CI\" ] || husky install",
-    "serve": "DEBUG=Eleventy* eleventy --serve watch",
+    "serve": "DEBUG=Eleventy* eleventy --serve --watch",
     "start": "npm-run-all -p serve watch",
     "styles": "postcss src/styles/*.css --dir public/css",
     "watch": "npm run watch:styles",
