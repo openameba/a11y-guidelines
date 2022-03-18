@@ -10,7 +10,7 @@
     "postcss": "^8.2.6"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.0",
+    "@11ty/eleventy": "^1.0.0",
     "autoprefixer": "^10.0.0",
     "bin-wrapper": "^4.1.0",
     "cssnano": "^5.0.0",
@@ -86,7 +86,7 @@
     "lint:prettier": "prettier -c {src,npm_scripts,.eleventy.js,package.json}",
     "lint:text": "textlint content src",
     "prepare": "[ -n \"$CI\" ] || husky install",
-    "serve": "DEBUG=Eleventy* eleventy --serve watch",
+    "serve": "DEBUG=Eleventy* eleventy --serve --watch",
     "start": "npm-run-all -p serve watch",
     "styles": "postcss src/styles/*.css --dir public/css",
     "watch": "npm run watch:styles",
