@@ -7,7 +7,7 @@
     "@openameba/spindle-icons": "^0.20.0",
     "@openameba/spindle-syntax-themes": "^0.3.0",
     "ameba-color-palette.css": "github:openameba/ameba-color-palette.css#feature/dark-mode",
-    "postcss": "^8.2.6"
+    "postcss": "^8.2.13"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
