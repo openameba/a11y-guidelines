@@ -16,7 +16,8 @@
       "rulePaths": [
         "prh.yml"
       ]
-    }
+    },
+    "@openameba/preset-ameba": true
   },
   "filters": {
     "allowlist": {

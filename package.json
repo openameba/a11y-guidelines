@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
+    "@openameba/textlint-rule-preset-ameba": "^0.1.0",
     "autoprefixer": "^10.0.0",
     "bin-wrapper": "^4.1.0",
     "cssnano": "^5.0.0",
