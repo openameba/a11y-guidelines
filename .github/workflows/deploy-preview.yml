@@ -8,6 +8,7 @@ on:
       - '.firebaserc'
       - 'firebase.json'
       - 'package.json'
+      - 'package-lock.json'
 
 jobs:
   build_and_preview:
