@@ -9,7 +9,7 @@
 Pull Requestを出す前に確認しましょう。
 
 - [ ] コミットは適切にまとめられているか
-- [ ] Pull Request の概要を適切に書いたか
+- [ ] Pull Requestの概要を適切に書いたか
 - [ ] レビュワーの指定をしているか
 - [ ] textlintを実行しエラーが出ていないか
 - [ ] Accessibility
