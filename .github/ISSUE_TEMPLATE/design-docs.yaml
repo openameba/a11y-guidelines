@@ -1,0 +1,21 @@
+name: 🎨 Design docs
+description: 要点をまとめた設計書を書くためのテンプレートです
+body:
+- type: textarea
+  attributes:
+    label: 概要 / Overview
+    description: どういった機能を実装するのか概要を書きましょう。
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: 関連リンク / Related link
+    description: 関連するissueやURLなどを書くと良いでしょう。
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: その他 / Others
+    description: その他申し送りがあれば書くと良いでしょう。
+  validations:
+    required: false
