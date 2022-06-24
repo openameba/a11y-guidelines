@@ -1,0 +1,71 @@
+name: visual regression test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request_target:
+    types:
+      - labeled
+  workflow_dispatch:
+
+jobs:
+  visual-regression-test:
+    runs-on: ubuntu-latest
+    if: >
+      # push event => OK
+      github.event_name == 'push' ||
+      # workflow_dispatch event => OK
+      github.event_name == 'workflow_dispatch' || (
+        # if pull_request event
+        github.event_name == 'pull_request' && (
+          # sent from openameba/a11y-guidelines => OK
+          github.event.pull_request.head.repo.full_name == 'openameba/a11y-guidelines' || (
+            # otherwise 'allow workflow' label attached => OK
+            github.event.pull_request.head.repo.full_name != 'openameba/a11y-guidelines' &&
+            contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
+          )
+        )
+      )
+    steps:
+      - run: sudo apt-get --yes update
+      - run: sudo apt-get --yes install fonts-noto
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+      - id: npm-cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-${{ github.event_name }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ github.event_name }}-node-
+      - run: npm ci
+      - run: >
+          npm install -D
+          puppeteer
+          reg-keygen-git-hash-plugin
+          reg-notify-github-plugin
+          reg-publish-gcs-plugin
+      - run: npm run build
+      - run: npm start &
+      - name: take screenshots
+        run: >
+          find public -type f -name '*.html' |
+          sed -e 's/public//' |
+          xargs node ./npm_scripts/scrape.js "${PWD}/.reg-suit/actual_images" http://localhost:3000
+      # reg-suit needs branch name
+      - run: git checkout ${{ github.head_ref || github.ref_name }}
+      - run: |
+          printf -- '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > "${PWD}/storage-key.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/storage-key.json"
+          npx reg-suit run
+        env:
+          GCS_BUCKET_NAME_REG_SUIT: ${{ secrets.GCS_BUCKET_NAME_REG_SUIT }}
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
+          REG_SUIT_NOTIFY_CLIENT_ID: ${{ secrets.REG_SUIT_NOTIFY_CLIENT_ID }}
