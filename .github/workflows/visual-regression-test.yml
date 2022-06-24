@@ -2,8 +2,6 @@ name: visual regression test
 
 on:
   push:
-    branches:
-      - master
   pull_request_target:
     types:
       - labeled
@@ -12,20 +10,11 @@ on:
 jobs:
   visual-regression-test:
     runs-on: ubuntu-latest
+    # need specified label if Pull-request
     if: >
-      # push event => OK
       github.event_name == 'push' ||
-      # workflow_dispatch event => OK
       github.event_name == 'workflow_dispatch' || (
-        # if pull_request event
-        github.event_name == 'pull_request' && (
-          # sent from openameba/a11y-guidelines => OK
-          github.event.pull_request.head.repo.full_name == 'openameba/a11y-guidelines' || (
-            # otherwise 'allow workflow' label attached => OK
-            github.event.pull_request.head.repo.full_name != 'openameba/a11y-guidelines' &&
-            contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
-          )
-        )
+        github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
       )
     steps:
       - run: sudo apt-get --yes update
