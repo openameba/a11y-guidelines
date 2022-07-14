@@ -110,10 +110,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@openameba/spindle-icons@^0.26.0":
-  version "0.26.0"
-  resolved "https://registry.npmjs.org/@openameba/spindle-icons/-/spindle-icons-0.26.0.tgz"
-  integrity sha512-O2qihigPt2rcuNaovBtu0z/92fnx0RWcwlRg0q+tfgGEhPgUV9FwL14T+8SDaiDsE5/prxI0ba0MlRdLReO1FQ==
+"@openameba/spindle-icons@^0.29.0":
+  version "0.29.0"
+  resolved "https://registry.npmjs.org/@openameba/spindle-icons/-/spindle-icons-0.29.0.tgz"
+  integrity sha512-MvVoeynYE2nNUL/c2Q9jk7eEpYs9NOGe843X8aY0PQRatvZDwChF2zy3ReyXVXADTkrWkhsnK+wcT1TJU252oA==
 
 "@openameba/spindle-syntax-themes@^0.3.0":
   version "0.3.0"
