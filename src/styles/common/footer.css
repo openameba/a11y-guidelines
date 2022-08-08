@@ -25,6 +25,21 @@
   margin-top: 28px;
 }
 
-.Footer__ThemeSwitch {
+.ThemeSwitch {
+  align-items: center;
+  display: flex;
   margin-top: 28px;
+}
+
+spindle-theme-switch {
+  height: 34px;
+  width: 84px;
+}
+
+.ThemeSwitch__Label {
+  color: var(--color-text-medium-emphasis);
+  font-size: calc(12 / 16 * 1rem);
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 0 0 0 1rem;
 }
