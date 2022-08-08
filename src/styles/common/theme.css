@@ -5,22 +5,22 @@
   display: none;
 }
 
-:root[data-theme='dark'] .Theme--light {
+:root[data-color-scheme='dark'] .Theme--light {
   display: none;
 }
 
-:root[data-theme='dark'] .Theme--dark {
+:root[data-color-scheme='dark'] .Theme--dark {
   display: block;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) .Theme--light,
-  :root:not([data-theme='light']) .Theme--light {
+  :root:not([data-color-scheme]) .Theme--light,
+  :root:not([data-color-scheme='light']) .Theme--light {
     display: none;
   }
 
-  :root:not([data-theme]) .Theme--dark,
-  :root:not([data-theme='light']) .Theme--dark {
+  :root:not([data-color-scheme]) .Theme--dark,
+  :root:not([data-color-scheme='light']) .Theme--dark {
     display: block;
   }
 }
