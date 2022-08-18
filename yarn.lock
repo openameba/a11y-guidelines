@@ -115,10 +115,10 @@
   resolved "https://registry.npmjs.org/@openameba/spindle-icons/-/spindle-icons-0.29.0.tgz"
   integrity sha512-MvVoeynYE2nNUL/c2Q9jk7eEpYs9NOGe843X8aY0PQRatvZDwChF2zy3ReyXVXADTkrWkhsnK+wcT1TJU252oA==
 
-"@openameba/spindle-syntax-themes@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.npmjs.org/@openameba/spindle-syntax-themes/-/spindle-syntax-themes-0.3.0.tgz"
-  integrity sha512-LQnoFJ0vdt/njFPvaLIEatLLY27uGOOsJWOXmU8YNicqax94SEfGRRMh4h6ptcU03e7owufbzc4UFFWSPlpkHw==
+"@openameba/spindle-syntax-themes@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@openameba/spindle-syntax-themes/-/spindle-syntax-themes-0.5.0.tgz"
+  integrity sha512-aXQxqVnBv/KB/iPWzVoWjlBfnpcAqppMVA7u6egmL8q4heSBJ+m8Zt4ykY1g3U/uz74P7GOaIioWQsxI00wcSA==
 
 "@openameba/textlint-rule-preset-ameba@^0.1.0":
   version "0.1.0"
