@@ -495,7 +495,7 @@
     "uri-js" "^4.2.2"
 
 "ameba-color-palette.css@github:openameba/ameba-color-palette.css#feature/dark-mode":
-  "resolved" "git+ssh://git@github.com/openameba/ameba-color-palette.css.git#03b6171004bce786253448f54ed55c2ce6e57e45"
+  "resolved" "git+ssh://git@github.com/openameba/ameba-color-palette.css.git#8bd4d87ce4c736ee1bf9953c5671cbafb6b69b76"
   "version" "4.4.1"
 
 "amp-create-callback@^1.0.0":
