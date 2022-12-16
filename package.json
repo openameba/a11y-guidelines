@@ -41,7 +41,8 @@
   "lint-staged": {
     "*.md": "textlint --dry-run",
     "*.+(css|js)": "prettier --check",
-    "package.json": "npx fixpack --dryRun"
+    "package.json": "npx fixpack --dryRun",
+    "yarn.lock": "node -e 'process.exitCode = 1'"
   },
   "postcss": {
     "plugins": {
