@@ -31,7 +31,8 @@
     "textlint-rule-prh": "^5.3.0"
   },
   "engines": {
-    "node": "16.17.1"
+    "node": "16.17.1",
+    "yarn": "0.0.0"
   },
   "keywords": [
     "accessibility"
@@ -40,7 +41,8 @@
   "lint-staged": {
     "*.md": "textlint --dry-run",
     "*.+(css|js)": "prettier --check",
-    "package.json": "npx fixpack --dryRun"
+    "package.json": "npx fixpack --dryRun",
+    "yarn.lock": "node -e 'process.exitCode = 1'"
   },
   "postcss": {
     "plugins": {
