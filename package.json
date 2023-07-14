@@ -24,7 +24,7 @@
     "postcss-import": "^14.0.0",
     "postcss-single-charset": "^2.0.0",
     "prettier": "^2.2.1",
-    "textlint": "^12.1.1",
+    "textlint": "^13.0.0",
     "textlint-filter-rule-allowlist": "^4.0.0",
     "textlint-rule-preset-japanese": "^7.0.0",
     "textlint-rule-preset-jtf-style": "^2.3.12",
