@@ -32,7 +32,7 @@
   },
   "engines": {
     "node": "16.20.1",
-    "yarn": "0.0.0"
+    "yarn": "0.28.4"
   },
   "keywords": [
     "accessibility"
