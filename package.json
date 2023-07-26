@@ -23,7 +23,7 @@
     "postcss-custom-properties": "^13.0.0",
     "postcss-import": "^15.0.0",
     "postcss-single-charset": "^2.0.0",
-    "prettier": "^2.2.1",
+    "prettier": "^3.0.0",
     "textlint": "^13.0.0",
     "textlint-filter-rule-allowlist": "^4.0.0",
     "textlint-rule-preset-japanese": "^7.0.0",
