@@ -10,7 +10,7 @@
     "postcss": "^8.2.6"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^2.0.0",
     "@openameba/textlint-rule-preset-ameba": "^0.4.0",
     "autoprefixer": "^10.0.0",
     "bin-wrapper": "^4.1.0",

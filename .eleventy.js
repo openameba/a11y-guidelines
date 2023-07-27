@@ -23,8 +23,7 @@ module.exports = (eleventyConfig) => {
   // Serve setting
   eleventyConfig.addWatchTarget('./src/styles');
 
-  eleventyConfig.setBrowserSyncConfig({
-    server: 'public',
+  eleventyConfig.setServerOptions({
     port: '3000',
   });
 
