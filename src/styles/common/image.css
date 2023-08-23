@@ -1,0 +1,15 @@
+/**
+ * image
+ *
+ */
+
+.image {
+  border: 1px solid var(--color-border-low-emphasis);
+}
+
+@media (max-width: 800px) {
+  .image {
+    width: calc(100% - 16px);
+    height: auto;
+  }
+}
