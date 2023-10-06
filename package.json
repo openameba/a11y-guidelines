@@ -86,7 +86,6 @@
     "format:prettier": "prettier --write {src,npm_scripts,.eleventy.js,package.json}",
     "format:text": "textlint --fix content src",
     "lint": "run-p lint:*",
-    "lint-staged": "lint-staged",
     "lint:prettier": "prettier -c {src,npm_scripts,.eleventy.js,package.json}",
     "lint:text": "textlint content src",
     "prepare": "[ -n \"$CI\" ] || husky install",
