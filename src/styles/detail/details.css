@@ -13,7 +13,7 @@ details + details {
 }
 
 summary {
-  text-indent: -1em;
+  text-indent: -0.8em;
   cursor: pointer;
   font-weight: bold;
   position: relative;
