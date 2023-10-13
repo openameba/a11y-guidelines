@@ -28,6 +28,14 @@ jobs:
         npm install
         npm run build
 
+    - name: Install go/bundle CLI
+      run: |
+        # Go has been installed at the setup hugo step,
+        # you can run setup-go action if you want to install specific version
+        go install github.com/WICG/webpackage/go/bundle/cmd/gen-bundle
+        # Add path to run the package
+        echo "$HOME/go/bin" >> $GITHUB_PATH
+
     - name: Generate Web Bundle 📦
       run: |
         # Create URL list from the files
