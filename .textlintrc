@@ -20,6 +20,7 @@
     "@openameba/preset-ameba": true
   },
   "filters": {
+    "comments": true,
     "allowlist": {
       "allow": [
         "/\\{\\{[\\s\\S]*?\\}\\}/",
