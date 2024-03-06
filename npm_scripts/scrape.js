@@ -2,6 +2,7 @@ const { promises: fs } = require('fs');
 const path = require('path');
 
 const puppeteer = require('puppeteer');
+const { setTimeout } = require('node:timers/promises');
 
 const dist = process.argv[2];
 const base = process.argv[3];
@@ -34,7 +35,7 @@ async function capture(pathnames) {
     const videos = await page.$$('video');
 
     if (videos.length > 0) {
-      await page.waitForTimeout(1000);
+      await setTimeout(1000);
     }
 
     await page.screenshot({
