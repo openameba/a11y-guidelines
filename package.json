@@ -18,7 +18,7 @@
     "cssnano": "^7.0.0",
     "husky": "^9.0.0",
     "lint-staged": "^15.0.0",
-    "markdown-it-anchor": "^8.4.1",
+    "markdown-it-anchor": "^9.0.0",
     "npm-run-all2": "^6.0.0",
     "postcss-cli": "^11.0.0",
     "postcss-custom-properties": "^13.0.0",
