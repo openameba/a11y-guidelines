@@ -19,4 +19,4 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
-      - uses: treosh/lighthouse-ci-action@v11
+      - uses: treosh/lighthouse-ci-action@v12
