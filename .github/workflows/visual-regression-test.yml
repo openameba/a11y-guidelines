@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: '16.x'
+          node-version: '20.x'
       - id: npm-cache-dir
         run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
       - id: npm-cache
