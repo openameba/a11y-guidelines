@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "config:base",
+    ":automergePatch",
+    ":label(renovate)",
+    ":preserveSemverRanges",
+    ":timezone(Asia/Tokyo)",
+    "group:linters",
+    "group:postcss"
+  ],
+  "reviewers": [
+    "team:spindle-working-group"
+  ],
+  "prConcurrentLimit": 0
+}
