@@ -33,7 +33,7 @@
   },
   "engines": {
     "node": "20.16.0",
-    "yarn": "1.22.22"
+    "npm": "10.8.1"
   },
   "keywords": [
     "accessibility"
