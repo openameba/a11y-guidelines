@@ -21,7 +21,7 @@
     "markdown-it-anchor": "^9.0.0",
     "npm-run-all2": "^6.0.0",
     "postcss-cli": "^11.0.0",
-    "postcss-custom-properties": "^13.0.0",
+    "postcss-custom-properties": "^14.0.0",
     "postcss-import": "^16.0.0",
     "postcss-single-charset": "^2.0.0",
     "prettier": "^3.0.0",
