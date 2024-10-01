@@ -31,4 +31,4 @@ $ npm ci
 $ npm start
 ```
 
-するとHTTPサーバーが起動するので、 http://localhost:1313/a11y-guidelines にブラウザからアクセスすると確認ができます。
+するとHTTPサーバーが起動するので、 http://localhost:3000 にブラウザからアクセスすると確認ができます。
