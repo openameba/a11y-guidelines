@@ -54,28 +54,6 @@
     }
   },
   "private": true,
-  "renovate": {
-    "extends": [
-      "config:base",
-      "group:linters",
-      "group:postcss",
-      ":automergePatch",
-      ":label(renovate)",
-      ":preserveSemverRanges",
-      ":timezone(Asia/Tokyo)"
-    ],
-    "assignees": [
-      "herablog",
-      "hrfmmymt",
-      "masuP9",
-      "nagatsukey",
-      "sasaplus1",
-      "syasuda90",
-      "itsminadesu",
-      "tokimari"
-    ],
-    "assigneesSampleSize": 2
-  },
   "repository": "openameba/a11y-guidelines",
   "scripts": {
     "build": "npm-run-all build:*",
