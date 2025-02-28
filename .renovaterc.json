@@ -1,15 +1,11 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    ":automergePatch",
-    ":label(renovate)",
-    ":preserveSemverRanges",
-    ":timezone(Asia/Tokyo)",
-    "group:linters",
-    "group:postcss"
+    "local>openameba/renovate-config:main.json5",
+    "local>openameba/renovate-config:npm.json5",
+    "local>openameba/renovate-config:automerge-all.json5"
   ],
   "reviewers": [
     "team:spindle-working-group"
-  ],
-  "prConcurrentLimit": 0
+  ]
 }
