@@ -18,7 +18,7 @@ jobs:
       - name: Create CNAME file to apply custom domain
         run: echo 'a11y-guidelines.ameba.design' > public/CNAME
       - name: Upload artifacts
-        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
           path: public
   deploy:
