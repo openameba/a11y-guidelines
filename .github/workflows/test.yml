@@ -27,4 +27,4 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
-      - uses: treosh/lighthouse-ci-action@2f8dda6cf4de7d73b29853c3f29e73a01e297bd8 # v12
+      - uses: treosh/lighthouse-ci-action@2f8dda6cf4de7d73b29853c3f29e73a01e297bd8 # 12.1.0
