@@ -53,6 +53,34 @@ async function capture(pathnames) {
       await Promise.all(tasks);
     }
 
+    const images = await page.$$('img');
+
+    if (images.length > 0) {
+      const imageTasks = images.map(async (imageElement) => {
+        await page.evaluate((image) => {
+          // loaded
+          if (image.complete && image.naturalWidth > 0) {
+            return Promise.resolve();
+          }
+
+          return new Promise((resolve, reject) => {
+            image.addEventListener('load', resolve, false);
+            image.addEventListener('error', reject, false);
+            image.addEventListener('abort', reject, false);
+            // timeout
+            setTimeout(resolve, 10000);
+          });
+        }, imageElement);
+      });
+
+      try {
+        await Promise.all(imageTasks);
+      } catch (error) {
+        console.error(error);
+        process.exitCode = 3;
+      }
+    }
+
     await page.screenshot({
       fullPage: true,
       path: output,
