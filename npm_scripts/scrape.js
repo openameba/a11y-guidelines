@@ -35,7 +35,22 @@ async function capture(pathnames) {
     const videos = await page.$$('video');
 
     if (videos.length > 0) {
-      await setTimeout(1000);
+      const tasks = videos.map(async (videoElement) => {
+        await page.evaluate((video) => {
+          // loaded
+          if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+            return Promise.resolve();
+          }
+
+          return new Promise((resolve) => {
+            video.addEventListener('canplaythrough', resolve, false);
+            // timeout
+            setTimeout(resolve, 10000);
+          });
+        }, videoElement);
+      });
+
+      await Promise.all(tasks);
     }
 
     await page.screenshot({
