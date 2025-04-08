@@ -47,6 +47,17 @@ async function capture(pathnames) {
     const videos = await page.$$('video');
 
     if (videos.length > 0) {
+      // hide some controls
+      await page.addStyleTag({
+        content: `
+          video::-webkit-media-controls-timeline { display: none !important; }
+          video::-webkit-media-controls-loading-indicator { display: none !important; }
+          video::-webkit-media-controls-current-time-display { display: none !important; }
+          video::-webkit-media-controls { visibility: hidden !important; }
+          video::-webkit-media-controls-overlay-enclosure { display: none !important; }
+        `,
+      });
+
       const tasks = videos.map(async (videoElement) => {
         await page.evaluate((video) => {
           // loaded
@@ -61,6 +72,20 @@ async function capture(pathnames) {
           });
         }, videoElement);
       });
+
+      tasks.push(
+        page.evaluate(() => {
+          const videoElements = document.querySelectorAll('video');
+          videoElements.forEach((video) => {
+            // hide controls
+            video.controls = false;
+            // show first frame
+            if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+              video.currentTime = 0;
+            }
+          });
+        })
+      );
 
       await Promise.all(tasks);
     }
