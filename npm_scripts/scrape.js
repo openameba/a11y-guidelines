@@ -30,7 +30,19 @@ async function capture(pathnames) {
 
     await fs.mkdir(dir, { recursive: true });
 
-    await page.goto(url.toString(), { waitUntil: 'networkidle0' });
+    const response = await page.goto(url.toString(), {
+      waitUntil: 'networkidle0',
+    });
+
+    if (response.status() >= 400) {
+      console.error(
+        `Error: Page ${url.toString()} returned status code ${response.status()}`
+      );
+      process.exitCode = 3;
+      await page.close();
+      await browser.close();
+      return;
+    }
 
     const videos = await page.$$('video');
 
@@ -77,7 +89,7 @@ async function capture(pathnames) {
         await Promise.all(imageTasks);
       } catch (error) {
         console.error(error);
-        process.exitCode = 3;
+        process.exitCode = 4;
       }
     }
 
