@@ -1,8 +1,8 @@
-const { promises: fs } = require('fs');
-const path = require('path');
+const { promises: fs } = require('node:fs');
+const path = require('node:path');
+const { setTimeout } = require('node:timers/promises');
 
 const puppeteer = require('puppeteer');
-const { setTimeout } = require('node:timers/promises');
 
 const dist = process.argv[2];
 const base = process.argv[3];
@@ -30,15 +30,29 @@ async function capture(pathnames) {
 
     await fs.mkdir(dir, { recursive: true });
 
-    const response = await page.goto(url.toString(), {
-      waitUntil: 'networkidle0',
-    });
+    let response;
+    try {
+      response = await page.goto(url.toString(), {
+        waitUntil: 'load',
+        timeout: 60000,
+      });
+    } catch (error) {
+      console.error(
+        `Error: Page ${url.toString()} loading timed out or failed: ${
+          error.message
+        }`
+      );
+      process.exitCode = 3;
+      await page.close();
+      await browser.close();
+      return;
+    }
 
     if (response.status() >= 400) {
       console.error(
         `Error: Page ${url.toString()} returned status code ${response.status()}`
       );
-      process.exitCode = 3;
+      process.exitCode = 4;
       await page.close();
       await browser.close();
       return;
@@ -114,7 +128,7 @@ async function capture(pathnames) {
         await Promise.all(imageTasks);
       } catch (error) {
         console.error(error);
-        process.exitCode = 4;
+        process.exitCode = 5;
       }
     }
 
