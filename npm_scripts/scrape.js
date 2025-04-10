@@ -1,6 +1,5 @@
 const { promises: fs } = require('node:fs');
 const path = require('node:path');
-const { setTimeout } = require('node:timers/promises');
 
 const puppeteer = require('puppeteer');
 
@@ -44,8 +43,7 @@ async function capture(pathnames) {
       );
       process.exitCode = 3;
       await page.close();
-      await browser.close();
-      return;
+      break;
     }
 
     if (response.status() >= 400) {
@@ -54,8 +52,7 @@ async function capture(pathnames) {
       );
       process.exitCode = 4;
       await page.close();
-      await browser.close();
-      return;
+      break;
     }
 
     const videos = await page.$$('video');
@@ -72,64 +69,24 @@ async function capture(pathnames) {
         `,
       });
 
-      const tasks = videos.map(async (videoElement) => {
-        await page.evaluate((video) => {
-          // loaded
-          if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
-            return Promise.resolve();
+      await page.evaluate(() => {
+        document.querySelectorAll('video').forEach((video) => {
+          // hide controls
+          video.controls = false;
+          // set currentTime
+          video.currentTime = 0;
+          // wait for video to be ready
+          if (video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) {
+            video.addEventListener(
+              'canplaythrough',
+              () => {
+                video.currentTime = 0;
+              },
+              { once: true }
+            );
           }
-
-          return new Promise((resolve) => {
-            video.addEventListener('canplaythrough', resolve, false);
-            // timeout
-            setTimeout(resolve, 10000);
-          });
-        }, videoElement);
+        });
       });
-
-      tasks.push(
-        page.evaluate(() => {
-          const videoElements = document.querySelectorAll('video');
-          videoElements.forEach((video) => {
-            // hide controls
-            video.controls = false;
-            // show first frame
-            if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-              video.currentTime = 0;
-            }
-          });
-        })
-      );
-
-      await Promise.all(tasks);
-    }
-
-    const images = await page.$$('img');
-
-    if (images.length > 0) {
-      const imageTasks = images.map(async (imageElement) => {
-        await page.evaluate((image) => {
-          // loaded
-          if (image.complete && image.naturalWidth > 0) {
-            return Promise.resolve();
-          }
-
-          return new Promise((resolve, reject) => {
-            image.addEventListener('load', resolve, false);
-            image.addEventListener('error', reject, false);
-            image.addEventListener('abort', reject, false);
-            // timeout
-            setTimeout(resolve, 10000);
-          });
-        }, imageElement);
-      });
-
-      try {
-        await Promise.all(imageTasks);
-      } catch (error) {
-        console.error(error);
-        process.exitCode = 5;
-      }
     }
 
     await page.screenshot({
