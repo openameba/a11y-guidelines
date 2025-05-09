@@ -17,7 +17,7 @@
     "bin-wrapper": "4.1.0",
     "cssnano": "7.0.6",
     "husky": "9.1.7",
-    "lint-staged": "15.5.1",
+    "lint-staged": "15.5.2",
     "markdown-it-anchor": "9.2.0",
     "npm-run-all2": "8.0.1",
     "postcss-cli": "11.0.1",
