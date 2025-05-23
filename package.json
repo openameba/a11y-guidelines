@@ -19,7 +19,7 @@
     "husky": "9.1.7",
     "lint-staged": "16.0.0",
     "markdown-it-anchor": "9.2.0",
-    "npm-run-all2": "8.0.2",
+    "npm-run-all2": "8.0.3",
     "postcss-cli": "11.0.1",
     "postcss-custom-properties": "14.0.4",
     "postcss-import": "16.1.0",
