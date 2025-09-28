@@ -32,7 +32,7 @@
     "textlint-rule-prh": "6.1.0"
   },
   "engines": {
-    "node": "22.19.0",
+    "node": "22.20.0",
     "npm": "11.6.1"
   },
   "keywords": [
