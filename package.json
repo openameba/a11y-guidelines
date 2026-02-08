@@ -13,7 +13,7 @@
   "devDependencies": {
     "@11ty/eleventy": "3.1.2",
     "@openameba/textlint-rule-preset-ameba": "0.5.1",
-    "autoprefixer": "10.4.23",
+    "autoprefixer": "10.4.24",
     "bin-wrapper": "4.1.0",
     "cssnano": "7.1.2",
     "husky": "9.1.7",
