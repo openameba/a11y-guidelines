@@ -11,7 +11,7 @@
     "textlint-filter-rule-comments": "^1.2.2"
   },
   "devDependencies": {
-    "@11ty/eleventy": "3.1.2",
+    "@11ty/eleventy": "3.1.5",
     "@openameba/textlint-rule-preset-ameba": "0.5.1",
     "autoprefixer": "10.4.27",
     "bin-wrapper": "4.1.0",
