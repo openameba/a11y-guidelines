@@ -24,7 +24,7 @@
     "postcss-custom-properties": "15.0.1",
     "postcss-import": "16.1.1",
     "prettier": "3.8.1",
-    "textlint": "15.5.2",
+    "textlint": "15.5.4",
     "textlint-filter-rule-allowlist": "4.0.0",
     "textlint-rule-preset-japanese": "10.0.4",
     "textlint-rule-preset-jtf-style": "3.0.3",
