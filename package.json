@@ -32,7 +32,7 @@
   },
   "engines": {
     "node": "24.16.0",
-    "npm": "11.14.1"
+    "npm": "11.15.0"
   },
   "keywords": [
     "accessibility"
