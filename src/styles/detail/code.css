@@ -1,6 +1,30 @@
 /**
- * Code
+ * code
+ * インラインコードに背景を敷いて識別性向上、コードブロックの余白整備
  */
 code {
   color: var(--color-text-accent-primary);
+  background-color: var(--color-surface-secondary);
+  border-radius: var(--radius-s);
+  padding: 0.1em 0.35em;
+  font-family:
+    ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--color-surface-secondary);
+  border: 1px solid var(--color-border-low-emphasis);
+  border-radius: var(--radius-m);
+  padding: var(--space-2);
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+pre code {
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  color: inherit;
+  font-size: calc(14 / 16 * 1rem);
 }

@@ -1,0 +1,38 @@
+/**
+ * SCList(達成基準の目次リスト)
+ * - リンクの当たり判定を高さ 44px 以上に(2.5.5/2.5.8)。幅はコンテンツ+左右 8px に
+ *   留める(コンテナ幅いっぱいだと余白の誤クリックで意図しない遷移が起きるため)
+ * - Label はリンクの外の兄弟要素。下線は base.css のリンク設計をそのまま継承する
+ */
+.SCList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.SCList > li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+/* 隣接する 44px ターゲット同士の視覚的セパレーション(角丸が視認できる最小限) */
+.SCList > li + li {
+  margin-top: 4px;
+}
+
+.SCList a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  width: fit-content;
+  padding: 2px var(--space-1);
+  /* テキスト左端は本文と揃えたまま、当たり判定だけ左右へ 8px 広げる */
+  margin-inline: calc(-1 * var(--space-1));
+  border-radius: var(--radius-s);
+}
+
+.SCList .Label {
+  flex-shrink: 0;
+  margin-left: 0;
+}

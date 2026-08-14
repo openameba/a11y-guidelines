@@ -1,22 +1,23 @@
 /**
- * Heading
+ * 見出しスケール(detail 系: 達成基準ページ)
+ * default 系と1段ずれた同一ロール構造:
+ * ページ題(h1)/ border付きセクション(h2)/ 小見出し(h3)/
+ * 左ボーダー見出し(h4)/ 最小(h5, h6)
  */
-
 h1 {
-  font-size: calc(28 / 16 * 1rem);
-  line-height: 1.5;
-  margin: 64px 0 24px;
+  font-size: calc(32 / 16 * 1rem);
+  line-height: var(--line-height-heading);
+  margin: var(--space-8) 0 var(--space-3);
 }
 
 h2 {
-  font-size: calc(24 / 16 * 1rem);
-  line-height: 1.75;
-  margin: 48px 0 32px;
-  padding-bottom: 8px;
+  font-size: calc(22 / 16 * 1rem);
+  line-height: 1.6;
+  margin: var(--space-6) 0 var(--space-4);
+  padding-bottom: var(--space-1);
   border-bottom: 1px solid var(--color-border-low-emphasis);
 }
 
-/* Heading内のアンカーリンクのアイコンの位置を微調整 */
 h2[id] a::before {
   top: 0.4em;
 }
@@ -24,25 +25,25 @@ h2[id] a::before {
 h3 {
   font-size: calc(18 / 16 * 1rem);
   line-height: 1.71;
-  margin: 32px 0 16px;
+  margin: var(--space-4) 0 var(--space-2);
 }
 
 h4 {
-  border-left: 4px solid var(--color-border-medium-emphasis);
   font-size: calc(16 / 16 * 1rem);
   line-height: 1.71;
-  margin: 32px 0 24px;
-  padding-left: 16px;
+  margin: var(--space-4) 0 var(--space-3);
+  border-left: 4px solid var(--color-border-medium-emphasis);
+  padding-left: var(--space-2);
 }
 
 h5 {
   font-size: calc(14 / 16 * 1rem);
   line-height: 1.71;
-  margin: 24px 0 16px;
+  margin: var(--space-3) 0 var(--space-2);
 }
 
 h6 {
   font-size: calc(12 / 16 * 1rem);
   line-height: 1.71;
-  margin: 16px 0 8px;
+  margin: var(--space-2) 0 var(--space-1);
 }

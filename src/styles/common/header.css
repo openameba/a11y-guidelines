@@ -1,33 +1,36 @@
 /**
  * Header
+ * タイトルをブロック化し、アクセントバーをパレットのアクセント色で表現する
  */
 .Header {
   padding: 0;
   margin-bottom: 72px;
 }
 
-.Header a {
-  text-decoration: none;
-  display: block;
-  padding-bottom: 8px;
+/* トップの h1 が見出しスケールの影響を受けないようリセット
+   (下層の p.Container は .Container の margin: 0 auto に任せるため触らない) */
+.Header h1 {
+  margin: 0;
+  font-size: 1rem;
 }
 
-.Header a:hover,
-.Header a:focus {
-  background-color: inherit;
+.Header a {
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: var(--space-1);
 }
 
 .Header__Logo {
   display: block;
-  margin: 64px 0 48px;
+  margin: var(--space-8) 0 var(--space-6);
 }
 
-.Header__title {
-  border-left: 8px solid currentColor;
+.Header__Title {
+  border-left: 8px solid var(--color-text-accent-primary);
   display: inline-block;
-  padding-left: 32px;
-  font-size: calc(48 / 16 * 1rem);
-  line-height: 1.16;
+  padding-left: var(--space-4);
+  font-size: calc(44 / 16 * 1rem);
+  line-height: 1.2;
   color: var(--color-heading-text);
   font-weight: bold;
 }
@@ -36,15 +39,20 @@
   .Header {
     margin-bottom: 96px;
   }
+
   .Header__Logo {
-    margin-top: 32px;
+    margin-top: var(--space-4);
     margin-bottom: 21px;
   }
-  .Header__title {
-    font-size: calc(36 / 16 * 1rem);
+
+  .Header__Title {
+    font-size: calc(34 / 16 * 1rem);
     padding-left: 0;
     border-left: 0;
+    padding-top: var(--space-1);
+    border-top: 8px solid var(--color-text-accent-primary);
   }
+
   .Header a {
     padding-bottom: 0;
   }

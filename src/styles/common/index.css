@@ -1,6 +1,7 @@
 /**
  * ページ共通　style
  */
+@import './tokens.css';
 @import './base.css';
 @import './color.css';
 @import './overrides.css';
