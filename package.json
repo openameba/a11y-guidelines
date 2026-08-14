@@ -31,8 +31,7 @@
     "textlint-rule-prh": "6.1.0"
   },
   "engines": {
-    "node": "24.19.0",
-    "npm": "12.0.2"
+    "node": "24.19.0"
   },
   "keywords": [
     "accessibility"
@@ -41,9 +40,11 @@
   "lint-staged": {
     "src/*.md": "textlint --dry-run",
     "*.+(css|js)": "prettier --check",
-    "package.json": "npx fixpack --dryRun",
-    "yarn.lock": "node -e 'process.exitCode = 1'"
+    "package.json": "pnpm dlx fixpack --dryRun",
+    "yarn.lock": "node -e 'process.exitCode = 1'",
+    "package-lock.json": "node -e 'process.exitCode = 1'"
   },
+  "packageManager": "pnpm@11.21.0",
   "postcss": {
     "plugins": {
       "postcss-custom-properties": {},
@@ -57,8 +58,8 @@
     "build": "npm-run-all build:*",
     "build:css": "postcss src/styles/*.css --dir public/css",
     "build:html": "NODE_ENV=production eleventy",
-    "build:svg": "npx cpx 'node_modules/@openameba/spindle-icons/dist/svg/+(circle_bold|minus_bold|cross_bold|plus_bold).svg' src/img/icon",
-    "fixpack": "npx fixpack",
+    "build:svg": "pnpm dlx cpx 'node_modules/@openameba/spindle-icons/dist/svg/+(circle_bold|minus_bold|cross_bold|plus_bold).svg' src/img/icon",
+    "fixpack": "pnpm dlx fixpack",
     "format": "run-p format:*",
     "format:prettier": "prettier --write {src,npm_scripts,.eleventy.js,package.json}",
     "format:text": "textlint --fix content src",
