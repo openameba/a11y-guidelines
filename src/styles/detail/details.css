@@ -1,48 +1,44 @@
 /**
- * 開閉パネル
+ * 補足の開閉パネル
+ * ネイティブの <details>/<summary> をそのまま使う(4.1.2)。
+ * 旧実装の text-indent ハック + summary::before の背景ベタ塗りによる
+ * マーカー隠しを list-style-position に置換。開閉アイコンは標準 mask を併記
  */
 details {
   box-sizing: border-box;
   font-size: calc(14 / 16 * 1rem);
-  border: 3px solid var(--color-border-low-emphasis);
-  border-radius: 4px;
+  border: 2px solid var(--color-border-low-emphasis);
+  border-radius: var(--radius-m);
 }
 
 details + details {
-  margin-top: 16px;
+  margin-top: var(--space-2);
 }
 
 summary {
-  text-indent: -0.8em;
   cursor: pointer;
   font-weight: bold;
   position: relative;
-  padding: 16px 32px;
-}
-
-summary:before {
-  content: '';
-  display: block;
-  width: 32px;
-  height: 100%;
-  background-color: var(--color-base-background);
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  padding: var(--space-2) var(--space-6) var(--space-2) var(--space-2);
+  border-radius: calc(var(--radius-m) - 2px);
+  list-style-position: inside;
 }
 
 details[open] {
-  padding: 0 32px 16px;
+  padding: 0 var(--space-4) var(--space-2);
 }
 
-details[open] summary {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  margin: 0 -32px 16px;
+details[open] > summary {
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+  margin: 0 calc(-1 * var(--space-4)) var(--space-2);
+  border-bottom: 1px solid var(--color-border-low-emphasis);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-summary:after {
+/* 開閉状態のアイコン(+/-): 標準マーカーに追加の視覚手がかり(1.4.1) */
+summary::after {
   background: var(--color-object-low-emphasis);
   position: absolute;
   right: 1rem;
@@ -50,13 +46,19 @@ summary:after {
   content: '';
   height: 24px;
   width: 24px;
+  mask-image: url('/img/icon/plus_bold.svg');
+  mask-size: contain;
   -webkit-mask-image: url('/img/icon/plus_bold.svg');
+  -webkit-mask-size: contain;
 }
 
-details[open] > summary:after {
+details[open] > summary::after {
+  mask-image: url('/img/icon/minus_bold.svg');
   -webkit-mask-image: url('/img/icon/minus_bold.svg');
 }
 
-summary:focus {
-  outline-offset: 1px;
+@media (hover: hover) {
+  summary:hover {
+    background-color: var(--color-surface-secondary);
+  }
 }

@@ -28,6 +28,10 @@ Amebaのサービスに携わるコンテンツや開発者は、高品質なサ
 - テスト・チェック方法
 - 参考文献
 
+<!-- 目次をランドマーク化(1.3.1)。aria-labelledby は markdown-it-anchor が
+「## 目次」に自動生成する id(URL エンコード)を参照している -->
+<nav aria-labelledby="%E7%9B%AE%E6%AC%A1">
+
 ## 目次
 
 WCAG2.1に記載の項目のうち、Amebaブランドのサービスで準拠すべき項目。（※WCAG2.1の項目は、追加作業中）
@@ -104,3 +108,5 @@ WCAG2.1に記載の項目のうち、Amebaブランドのサービスで準拠�
 #### 4.1 互換性を保つ
 
 {{ scs.scList(collections.SC, "4.1") }}
+
+</nav>
