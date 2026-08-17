@@ -1,6 +1,7 @@
 /**
  * Header
- * タイトルをブロック化し、アクセントバーをパレットのアクセント色で表現する
+ * タイトルはサイズとウェイトのみで表現(完全タイポグラフィ主体)。
+ * ロゴとの間隔を詰めてロックアップ(1つの視覚ユニット)として見せる
  */
 .Header {
   padding: 0;
@@ -8,7 +9,8 @@
 }
 
 /* トップの h1 が見出しスケールの影響を受けないようリセット
-   (下層の p.Container は .Container の margin: 0 auto に任せるため触らない) */
+   (下層の p.Container は .Container の margin: 0 auto に任せるため触らない —
+   .Header p のリセットを足すと specificity でセンタリングが潰れる) */
 .Header h1 {
   margin: 0;
   font-size: 1rem;
@@ -22,13 +24,11 @@
 
 .Header__Logo {
   display: block;
-  margin: var(--space-8) 0 var(--space-6);
+  margin: var(--space-8) 0 var(--space-3);
 }
 
 .Header__Title {
-  border-left: 8px solid var(--color-text-accent-primary);
   display: inline-block;
-  padding-left: var(--space-4);
   font-size: calc(44 / 16 * 1rem);
   line-height: 1.2;
   color: var(--color-heading-text);
@@ -42,15 +42,11 @@
 
   .Header__Logo {
     margin-top: var(--space-4);
-    margin-bottom: 21px;
+    margin-bottom: var(--space-2);
   }
 
   .Header__Title {
     font-size: calc(34 / 16 * 1rem);
-    padding-left: 0;
-    border-left: 0;
-    padding-top: var(--space-1);
-    border-top: 8px solid var(--color-text-accent-primary);
   }
 
   .Header a {

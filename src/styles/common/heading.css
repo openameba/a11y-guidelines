@@ -35,6 +35,11 @@
   opacity: 0;
 }
 
+/* h1(lh 1.3)は base の 0.3em だとアイコンがやや下に付くため光学調整 */
+:is(h1[id]) a::before {
+  top: 0.25em;
+}
+
 :is(h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]) a:focus-visible::before {
   opacity: 1;
 }
