@@ -2,7 +2,9 @@
 
 :root {
   --color-base-background: var(--color-surface-primary);
-  --color-base-text: var(--color-text-medium-emphasis);
+  /* 本文はデザインレビューを受けて medium-emphasis(0.74)から一段濃く。
+     キャプション等の medium-emphasis は据え置きで階層を維持する */
+  --color-base-text: var(--gray-90-alpha);
   --color-heading-text: var(--color-text-high-emphasis);
   --color-link: var(--color-base-text);
 }
@@ -17,6 +19,7 @@
  * - OS がダークで、明示指定が無い/dark のとき
  */
 :root[data-color-scheme='dark'] {
+  --color-base-text: var(--white-90-alpha);
   --color-surface-primary: var(--gray-90);
   --color-surface-secondary: var(--white-5-alpha);
   --color-text-high-emphasis: var(--white-100);
@@ -31,6 +34,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-color-scheme]),
   :root[data-color-scheme='dark'] {
+    --color-base-text: var(--white-90-alpha);
     --color-surface-primary: var(--gray-90);
     --color-surface-secondary: var(--white-5-alpha);
     --color-text-high-emphasis: var(--white-100);
