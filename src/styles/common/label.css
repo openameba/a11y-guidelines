@@ -1,12 +1,13 @@
 /**
  * label
- * 適合レベルバッジ。背景に surface-secondary を敷いて視認性を高める
+ * 適合レベルバッジ。背景はデザインレビューを受けて surface-secondary(グレー)から
+ * surface-primary(ページ地色)に変更(グレー背景は文字コントラストを下げるため)
  */
 .Label {
   display: inline-block;
   border-radius: 1000px;
   border: solid 1.5px currentColor;
-  background-color: var(--color-surface-secondary);
+  background-color: var(--color-surface-primary);
   color: inherit;
   font-size: calc(12 / 16 * 1rem);
   font-weight: bold;
