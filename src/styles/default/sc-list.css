@@ -2,7 +2,9 @@
  * SCList(達成基準の目次リスト)
  * - リンクの当たり判定を高さ 44px 以上に(2.5.5/2.5.8)。幅はコンテンツ+左右 8px に
  *   留める(コンテナ幅いっぱいだと余白の誤クリックで意図しない遷移が起きるため)
- * - Label はリンクの外の兄弟要素。下線は base.css のリンク設計をそのまま継承する
+ * - 下線は表示しない(1.4.1 の整理: 本文中のリンクと違い、目次のようなナビゲーション
+ *   リストは文脈でリンクと分かるため下線は不要。hover 背景と :focus-visible リングで
+ *   フィードバックは維持)
  */
 .SCList {
   list-style: none;
@@ -26,10 +28,11 @@
   align-items: center;
   min-height: 44px;
   width: fit-content;
-  padding: 2px var(--space-1);
+  padding: var(--space-1);
   /* テキスト左端は本文と揃えたまま、当たり判定だけ左右へ 8px 広げる */
   margin-inline: calc(-1 * var(--space-1));
   border-radius: var(--radius-s);
+  text-decoration-line: none;
 }
 
 .SCList .Label {
