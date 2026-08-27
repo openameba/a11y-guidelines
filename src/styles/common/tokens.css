@@ -28,4 +28,7 @@
   /* 角丸 */
   --radius-s: 4px;
   --radius-m: 8px;
+
+  /* 固定グローバルヘッダーの高さ(scroll-padding の算出にも使う) */
+  --global-header-height: 48px;
 }

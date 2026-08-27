@@ -1,0 +1,125 @@
+/**
+ * 固定グローバルヘッダー
+ * スクロールして大きいヘッダーが画面外に出たときにのみ現れる細いバー。
+ * - 初期表示では出さない(ページ内ヘッダーのロゴと重複しないため)
+ * - 出現は scroll-driven animations によるプログレッシブエンハンスメント。
+ *   非対応ブラウザでは visibility: hidden のまま(フォーカスも当たらない)で、
+ *   ナビゲーションはトップのリンクとパンくずが担う
+ * - 表示時は DOM 先頭にあるためフォーカス順と視覚順が一致する(2.4.3)
+ * - ナビリンクは 44px ターゲット(2.5.5/2.5.8)、hover は下線のみ(1.4.1 の整理)
+ */
+.GlobalHeader {
+  position: fixed;
+  inset: 0 0 auto;
+  /* サイト唯一の浮遊要素(z-index スケールは未導入) */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--global-header-height);
+  padding: 0 var(--space-3);
+  background-color: var(--color-surface-primary);
+  border-bottom: 1px solid var(--color-border-low-emphasis);
+  /* 非表示時はフォーカス不可にする(opacity だけだと Tab が届いてしまう) */
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* スクロールで出現(対応ブラウザのみ) */
+@supports (animation-timeline: scroll()) {
+  .GlobalHeader {
+    animation: global-header-reveal linear both;
+    animation-timeline: scroll();
+    /* 大きいヘッダー(ロゴ+タイトル ≒ 240px)が画面外に出るあたりでフェードイン */
+    animation-range: 240px 320px;
+  }
+}
+
+@keyframes global-header-reveal {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    translate: 0 -8px;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* 2.3.3: 移動は無効化し、フェードのみに */
+  @keyframes global-header-reveal {
+    from {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    to {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+/* ロックアップ: 小ロゴ(Ameba)+区切り線+タイトル。
+   「Ameba」はロゴの alt が担い、読み上げは「Ameba Accessibility Guidelines」になる */
+.GlobalHeader__Lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  color: var(--color-heading-text);
+  text-decoration: none;
+}
+
+.GlobalHeader__Lockup::after {
+  content: '';
+  order: 1;
+  width: 1px;
+  height: 14px;
+  background-color: var(--color-border-low-emphasis);
+}
+
+.GlobalHeader__Logo {
+  display: block;
+}
+
+.GlobalHeader__Title {
+  order: 2;
+  font-size: calc(14 / 16 * 1rem);
+  font-weight: bold;
+}
+
+.GlobalNav ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.GlobalNav li {
+  margin: 0;
+}
+
+.GlobalNav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: var(--radius-s);
+  font-size: calc(14 / 16 * 1rem);
+  color: var(--color-base-text);
+  text-decoration-line: none;
+}
+
+@media (hover: hover) {
+  /* hover で「リンクである」ことを下線で返す(SCList と同じ規約) */
+  .GlobalNav a:hover {
+    text-decoration-line: underline;
+  }
+}
