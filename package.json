@@ -61,7 +61,7 @@
     "build": "run-s build:*",
     "build:css": "postcss src/styles/*.css --dir public/css",
     "build:html": "NODE_ENV=production eleventy",
-    "build:svg": "cpx 'node_modules/@openameba/spindle-icons/dist/svg/+(circle_bold|minus_bold|cross_bold|plus_bold|link|triangle_right).svg' src/img/icon",
+    "build:svg": "cpx 'node_modules/@openameba/spindle-icons/dist/svg/+(circle_bold|minus_bold|cross_bold|plus_bold|link|triangle_right|menu_hamburger_bold).svg' src/img/icon",
     "fixpack": "fixpack",
     "format": "run-p format:*",
     "format:prettier": "prettier --write {src,npm_scripts,.eleventy.js,package.json}",
