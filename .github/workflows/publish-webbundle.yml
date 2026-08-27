@@ -28,7 +28,7 @@ jobs:
 
     - name: Build Site
       run: |
-        pnpm install
+        pnpm install --frozen-lockfile
         pnpm run build
 
     - name: Install go/bundle CLI
