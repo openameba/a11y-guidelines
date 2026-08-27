@@ -123,3 +123,123 @@
     text-decoration-line: underline;
   }
 }
+/* ===== モバイル(800px 未満): ナビをハンバーガー+モーダルメニューに ===== */
+
+/* ハンバーガーボタン。デスクトップでは非表示。
+   JS が初期化時に hidden 属性を外すまで表示しない(JS 無効環境ではボタン自体を出さない) */
+.GlobalHeader__MenuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: transparent;
+  cursor: pointer;
+}
+
+.GlobalHeader__MenuButton::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-object-low-emphasis);
+  mask-image: url('/img/icon/menu_hamburger_bold.svg');
+  mask-size: contain;
+  -webkit-mask-image: url('/img/icon/menu_hamburger_bold.svg');
+  -webkit-mask-size: contain;
+}
+
+@media (max-width: 799px) {
+  .GlobalNav {
+    display: none;
+  }
+
+  .GlobalHeader__MenuButton:not([hidden]) {
+    display: inline-flex;
+  }
+}
+
+/*
+ * モバイルメニュー(dialog)。showModal() でフォーカストラップ・Esc 閉じ・
+ * 背景 inert がネイティブに担保される(2.1.1/2.1.2/4.1.2)。
+ * モーダル中は背景のバーが inert になるため、閉じるボタンは dialog 内のヘッダー行に置く
+ * (dialog がバーを覆うので見た目はバーのボタンが × に変わったように見える)
+ */
+.MobileMenu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 var(--space-1);
+  border: 0;
+  border-bottom: 1px solid var(--color-border-low-emphasis);
+  background: var(--color-surface-primary);
+  color: var(--color-base-text);
+}
+
+.MobileMenu::backdrop {
+  /* gray-30-alpha 相当(::backdrop はカスタムプロパティを継承しないためリテラル) */
+  background: rgba(8, 18, 26, 0.3);
+}
+
+.MobileMenu__Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--global-header-height);
+  padding: 0 var(--space-3);
+}
+
+.MobileMenu__Close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -12px; /* アイコン位置をバーのボタンと揃える(当たり判定は 44px 維持) */
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: transparent;
+  cursor: pointer;
+}
+
+.MobileMenu__Close::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-object-low-emphasis);
+  mask-image: url('/img/icon/cross_bold.svg');
+  mask-size: contain;
+  -webkit-mask-image: url('/img/icon/cross_bold.svg');
+  -webkit-mask-size: contain;
+}
+
+.MobileMenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.MobileMenu li {
+  margin: 0;
+}
+
+.MobileMenu a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  font-size: calc(14 / 16 * 1rem);
+  color: var(--color-base-text);
+  text-decoration-line: none;
+}
+
+@media (hover: hover) {
+  .MobileMenu a:hover {
+    text-decoration-line: underline;
+  }
+}
