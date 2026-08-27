@@ -12,7 +12,8 @@ html {
     Meiryo,
     sans-serif;
   line-height: 1.5;
-  scroll-padding-top: 1.5em;
+  /* ページ内アンカーの着地点が固定グローバルヘッダーに隠れないようにする */
+  scroll-padding-top: calc(var(--global-header-height) + 1em);
 }
 
 body {

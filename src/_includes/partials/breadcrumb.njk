@@ -1,0 +1,8 @@
+<nav class="Breadcrumb" aria-label="現在位置">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    {# アンカーはトップの原則見出し。markdown-it-anchor の id はスペースがハイフンになる #}
+    <li><a href="/#{{ number | scNumberToPrincipleLabel | replace(" ", "-") }}">{{ number | scNumberToPrincipleLabel }}</a></li>
+    <li aria-current="page">{{ number }} {{ title }}</li>
+  </ol>
+</nav>
