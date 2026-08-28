@@ -22,27 +22,20 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '24.x'
-      - id: npm-cache-dir
-        run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
-      - id: npm-cache
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: ${{ steps.npm-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-${{ github.event_name }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ github.event_name }}-node-
-      - run: npm ci
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
       - run: >
-          npm install -D
+          pnpm add -D
           puppeteer
           reg-keygen-git-hash-plugin
           reg-notify-github-plugin
           reg-publish-gcs-plugin
-      - run: npm run build
-      - run: npm start &
+      - run: pnpm run build
+      - run: pnpm start &
       - name: take screenshots
         run: >
           find public -type f -name '*.html' |
@@ -53,7 +46,7 @@ jobs:
       - run: |
           printf -- '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > "${PWD}/storage-key.json"
           export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/storage-key.json"
-          npx reg-suit run
+          pnpm dlx reg-suit run
         env:
           GCS_BUCKET_NAME_REG_SUIT: ${{ secrets.GCS_BUCKET_NAME_REG_SUIT }}
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}

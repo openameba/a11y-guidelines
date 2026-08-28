@@ -1,0 +1,4 @@
+allowBuilds:
+  core-js: false
+  fsevents: false
+  puppeteer: true

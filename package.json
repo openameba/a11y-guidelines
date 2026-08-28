@@ -15,9 +15,12 @@
     "@openameba/textlint-rule-preset-ameba": "0.5.1",
     "autoprefixer": "10.5.4",
     "bin-wrapper": "4.1.0",
+    "cpx": "1.5.0",
     "cssnano": "8.0.7",
+    "fixpack": "4.0.0",
     "husky": "9.1.7",
     "lint-staged": "17.3.0",
+    "markdown-it": "14.3.0",
     "markdown-it-anchor": "9.2.1",
     "npm-run-all2": "9.0.3",
     "postcss-cli": "11.0.1",
@@ -31,8 +34,7 @@
     "textlint-rule-prh": "6.1.0"
   },
   "engines": {
-    "node": "24.19.0",
-    "npm": "12.0.2"
+    "node": "24.19.0"
   },
   "keywords": [
     "accessibility"
@@ -41,9 +43,11 @@
   "lint-staged": {
     "src/*.md": "textlint --dry-run",
     "*.+(css|js)": "prettier --check",
-    "package.json": "npx fixpack --dryRun",
-    "yarn.lock": "node -e 'process.exitCode = 1'"
+    "package.json": "fixpack --dryRun",
+    "yarn.lock": "node -e 'process.exitCode = 1'",
+    "package-lock.json": "node -e 'process.exitCode = 1'"
   },
+  "packageManager": "pnpm@11.21.0",
   "postcss": {
     "plugins": {
       "postcss-custom-properties": {},
@@ -54,11 +58,11 @@
   "private": true,
   "repository": "openameba/a11y-guidelines",
   "scripts": {
-    "build": "npm-run-all build:*",
+    "build": "run-s build:*",
     "build:css": "postcss src/styles/*.css --dir public/css",
     "build:html": "NODE_ENV=production eleventy",
-    "build:svg": "npx cpx 'node_modules/@openameba/spindle-icons/dist/svg/+(circle_bold|minus_bold|cross_bold|plus_bold).svg' src/img/icon",
-    "fixpack": "npx fixpack",
+    "build:svg": "cpx 'node_modules/@openameba/spindle-icons/dist/svg/+(circle_bold|minus_bold|cross_bold|plus_bold).svg' src/img/icon",
+    "fixpack": "fixpack",
     "format": "run-p format:*",
     "format:prettier": "prettier --write {src,npm_scripts,.eleventy.js,package.json}",
     "format:text": "textlint --fix content src",
@@ -67,9 +71,9 @@
     "lint:text": "textlint content src",
     "prepare": "[ -n \"$CI\" ] || husky install",
     "serve": "DEBUG=Eleventy* eleventy --serve --watch",
-    "start": "npm-run-all -p serve watch",
+    "start": "run-p serve watch",
     "styles": "postcss src/styles/*.css --dir public/css",
-    "watch": "npm run watch:styles",
-    "watch:styles": "npm run styles --watch"
+    "watch": "pnpm run watch:styles",
+    "watch:styles": "postcss src/styles/*.css --dir public/css --watch"
   }
 }

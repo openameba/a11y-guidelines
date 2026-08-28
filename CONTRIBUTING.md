@@ -24,11 +24,17 @@ But, pull requests or issues to fix links, typos, missunderstanding of WCAG are 
 
 https://nodejs.org/en/ から node.js をダウンロードしインストールします。
 
+このプロジェクトはパッケージマネージャーとして [pnpm](https://pnpm.io/) を使用しています。Node.jsに同梱されている [Corepack](https://nodejs.org/api/corepack.html) を有効化すると、`package.json` の `packageManager` フィールドで指定されたバージョンのpnpmが自動的に使えるようになります。
+
+```console
+$ corepack enable
+```
+
 インストールができたら、以下のコマンドを実行します。
 
 ```console
-$ npm ci
-$ npm start
+$ pnpm install
+$ pnpm start
 ```
 
 するとHTTPサーバーが起動するので、 http://localhost:3000 にブラウザからアクセスすると確認ができます。
