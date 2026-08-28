@@ -15,7 +15,7 @@
     "@openameba/textlint-rule-preset-ameba": "0.5.1",
     "autoprefixer": "10.5.4",
     "bin-wrapper": "4.1.0",
-    "cpx2": "2.0.0",
+    "cpx2": "3.0.2",
     "cssnano": "8.0.7",
     "fixpack": "4.0.0",
     "husky": "9.1.7",
