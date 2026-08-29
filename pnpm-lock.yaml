@@ -37,8 +37,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       cpx2:
-        specifier: 8.0.2
-        version: 8.0.2
+        specifier: 9.0.0
+        version: 9.0.0
       cssnano:
         specifier: 8.0.8
         version: 8.0.8(postcss@8.5.26)
@@ -679,9 +679,9 @@ packages:
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
 
-  cpx2@8.0.2:
-    resolution: {integrity: sha512-exLFEIh8XgWthEtrEq8hs+S6jxM5ZHpjQnRH6D7VU+2uAYS3amLSVOUSuirfx3HeN7WBCq+xFygHpt7l+gQtUA==}
-    engines: {node: ^20.0.0 || >=22.0.0, npm: '>=10'}
+  cpx2@9.0.0:
+    resolution: {integrity: sha512-KRZGQCmHrM10xfLjrCBTQHpEIJgKtZyOOO5fygu9KE00IjQOL76FHjeON62R5PWS/W2J5ofgRJKF8rpUlEuLPQ==}
+    engines: {node: ^22.0.0 || >=24.0.0, npm: '>=10'}
     hasBin: true
 
   cross-spawn@5.1.0:
@@ -3945,7 +3945,7 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
-  cpx2@8.0.2:
+  cpx2@9.0.0:
     dependencies:
       debounce: 3.0.0
       glob: 13.0.6
@@ -3953,7 +3953,6 @@ snapshots:
       ignore: 7.0.6
       minimatch: 10.2.6
       p-map: 7.0.7
-      resolve: 1.22.12
       shell-quote: 1.10.0
       subarg: 1.0.0
 
