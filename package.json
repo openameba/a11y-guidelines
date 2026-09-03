@@ -16,7 +16,7 @@
     "autoprefixer": "10.5.4",
     "bin-wrapper": "4.1.0",
     "cpx2": "9.0.0",
-    "cssnano": "8.0.10",
+    "cssnano": "9.0.0",
     "fixpack": "4.0.0",
     "husky": "9.1.7",
     "lint-staged": "17.4.1",
