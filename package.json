@@ -20,7 +20,7 @@
     "fixpack": "4.0.0",
     "husky": "9.1.7",
     "lint-staged": "17.4.1",
-    "markdown-it": "15.0.0",
+    "markdown-it": "15.0.1",
     "markdown-it-anchor": "9.2.1",
     "npm-run-all2": "9.0.3",
     "postcss-cli": "11.0.1",
