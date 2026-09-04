@@ -25,12 +25,23 @@
 .Header a {
   text-decoration: none;
   display: inline-block;
-  padding-bottom: var(--space-1);
+  /* フォーカスリング対策(2.4.7): ロゴ上の大きな余白はリンクの「内側」
+     (ロゴの margin)ではなく「外側」(リンクの margin)に置く。内側にあると
+     リングが余白ごと囲んで巨大化し、上端が見切れる。リングと内容の間隔は
+     8px の padding で確保し、左右は負マージンで打ち消して表示位置は変えない */
+  margin: calc(var(--space-8) - var(--space-1)) calc(-1 * var(--space-1)) 0;
+  padding: var(--space-1);
+  border-radius: var(--radius-s);
+}
+
+/* リングは縁ぴったりに描く(既定の外側 +2px だと狭い画面で見切れる) */
+.Header a:focus-visible {
+  outline-offset: 0;
 }
 
 .Header__Logo {
   display: block;
-  margin: var(--space-8) 0 var(--space-3);
+  margin: 0 0 var(--space-3);
 }
 
 .Header__Title {
@@ -47,7 +58,6 @@
   }
 
   .Header__Logo {
-    margin-top: var(--space-4);
     margin-bottom: var(--space-2);
   }
 
@@ -55,7 +65,9 @@
     font-size: calc(34 / 16 * 1rem);
   }
 
+  /* 下端の 8px padding は負マージンで打ち消し、従来のヘッダー高を保つ */
   .Header a {
-    padding-bottom: 0;
+    margin-top: calc(var(--space-4) - var(--space-1));
+    margin-bottom: calc(-1 * var(--space-1));
   }
 }
