@@ -199,7 +199,6 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  margin-right: -12px; /* アイコン位置をバーのボタンと揃える(当たり判定は 44px 維持) */
   padding: 0;
   border: 0;
   border-radius: var(--radius-s);
@@ -228,7 +227,7 @@
   margin: 0;
 }
 
-.MobileMenu a {
+.MobileMenu li a {
   display: flex;
   align-items: center;
   min-height: 44px;
@@ -239,7 +238,18 @@
 }
 
 @media (hover: hover) {
-  .MobileMenu a:hover {
+  .MobileMenu li a:hover {
     text-decoration-line: underline;
   }
+}
+
+/*
+ * フォーカスリングのインセット化(2.4.7):
+ * バー/メニュー内の操作要素はビューポートや dialog の縁に接しているため、
+ * 既定の外側リング(offset +2px)では見切れる。負の outline-offset で
+ * リングを要素の内側に描き、常に全周が見えるようにする
+ */
+.GlobalHeader :focus-visible,
+.MobileMenu :focus-visible {
+  outline-offset: calc(-1 * var(--focus-ring-width));
 }
