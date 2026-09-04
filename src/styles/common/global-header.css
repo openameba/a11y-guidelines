@@ -71,6 +71,11 @@
   align-items: center;
   gap: 12px;
   min-height: 44px;
+  /* インセットのフォーカスリング(3px)がロゴ/文字に被らないための余白。
+     負マージンで打ち消し、ロゴの表示位置(左端 24px)は変えない */
+  padding: 0 var(--space-1);
+  margin-inline: calc(-1 * var(--space-1));
+  border-radius: var(--radius-s);
   color: var(--color-heading-text);
   text-decoration: none;
 }
