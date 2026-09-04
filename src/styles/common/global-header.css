@@ -258,3 +258,10 @@
 .MobileMenu :focus-visible {
   outline-offset: calc(-1 * var(--focus-ring-width));
 }
+
+/* ロックアップはリングを縁ぴったりに(インセットだと内容と近く見えるため。
+   直前のインセット規則と同順位のため、後勝ちでこちらが適用される) */
+.GlobalHeader .GlobalHeader__Lockup:focus-visible,
+.MobileMenu .GlobalHeader__Lockup:focus-visible {
+  outline-offset: 0;
+}
