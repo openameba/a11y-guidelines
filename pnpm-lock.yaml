@@ -15,8 +15,8 @@ importers:
         specifier: ^2.0.0
         version: 2.2.1
       ameba-color-palette.css:
-        specifier: github:openameba/ameba-color-palette.css#feature/dark-mode
-        version: https://codeload.github.com/openameba/ameba-color-palette.css/tar.gz/8bd4d87ce4c736ee1bf9953c5671cbafb6b69b76
+        specifier: ^4.17.0
+        version: 4.17.0
       postcss:
         specifier: ^8.2.6
         version: 8.5.26
@@ -378,9 +378,8 @@ packages:
     resolution: {integrity: sha512-XppPf2S42nO2WhvKzlwzlfcApcXHzjlod30pKmcWjRgLOtqoe5DMuqdiYoM6AgyXksc6A6pV4v1L/WW217e57w==}
     engines: {node: '>=0.8.0'}
 
-  ameba-color-palette.css@https://codeload.github.com/openameba/ameba-color-palette.css/tar.gz/8bd4d87ce4c736ee1bf9953c5671cbafb6b69b76:
-    resolution: {gitHosted: true, integrity: sha512-/GSFjrM1jk1G4m4EuAm7dVtRg3anVtoog/IxuQPY99QUN7nedDon6XjGocwSLfm+Wn790jLuM7Mz7Ws27y1Xsw==, tarball: https://codeload.github.com/openameba/ameba-color-palette.css/tar.gz/8bd4d87ce4c736ee1bf9953c5671cbafb6b69b76}
-    version: 4.4.1
+  ameba-color-palette.css@4.17.0:
+    resolution: {integrity: sha512-3Z3aZiflXewBdG1Z33JHk10l3y2AMPc10rRbq3gY8ntEejrsuH/vvOKHAqwFrLswwME848BH/wpYOKjwKENwOA==}
 
   analyze-desumasu-dearu@2.1.5:
     resolution: {integrity: sha512-4YPL7IRAuaZflE10+BVhKr6k5KQl/DiLeNCIF7ISqKr0ogM2hqm9ztRNCPqL/xYDI7hfuIHR8T+U7mIDRLQNXw==}
@@ -3613,7 +3612,7 @@ snapshots:
       esprima: 1.2.5
       estraverse: 1.9.3
 
-  ameba-color-palette.css@https://codeload.github.com/openameba/ameba-color-palette.css/tar.gz/8bd4d87ce4c736ee1bf9953c5671cbafb6b69b76: {}
+  ameba-color-palette.css@4.17.0: {}
 
   analyze-desumasu-dearu@2.1.5: {}
 

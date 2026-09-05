@@ -1,33 +1,53 @@
 /**
  * Header
+ * タイトルはサイズとウェイトのみで表現(完全タイポグラフィ主体)。
+ * ロゴとの間隔を詰めてロックアップ(1つの視覚ユニット)として見せる
  */
 .Header {
   padding: 0;
   margin-bottom: 72px;
 }
 
-.Header a {
-  text-decoration: none;
-  display: block;
-  padding-bottom: 8px;
+/* トップ(リード文があるページ)はタイトル直下 16px にリード文を寄せる。
+   :has 非対応ブラウザでは 72px のまま(許容) */
+.Header:has(+ .Main .Lead) {
+  margin-bottom: var(--space-2);
 }
 
-.Header a:hover,
-.Header a:focus {
-  background-color: inherit;
+/* トップの h1 が見出しスケールの影響を受けないようリセット
+   (下層の p.Container は .Container の margin: 0 auto に任せるため触らない —
+   .Header p のリセットを足すと specificity でセンタリングが潰れる) */
+.Header h1 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.Header a {
+  text-decoration: none;
+  display: inline-block;
+  /* フォーカスリング対策(2.4.7): ロゴ上の大きな余白はリンクの「内側」
+     (ロゴの margin)ではなく「外側」(リンクの margin)に置く。内側にあると
+     リングが余白ごと囲んで巨大化し、上端が見切れる。リングと内容の間隔は
+     8px の padding で確保し、左右は負マージンで打ち消して表示位置は変えない */
+  margin: calc(var(--space-8) - var(--space-1)) calc(-1 * var(--space-1)) 0;
+  padding: var(--space-1);
+  border-radius: var(--radius-s);
+}
+
+/* リングは縁ぴったりに描く(既定の外側 +2px だと狭い画面で見切れる) */
+.Header a:focus-visible {
+  outline-offset: 0;
 }
 
 .Header__Logo {
   display: block;
-  margin: 64px 0 48px;
+  margin: 0 0 var(--space-3);
 }
 
-.Header__title {
-  border-left: 8px solid currentColor;
+.Header__Title {
   display: inline-block;
-  padding-left: 32px;
-  font-size: calc(48 / 16 * 1rem);
-  line-height: 1.16;
+  font-size: calc(44 / 16 * 1rem);
+  line-height: 1.2;
   color: var(--color-heading-text);
   font-weight: bold;
 }
@@ -36,16 +56,18 @@
   .Header {
     margin-bottom: 96px;
   }
+
   .Header__Logo {
-    margin-top: 32px;
-    margin-bottom: 21px;
+    margin-bottom: var(--space-2);
   }
-  .Header__title {
-    font-size: calc(36 / 16 * 1rem);
-    padding-left: 0;
-    border-left: 0;
+
+  .Header__Title {
+    font-size: calc(34 / 16 * 1rem);
   }
+
+  /* 下端の 8px padding は負マージンで打ち消し、従来のヘッダー高を保つ */
   .Header a {
-    padding-bottom: 0;
+    margin-top: calc(var(--space-4) - var(--space-1));
+    margin-bottom: calc(-1 * var(--space-1));
   }
 }

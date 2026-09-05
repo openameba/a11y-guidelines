@@ -1,0 +1,51 @@
+/**
+ * SCList(達成基準の目次リスト)
+ * - リンクの当たり判定を高さ 44px 以上に(2.5.5/2.5.8)。幅はコンテンツ+左右 8px に
+ *   留める(コンテナ幅いっぱいだと余白の誤クリックで意図しない遷移が起きるため)
+ * - レベルラベルはテキスト直後に置く(離すと対応が読み取りにくくなるため)
+ * - 行の罫線は使わない(1行テキスト直下の罫線は下線に見え、ノイズが戻るため)
+ * - 下線は静止状態では表示せず、hover で表示して「リンクである」ことを
+ *   返す(1.4.1 の整理: 本文中のリンクと違い、目次のようなナビゲーションリストは
+ *   色でリンクを区別していないため、色だけに頼る状態にはならない)
+ */
+.SCList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.SCList > li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+/* 隣接する 44px ターゲット同士の視覚的セパレーション(角丸が視認できる最小限) */
+.SCList > li + li {
+  margin-top: 4px;
+}
+
+.SCList a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  /* 当たり判定はコンテンツ幅+左右 8px(余白まで広げない) */
+  width: fit-content;
+  padding: var(--space-1);
+  /* テキスト左端は本文と揃えたまま、当たり判定だけ左右へ 8px 広げる */
+  margin-inline: calc(-1 * var(--space-1));
+  border-radius: var(--radius-s);
+  text-decoration-line: none;
+}
+
+@media (hover: hover) {
+  /* hover で「リンクである」ことを下線で返す */
+  .SCList a:hover {
+    text-decoration-line: underline;
+  }
+}
+
+.SCList .Label {
+  flex-shrink: 0;
+  margin-left: 0;
+}

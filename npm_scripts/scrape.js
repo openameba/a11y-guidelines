@@ -39,7 +39,7 @@ async function capture(pathnames) {
       console.error(
         `Error: Page ${url.toString()} loading timed out or failed: ${
           error.message
-        }`
+        }`,
       );
       process.exitCode = 3;
       await page.close();
@@ -48,7 +48,7 @@ async function capture(pathnames) {
 
     if (response.status() >= 400) {
       console.error(
-        `Error: Page ${url.toString()} returned status code ${response.status()}`
+        `Error: Page ${url.toString()} returned status code ${response.status()}`,
       );
       process.exitCode = 4;
       await page.close();
@@ -82,7 +82,7 @@ async function capture(pathnames) {
               () => {
                 video.currentTime = 0;
               },
-              { once: true }
+              { once: true },
             );
           }
         });

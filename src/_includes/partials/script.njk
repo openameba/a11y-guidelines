@@ -11,6 +11,32 @@ window.addEventListener('load', applyThemeTransition);
 
 mql.addEventListener('change', applyThemeTransition, false);
 </script>
+<script type="module">
+// モバイルメニュー(グローバルヘッダーのハンバーガー)。
+// dialog.showModal() がフォーカストラップ・Esc 閉じ・背景 inert・
+// 閉時のフォーカス返却をネイティブに担保する(2.1.1/2.1.2/2.4.3)。
+// JS 無効・dialog 非対応環境ではボタンを hidden のまま出さない
+const menuButton = document.querySelector('.GlobalHeader__MenuButton');
+const menu = document.getElementById('global-menu');
+if (menuButton && menu && typeof menu.showModal === 'function') {
+  const closeMenu = () => {
+    menuButton.setAttribute('aria-expanded', 'false');
+    if (menu.open) menu.close();
+  };
+  menuButton.hidden = false;
+  menuButton.addEventListener('click', () => {
+    menuButton.setAttribute('aria-expanded', 'true');
+    menu.showModal();
+  });
+  // Esc 閉じ(cancel → close)にも追従して状態を戻す
+  menu.addEventListener('close', closeMenu);
+  menu.querySelector('.MobileMenu__Close').addEventListener('click', closeMenu);
+  // 背景(::backdrop)クリックで閉じる
+  menu.addEventListener('click', (event) => {
+    if (event.target === menu) closeMenu();
+  });
+}
+</script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
 <script defer>
 document.addEventListener('DOMContentLoaded', () => {
