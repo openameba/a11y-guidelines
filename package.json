@@ -47,7 +47,7 @@
     "yarn.lock": "node -e 'process.exitCode = 1'",
     "package-lock.json": "node -e 'process.exitCode = 1'"
   },
-  "packageManager": "pnpm@12.1.0",
+  "packageManager": "pnpm@12.2.1",
   "postcss": {
     "plugins": {
       "postcss-custom-properties": {},
