@@ -138,8 +138,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       cpx2:
-        specifier: 9.0.0
-        version: 9.0.0
+        specifier: 9.0.2
+        version: 9.0.2
       cssnano:
         specifier: 9.0.3
         version: 9.0.3(postcss@8.5.28)
@@ -792,8 +792,8 @@ packages:
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
 
-  cpx2@9.0.0:
-    resolution: {integrity: sha512-KRZGQCmHrM10xfLjrCBTQHpEIJgKtZyOOO5fygu9KE00IjQOL76FHjeON62R5PWS/W2J5ofgRJKF8rpUlEuLPQ==}
+  cpx2@9.0.2:
+    resolution: {integrity: sha512-9k/+5lzpDdNGB6UwfSEfJxF/v2TsuOBZtF3xf8DFxpqtLTlWZo4svf/oOxQ0E7Of7mhVw8mQZkDz7nlCXtc1ig==}
     engines: {node: ^22.0.0 || >=24.0.0, npm: '>=10'}
     hasBin: true
 
@@ -4077,7 +4077,7 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
-  cpx2@9.0.0:
+  cpx2@9.0.2:
     dependencies:
       debounce: 3.0.0
       glob: 13.0.6
