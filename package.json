@@ -19,7 +19,7 @@
     "cssnano": "9.0.4",
     "fixpack": "4.0.0",
     "husky": "9.1.7",
-    "lint-staged": "17.5.0",
+    "lint-staged": "17.5.1",
     "markdown-it": "15.0.1",
     "markdown-it-anchor": "10.0.0",
     "npm-run-all2": "9.0.3",
