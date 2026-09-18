@@ -210,11 +210,11 @@ importers:
         specifier: 17.5.1
         version: 17.5.1
       markdown-it:
-        specifier: 15.0.1
-        version: 15.0.1
+        specifier: 15.0.2
+        version: 15.0.2
       markdown-it-anchor:
         specifier: 10.0.0
-        version: 10.0.0(@types/markdown-it@14.2.0)(markdown-it@15.0.1)
+        version: 10.0.0(@types/markdown-it@14.2.0)(markdown-it@15.0.2)
       npm-run-all2:
         specifier: 9.0.3
         version: 9.0.3
@@ -1898,8 +1898,8 @@ packages:
     resolution: {integrity: sha512-sHHjZ5fJKlgrG4qns2YwVcdNep35h5fERrfkD2YNsb9UFk0UIHarbiTaHKVMlPuWAoiilyK8Fv/jAm11slsY7Q==}
     hasBin: true
 
-  markdown-it@15.0.1:
-    resolution: {integrity: sha512-9/7gE95FNPkfUWrjJIoHZza2iLmuJlPD0UNMxPi7bxUrbCR525YZY0r+zyfes0dZI5ZZ/uNIXUJca0pJvtw41g==}
+  markdown-it@15.0.2:
+    resolution: {integrity: sha512-q4IGxMv56jCqT4OCRCADBoDP3LO4MhmTXjFbphHPXs4g3j9Xg5RDnxqN8IF/3vIWEU+VCnUq+7JUg/cfy2E6Qw==}
     hasBin: true
 
   markdown-table@2.0.0:
@@ -5253,10 +5253,10 @@ snapshots:
     dependencies:
       pify: 3.0.0
 
-  markdown-it-anchor@10.0.0(@types/markdown-it@14.2.0)(markdown-it@15.0.1):
+  markdown-it-anchor@10.0.0(@types/markdown-it@14.2.0)(markdown-it@15.0.2):
     dependencies:
       '@types/markdown-it': 14.2.0
-      markdown-it: 15.0.1
+      markdown-it: 15.0.2
 
   markdown-it@14.3.2:
     dependencies:
@@ -5267,7 +5267,7 @@ snapshots:
       punycode.js: 2.3.1
       uc.micro: 2.1.0
 
-  markdown-it@15.0.1:
+  markdown-it@15.0.2:
     dependencies:
       argparse: 3.0.2
       entities: 8.1.0
