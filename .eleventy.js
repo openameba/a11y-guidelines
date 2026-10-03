@@ -34,6 +34,12 @@ module.exports = (eleventyConfig) => {
   const scNumberToPath = require('./src/_filters/scNumberToPath');
   eleventyConfig.addFilter('scNumberToPath', scNumberToPath);
 
+  const scNumberToPrincipleLabel = require('./src/_filters/scNumberToPrincipleLabel');
+  eleventyConfig.addFilter(
+    'scNumberToPrincipleLabel',
+    scNumberToPrincipleLabel,
+  );
+
   // ShortCodes
   const labelShortCode = require('./src/_shortcodes/label');
   eleventyConfig.addPairedShortcode('label', labelShortCode);

@@ -2,7 +2,47 @@
 
 :root {
   --color-base-background: var(--color-surface-primary);
-  --color-base-text: var(--color-text-medium-emphasis);
+  /* 本文はデザインレビューを受けて medium-emphasis(0.74)から一段濃く。
+     キャプション等の medium-emphasis は据え置きで階層を維持する */
+  --color-base-text: var(--gray-90-alpha);
   --color-heading-text: var(--color-text-high-emphasis);
   --color-link: var(--color-base-text);
+}
+
+/**
+ * ダークモード
+ * ameba-color-palette.css 4.x(npm)はライトのセマンティックトークンのみ提供するため、
+ * 旧 feature/dark-mode ブランチが持っていたダーク定義のうち、
+ * このサイトが使用する変数だけをここで管理する(値は同ブランチと同一)。
+ * セレクタ構成はパレット本体のダークモード実装を踏襲:
+ * - [data-color-scheme='dark'] 明示指定
+ * - OS がダークで、明示指定が無い/dark のとき
+ */
+:root[data-color-scheme='dark'] {
+  --color-base-text: var(--white-90-alpha);
+  --color-surface-primary: var(--gray-90);
+  --color-surface-secondary: var(--white-5-alpha);
+  --color-text-high-emphasis: var(--white-100);
+  --color-text-medium-emphasis: var(--white-80-alpha);
+  --color-text-accent-primary: var(--primary-green-50);
+  --color-text-caution: var(--caution-red-vivid-100);
+  --color-border-low-emphasis: var(--white-20-alpha);
+  --color-border-medium-emphasis: var(--white-30-alpha);
+  --color-object-low-emphasis: var(--white-60-alpha);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-color-scheme]),
+  :root[data-color-scheme='dark'] {
+    --color-base-text: var(--white-90-alpha);
+    --color-surface-primary: var(--gray-90);
+    --color-surface-secondary: var(--white-5-alpha);
+    --color-text-high-emphasis: var(--white-100);
+    --color-text-medium-emphasis: var(--white-80-alpha);
+    --color-text-accent-primary: var(--primary-green-50);
+    --color-text-caution: var(--caution-red-vivid-100);
+    --color-border-low-emphasis: var(--white-20-alpha);
+    --color-border-medium-emphasis: var(--white-30-alpha);
+    --color-object-low-emphasis: var(--white-60-alpha);
+  }
 }
