@@ -198,8 +198,8 @@ importers:
         specifier: 9.0.3
         version: 9.0.3
       cssnano:
-        specifier: 9.1.0
-        version: 9.1.0(postcss@8.5.28)
+        specifier: 9.1.1
+        version: 9.1.1(postcss@8.5.28)
       fixpack:
         specifier: 4.0.0
         version: 4.0.0
@@ -908,8 +908,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.28
 
-  cssnano@9.1.0:
-    resolution: {integrity: sha512-ae04R4AveAXRs1M29hDNrKcfsLv/Ef2nA21wnCaWKqcMcCEUGBx8uRz4JYvYkArF5agDW1hhv1c9sr1d+6dT8w==}
+  cssnano@9.1.1:
+    resolution: {integrity: sha512-Jm3JBThKaUOo6Q9Buyjez+ww/SsgbwmLgg8H5fIf+wAAv5clG2x1KupoQR2PejzEbRyTVqVu93nORWT/320J/g==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.28
@@ -4038,8 +4038,8 @@ snapshots:
 
   caniuse-api@4.0.0:
     dependencies:
-      browserslist: 4.29.1
-      caniuse-lite: 1.0.30001812
+      browserslist: 4.29.3
+      caniuse-lite: 1.0.30001814
 
   caniuse-lite@1.0.30001812: {}
 
@@ -4241,7 +4241,7 @@ snapshots:
       '@csstools/css-tokenizer': 4.0.2
       postcss: 8.5.28
 
-  cssnano@9.1.0(postcss@8.5.28):
+  cssnano@9.1.1(postcss@8.5.28):
     dependencies:
       cssnano-preset-default: 9.2.2(postcss@8.5.28)
       postcss: 8.5.28
