@@ -198,8 +198,8 @@ importers:
         specifier: 9.0.3
         version: 9.0.3
       cssnano:
-        specifier: 9.3.1
-        version: 9.3.1(postcss@8.5.29)
+        specifier: 9.3.2
+        version: 9.3.2(postcss@8.5.29)
       fixpack:
         specifier: 4.0.0
         version: 4.0.0
@@ -903,8 +903,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.29
 
-  cssnano@9.3.1:
-    resolution: {integrity: sha512-z9H0t9jc05xtySrd+6+OhXhVlRH4alOzfejM7AR8cWQZGiG2fXmz0hX3G5WZlT1Xspqj3mMp/uPSaOlW7KoE2A==}
+  cssnano@9.3.2:
+    resolution: {integrity: sha512-KvuGq1GUUfC8nxaPDSqFhMAVMJQ/3BuVPFKTQIalOu9icM3pqCUoyNGnVkL/bO3sMPnDaeKFHNaP03y21yvGiA==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.28
@@ -2798,10 +2798,6 @@ packages:
     resolution: {integrity: sha512-/dPCrG1s3ePpWm6yBbxZq5Be1dXGLyLn9Z791chDC3NFrpkVbWGzkBwPN1knaciexFXgRJ7hzdnwZ4stHSDmjg==}
     engines: {node: '>=4'}
 
-  source-map-js@1.2.1:
-    resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
-    engines: {node: '>=0.10.0'}
-
   source-map-js@1.2.2:
     resolution: {integrity: sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==}
     engines: {node: '>=0.10.0'}
@@ -4191,12 +4187,12 @@ snapshots:
   css-tree@2.2.1:
     dependencies:
       mdn-data: 2.0.28
-      source-map-js: 1.2.1
+      source-map-js: 1.2.2
 
   css-tree@3.2.1:
     dependencies:
       mdn-data: 2.27.1
-      source-map-js: 1.2.1
+      source-map-js: 1.2.2
 
   css-what@7.0.0: {}
 
@@ -4238,7 +4234,7 @@ snapshots:
       '@csstools/css-tokenizer': 4.0.2
       postcss: 8.5.29
 
-  cssnano@9.3.1(postcss@8.5.29):
+  cssnano@9.3.2(postcss@8.5.29):
     dependencies:
       cssnano-preset-default: 9.6.0(postcss@8.5.29)
       postcss: 8.5.29
@@ -6285,8 +6281,6 @@ snapshots:
   sort-keys@2.0.0:
     dependencies:
       is-plain-obj: 1.1.0
-
-  source-map-js@1.2.1: {}
 
   source-map-js@1.2.2: {}
 
