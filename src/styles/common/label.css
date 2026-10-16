@@ -1,15 +1,21 @@
 /**
  * label
+ * 適合レベルバッジ。背景はデザインレビューを受けて surface-secondary(グレー)から
+ * surface-primary(ページ地色)に変更(グレー背景は文字コントラストを下げるため)
  */
 .Label {
+  display: inline-block;
   border-radius: 1000px;
-  border: solid 1px currentColor;
+  border: solid 1.5px currentColor;
+  background-color: var(--color-surface-primary);
   color: inherit;
   font-size: calc(12 / 16 * 1rem);
   font-weight: bold;
-  margin-left: 8px;
-  padding: 2px 8px;
+  line-height: 1.5;
+  margin-left: var(--space-1);
+  padding: 2px 10px;
   vertical-align: text-bottom;
+  white-space: nowrap;
 }
 
 .Label--large {
