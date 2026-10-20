@@ -198,8 +198,8 @@ importers:
         specifier: 9.0.3
         version: 9.0.3
       cssnano:
-        specifier: 9.6.0
-        version: 9.6.0(postcss@8.5.30)
+        specifier: 9.8.0
+        version: 9.8.0(postcss@8.5.30)
       fixpack:
         specifier: 4.0.0
         version: 4.0.0
@@ -879,8 +879,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.29
 
-  cssnano@9.6.0:
-    resolution: {integrity: sha512-HVcCfGemKShupFMTKcZblan2zOA/W0uGMB9PKzWtliaY3L1DmyzAAqriMi5TzCo0WOYP4nwTnLi9AIxWn3Ma/w==}
+  cssnano@9.8.0:
+    resolution: {integrity: sha512-sNgrmVv7rtwR3j6VwjlgoDPq52ptYAKbsBQBm3SR1rEAg0e1feS8N2OqkPp1ZKmyGkpNr80kerYNCCbdQXhDtg==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.29
@@ -4150,7 +4150,7 @@ snapshots:
       '@csstools/css-tokenizer': 4.0.2
       postcss: 8.5.30
 
-  cssnano@9.6.0(postcss@8.5.30):
+  cssnano@9.8.0(postcss@8.5.30):
     dependencies:
       cssnano-preset-default: 9.8.0(postcss@8.5.30)
       postcss: 8.5.30
