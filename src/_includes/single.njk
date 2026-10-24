@@ -5,11 +5,14 @@
   </head>
 
   <body>
+    {% include "partials/global-header.njk" %}
+
     {% include "partials/header.njk" %}
 
     <main class="Main">
       <div class="Container">
         <article class="Article">
+          {% if number %}{% include "partials/breadcrumb.njk" %}{% endif %}
           {{ content | safe }}
         </article>
       </div>
