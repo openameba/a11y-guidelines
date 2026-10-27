@@ -1,62 +1,119 @@
 /**
- * 開閉パネル
+ * 補足の開閉パネル
+ * ネイティブの <details>/<summary> をそのまま使う(4.1.2)。
+ * マーカーは spindle の triangle アイコンに置換(開時 90° 回転)。
+ * 開閉の状態伝達はネイティブ要素のセマンティクスが担うため、置換は見た目のみの変更。
+ * 開閉の高さアニメーションは対応ブラウザのみのプログレッシブエンハンスメント
  */
 details {
   box-sizing: border-box;
   font-size: calc(14 / 16 * 1rem);
-  border: 3px solid var(--color-border-low-emphasis);
-  border-radius: 4px;
+  border: 2px solid var(--color-border-low-emphasis);
+  border-radius: var(--radius-m);
+  /* 開閉アニメーション用: block-size auto への遷移を許可(非対応ブラウザは無視) */
+  interpolate-size: allow-keywords;
 }
 
 details + details {
-  margin-top: 16px;
+  margin-top: var(--space-2);
+}
+
+/*
+ * 開閉アニメーション: ::details-content 対応ブラウザのみ高さがアニメーションし、
+ * 非対応では従来どおり瞬時に開閉。動きは 2.3.3 に配慮して prefers-reduced-motion で無効化
+ */
+details::details-content {
+  block-size: 0;
+  overflow-y: clip;
+  transition:
+    content-visibility 0.3s allow-discrete,
+    block-size 0.3s ease-out;
+}
+
+details[open]::details-content {
+  block-size: auto;
 }
 
 summary {
-  text-indent: -0.8em;
   cursor: pointer;
   font-weight: bold;
   position: relative;
-  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-6) var(--space-2) var(--space-2);
+  border-radius: calc(var(--radius-m) - 2px);
+  /* ネイティブマーカーは非表示にし、::before の triangle アイコンに置換 */
+  list-style: none;
 }
 
-summary:before {
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* マーカー: spindle の triangle_right。開時に 90° 回転して下向きになる */
+summary::before {
   content: '';
-  display: block;
-  width: 32px;
-  height: 100%;
-  background-color: var(--color-base-background);
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-object-low-emphasis);
+  mask-image: url('/img/icon/triangle_right.svg');
+  mask-size: contain;
+  -webkit-mask-image: url('/img/icon/triangle_right.svg');
+  -webkit-mask-size: contain;
+  transition: transform 0.3s ease-out;
+}
+
+details[open] > summary::before {
+  transform: rotate(90deg);
 }
 
 details[open] {
-  padding: 0 32px 16px;
+  padding: 0 var(--space-4) var(--space-2);
 }
 
-details[open] summary {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  margin: 0 -32px 16px;
+details[open] > summary {
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+  margin: 0 calc(-1 * var(--space-4)) var(--space-2);
+  border-bottom: 1px solid var(--color-border-low-emphasis);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-summary:after {
+/* 開閉状態のアイコン(+/-): マーカーに追加の視覚手がかり(1.4.1) */
+summary::after {
   background: var(--color-object-low-emphasis);
   position: absolute;
   right: 1rem;
-  top: calc(50% - 12px);
+  top: calc(50% - 10px);
   content: '';
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
+  mask-image: url('/img/icon/plus_bold.svg');
+  mask-size: contain;
   -webkit-mask-image: url('/img/icon/plus_bold.svg');
+  -webkit-mask-size: contain;
 }
 
-details[open] > summary:after {
+details[open] > summary::after {
+  mask-image: url('/img/icon/minus_bold.svg');
   -webkit-mask-image: url('/img/icon/minus_bold.svg');
 }
 
-summary:focus {
-  outline-offset: 1px;
+@media (hover: hover) {
+  summary:hover {
+    background-color: var(--color-surface-secondary);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details::details-content {
+    transition: none;
+  }
+
+  summary::before {
+    transition: none;
+  }
 }

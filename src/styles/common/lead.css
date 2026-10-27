@@ -1,0 +1,10 @@
+/**
+ * リード文
+ * トップページでタイトル直下に置く caption 的な説明文。
+ * 見出し「目次」を廃止した代わりに、タイトルに従属する補足として一段控えめに表示する
+ * (目次領域の名前は nav の aria-label="目次" が担う)
+ */
+.Lead {
+  font-size: calc(14 / 16 * 1rem);
+  color: var(--color-text-medium-emphasis);
+}
