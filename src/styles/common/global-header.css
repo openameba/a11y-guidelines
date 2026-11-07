@@ -1,0 +1,267 @@
+/**
+ * 固定グローバルヘッダー
+ * スクロールして大きいヘッダーが画面外に出たときにのみ現れる細いバー。
+ * - 初期表示では出さない(ページ内ヘッダーのロゴと重複しないため)
+ * - 出現は scroll-driven animations によるプログレッシブエンハンスメント。
+ *   非対応ブラウザでは visibility: hidden のまま(フォーカスも当たらない)で、
+ *   ナビゲーションはトップのリンクとパンくずが担う
+ * - 表示時は DOM 先頭にあるためフォーカス順と視覚順が一致する(2.4.3)
+ * - ナビリンクは 44px ターゲット(2.5.5/2.5.8)、hover は下線のみ(1.4.1 の整理)
+ */
+.GlobalHeader {
+  position: fixed;
+  inset: 0 0 auto;
+  /* サイト唯一の浮遊要素(z-index スケールは未導入) */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--global-header-height);
+  padding: 0 var(--space-3);
+  background-color: var(--color-surface-primary);
+  border-bottom: 1px solid var(--color-border-low-emphasis);
+  /* 非表示時はフォーカス不可にする(opacity だけだと Tab が届いてしまう) */
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* スクロールで出現(対応ブラウザのみ) */
+@supports (animation-timeline: scroll()) {
+  .GlobalHeader {
+    animation: global-header-reveal linear both;
+    animation-timeline: scroll();
+    /* 大きいヘッダー(ロゴ+タイトル ≒ 240px)が画面外に出るあたりでフェードイン */
+    animation-range: 240px 320px;
+  }
+}
+
+@keyframes global-header-reveal {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    translate: 0 -8px;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* 2.3.3: 移動は無効化し、フェードのみに */
+  @keyframes global-header-reveal {
+    from {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    to {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+/* ロックアップ: 小ロゴ(Ameba)+区切り線+タイトル。
+   「Ameba」はロゴの alt が担い、読み上げは「Ameba Accessibility Guidelines」になる */
+.GlobalHeader__Lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  /* インセットのフォーカスリング(3px)がロゴ/文字に被らないための余白。
+     負マージンで打ち消し、ロゴの表示位置(左端 24px)は変えない */
+  padding: 0 var(--space-1);
+  margin-inline: calc(-1 * var(--space-1));
+  border-radius: var(--radius-s);
+  color: var(--color-heading-text);
+  text-decoration: none;
+}
+
+.GlobalHeader__Lockup::after {
+  content: '';
+  order: 1;
+  width: 1px;
+  height: 14px;
+  background-color: var(--color-border-low-emphasis);
+}
+
+.GlobalHeader__Logo {
+  display: block;
+}
+
+.GlobalHeader__Title {
+  order: 2;
+  font-size: calc(14 / 16 * 1rem);
+  font-weight: bold;
+}
+
+.GlobalNav ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.GlobalNav li {
+  margin: 0;
+}
+
+.GlobalNav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: var(--radius-s);
+  font-size: calc(14 / 16 * 1rem);
+  color: var(--color-base-text);
+  text-decoration-line: none;
+}
+
+@media (hover: hover) {
+  /* hover で「リンクである」ことを下線で返す(SCList と同じ規約) */
+  .GlobalNav a:hover {
+    text-decoration-line: underline;
+  }
+}
+/* ===== モバイル(800px 未満): ナビをハンバーガー+モーダルメニューに ===== */
+
+/* ハンバーガーボタン。デスクトップでは非表示。
+   JS が初期化時に hidden 属性を外すまで表示しない(JS 無効環境ではボタン自体を出さない) */
+.GlobalHeader__MenuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: transparent;
+  cursor: pointer;
+}
+
+.GlobalHeader__MenuButton::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-object-low-emphasis);
+  mask-image: url('/img/icon/menu_hamburger_bold.svg');
+  mask-size: contain;
+  -webkit-mask-image: url('/img/icon/menu_hamburger_bold.svg');
+  -webkit-mask-size: contain;
+}
+
+@media (max-width: 799px) {
+  .GlobalNav {
+    display: none;
+  }
+
+  .GlobalHeader__MenuButton:not([hidden]) {
+    display: inline-flex;
+  }
+}
+
+/*
+ * モバイルメニュー(dialog)。showModal() でフォーカストラップ・Esc 閉じ・
+ * 背景 inert がネイティブに担保される(2.1.1/2.1.2/4.1.2)。
+ * モーダル中は背景のバーが inert になるため、閉じるボタンは dialog 内のヘッダー行に置く
+ * (dialog がバーを覆うので見た目はバーのボタンが × に変わったように見える)
+ */
+.MobileMenu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 var(--space-1);
+  border: 0;
+  border-bottom: 1px solid var(--color-border-low-emphasis);
+  background: var(--color-surface-primary);
+  color: var(--color-base-text);
+}
+
+.MobileMenu::backdrop {
+  /* gray-30-alpha 相当(::backdrop はカスタムプロパティを継承しないためリテラル) */
+  background: rgba(8, 18, 26, 0.3);
+}
+
+.MobileMenu__Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--global-header-height);
+  padding: 0 var(--space-3);
+}
+
+.MobileMenu__Close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: transparent;
+  cursor: pointer;
+}
+
+.MobileMenu__Close::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-object-low-emphasis);
+  mask-image: url('/img/icon/cross_bold.svg');
+  mask-size: contain;
+  -webkit-mask-image: url('/img/icon/cross_bold.svg');
+  -webkit-mask-size: contain;
+}
+
+.MobileMenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.MobileMenu li {
+  margin: 0;
+}
+
+.MobileMenu li a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  font-size: calc(14 / 16 * 1rem);
+  color: var(--color-base-text);
+  text-decoration-line: none;
+}
+
+@media (hover: hover) {
+  .MobileMenu li a:hover {
+    text-decoration-line: underline;
+  }
+}
+
+/*
+ * フォーカスリングのインセット化(2.4.7):
+ * バー/メニュー内の操作要素はビューポートや dialog の縁に接しているため、
+ * 既定の外側リング(offset +2px)では見切れる。負の outline-offset で
+ * リングを要素の内側に描き、常に全周が見えるようにする
+ */
+.GlobalHeader :focus-visible,
+.MobileMenu :focus-visible {
+  outline-offset: calc(-1 * var(--focus-ring-width));
+}
+
+/* ロックアップはリングを縁ぴったりに(インセットだと内容と近く見えるため。
+   直前のインセット規則と同順位のため、後勝ちでこちらが適用される) */
+.GlobalHeader .GlobalHeader__Lockup:focus-visible,
+.MobileMenu .GlobalHeader__Lockup:focus-visible {
+  outline-offset: 0;
+}

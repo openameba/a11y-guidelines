@@ -3,21 +3,22 @@
  *
  */
 figure {
-  margin: 0;
+  margin: var(--space-3) 0;
   max-width: 100%;
-  vertical-align: top;
-  margin: 32px 0 48px;
 }
 
 figure img,
 figure video {
-  border: 1px solid var(--color-border-low-emphasis);
   max-width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border-low-emphasis);
+  border-radius: var(--radius-m);
 }
 
 figcaption {
-  font-size: calc(12 / 16 * 1rem);
-  margin-top: 8px;
+  color: var(--color-text-medium-emphasis);
+  font-size: calc(14 / 16 * 1rem);
+  margin-top: var(--space-1);
 }
 
 .Figurelist {
@@ -44,21 +45,6 @@ figcaption {
 
 .Figurelist figure {
   margin: 0;
-}
-
-/**
- * 4.1.2のように画像を2枚並べる図に使う。
- */
-.FigureMulti {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 12px;
-  align-items: flex-end;
-}
-
-.FigureMulti img {
-  max-width: 100%;
 }
 
 @media (max-width: 800px) {
