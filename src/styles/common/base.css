@@ -4,43 +4,59 @@
 html {
   box-sizing: border-box;
   font-family:
-    Meiryo,
-    'Yu Gothic Medium',
     system-ui,
     -apple-system,
-    BlinkMacSystemFont,
+    'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans',
+    'Yu Gothic Medium',
+    Meiryo,
     sans-serif;
   line-height: 1.5;
-  scroll-padding-top: 1.5em;
+  /* ページ内アンカーの着地点が固定グローバルヘッダーに隠れないようにする */
+  scroll-padding-top: calc(var(--global-header-height) + 1em);
 }
 
 body {
   background-color: var(--color-base-background);
   color: var(--color-base-text);
+  font-size: var(--font-size-body);
   margin: 0;
 }
 
+/**
+ * リンク(1.4.1):
+ * - 下線は静止状態で常時表示(色だけに頼らないリンク識別)。太さは 1px 固定
+ * - hover は下線が消える(形状変化なので forced-colors でも機能する)
+ */
 a {
   overflow-wrap: break-word;
   color: var(--color-link);
-  text-underline-position: under;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
 }
 
-:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--color-focus-clarity);
+a:hover {
+  text-decoration-line: none;
 }
 
-article a:focus {
-  color: inherit;
-  background-color: var(--color-focus-ambiguous);
-  box-shadow: 0 0 0 3px var(--color-focus-ambiguous);
+/**
+ * フォーカス表示(2.4.7):
+ * 旧実装の `:focus { outline: none; box-shadow: ... }` は
+ * forced-colors(Windows ハイコントラスト)で box-shadow が描画されず
+ * フォーカスが不可視になるため、outline ベースに刷新。
+ * :focus-visible でキーボード操作時のみ表示する
+ */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: 2px;
 }
 
 ol,
 ul {
   padding-left: 2em;
-  margin: 16px 0;
+  margin: var(--space-2) 0;
 }
 
 ol > li {
@@ -74,9 +90,10 @@ iframe {
   border: 0;
 }
 
+/* 1.4.8: 行間 1.75、段落間は行間込みで1.5文字分 */
 p {
-  line-height: 1.71;
-  margin: calc(1.5em - (0.71 / 2 * 1em)) 0; /* 1.4.8 line-height を含めて1.5文字分の余白 */
+  line-height: var(--line-height-body);
+  margin: calc(1.5em - (0.75 / 2 * 1em)) 0;
 }
 
 strong {
@@ -87,11 +104,11 @@ dt {
   color: var(--color-text-high-emphasis);
   font-size: calc(18 / 16 * 1rem);
   font-weight: bold;
-  line-height: 1.71;
+  line-height: var(--line-height-body);
 }
 
 dd {
-  margin: 0 0 16px;
+  margin: 0 0 var(--space-2);
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
