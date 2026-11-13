@@ -213,8 +213,8 @@ importers:
         specifier: 15.0.3
         version: 15.0.3
       markdown-it-anchor:
-        specifier: 10.0.0
-        version: 10.0.0(@types/markdown-it@14.2.0)(markdown-it@15.0.3)
+        specifier: 10.1.0
+        version: 10.1.0(@types/markdown-it@14.2.0)(markdown-it@15.0.3)
       npm-run-all2:
         specifier: 9.0.4
         version: 9.0.4
@@ -1807,11 +1807,14 @@ packages:
     resolution: {integrity: sha512-2w31R7SJtieJJnQtGc7RVL2StM2vGYVfqUOvUDxH6bC6aJTxPxTF0GnIgCyu7tjockiUWAYQRbxa7vKn34s5sQ==}
     engines: {node: '>=4'}
 
-  markdown-it-anchor@10.0.0:
-    resolution: {integrity: sha512-Q8g7Z6OBdH3eXF0lujFqukIxUvgCDZcjzCrJxmD6QiEzU1HWR9fVN+Bf6gxmM+0yrPFs+jUw8gNjLmUQqt6Eew==}
+  markdown-it-anchor@10.1.0:
+    resolution: {integrity: sha512-htMTOUnoGqoWguddWO+NBrOEdh3dt9k1RIhTlr2CQTJOPiLZglDDGADu+Ch+47roTO6nxl2aJfSYykmOhdJCew==}
     peerDependencies:
       '@types/markdown-it': '*'
       markdown-it: '*'
+    peerDependenciesMeta:
+      '@types/markdown-it':
+        optional: true
 
   markdown-it@14.3.3:
     resolution: {integrity: sha512-L//tDAkjTjJCU6pBUSBTgs3Kg4InVaZuUZog/b6V12UKhcDQ7S78877ibbCanRExwPuYP1CZD7Gd2dxSy1GXRg==}
@@ -3494,18 +3497,21 @@ snapshots:
     dependencies:
       '@types/node': 26.6.6
 
-  '@types/linkify-it@5.0.0': {}
+  '@types/linkify-it@5.0.0':
+    optional: true
 
   '@types/markdown-it@14.2.0':
     dependencies:
       '@types/linkify-it': 5.0.0
       '@types/mdurl': 2.0.0
+    optional: true
 
   '@types/mdast@3.0.15':
     dependencies:
       '@types/unist': 2.0.11
 
-  '@types/mdurl@2.0.0': {}
+  '@types/mdurl@2.0.0':
+    optional: true
 
   '@types/mocha@10.0.10': {}
 
@@ -4878,10 +4884,11 @@ snapshots:
     dependencies:
       pify: 3.0.0
 
-  markdown-it-anchor@10.0.0(@types/markdown-it@14.2.0)(markdown-it@15.0.3):
+  markdown-it-anchor@10.1.0(@types/markdown-it@14.2.0)(markdown-it@15.0.3):
     dependencies:
-      '@types/markdown-it': 14.2.0
       markdown-it: 15.0.3
+    optionalDependencies:
+      '@types/markdown-it': 14.2.0
 
   markdown-it@14.3.3:
     dependencies:
