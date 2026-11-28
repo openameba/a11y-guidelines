@@ -1,0 +1,39 @@
+<!-- 固定グローバルヘッダー: スクロールで大きいヘッダーが画面外に出たときにのみ現れる
+(出現制御は common/global-header.css の scroll-driven animations。
+非対応ブラウザでは visibility: hidden のままでフォーカスも当たらない)。
+header 要素にしない: header.Header と banner ランドマークが重複するため div。
+「Ameba」はロゴの alt が担い、ロックアップの読み上げは「Ameba Accessibility Guidelines」。
+ロゴは縮小時に ® が潰れるため、全アセットから ® を除去済み(通常ロゴを 62×20 で使用)。
+モバイル(<800px)はナビをハンバーガー+モーダルメニュー(dialog)に格納。
+ボタンは JS が初期化時に hidden を外す(JS 無効環境では出さない)。
+モーダル中は背景のバーが inert になるため、閉じるボタンは dialog 内のヘッダー行に置く -->
+<div class="GlobalHeader">
+  <a class="GlobalHeader__Lockup" href="/">
+    <img src="/img/logo-ameba.svg" class="GlobalHeader__Logo Theme--light" alt="Ameba" width="62" height="20" />
+    <img src="/img/logo-ameba-inverse.svg" class="GlobalHeader__Logo Theme--dark" alt="Ameba" width="62" height="20" />
+    <span class="GlobalHeader__Title">Accessibility Guidelines</span>
+  </a>
+  <nav class="GlobalNav" aria-label="サイト内メニュー">
+    <ul>
+      <li><a href="/">ホーム</a></li>
+      <li><a href="/about/">このガイドラインについて</a></li>
+      <li><a href="/services/">対象となるサービス</a></li>
+    </ul>
+  </nav>
+  <button class="GlobalHeader__MenuButton" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-menu" hidden></button>
+</div>
+<dialog class="MobileMenu" id="global-menu" aria-label="サイト内メニュー">
+  <div class="MobileMenu__Header">
+    <a class="GlobalHeader__Lockup" href="/">
+      <img src="/img/logo-ameba.svg" class="GlobalHeader__Logo Theme--light" alt="Ameba" width="62" height="20" />
+      <img src="/img/logo-ameba-inverse.svg" class="GlobalHeader__Logo Theme--dark" alt="Ameba" width="62" height="20" />
+      <span class="GlobalHeader__Title">Accessibility Guidelines</span>
+    </a>
+    <button class="MobileMenu__Close" type="button" aria-label="メニューを閉じる"></button>
+  </div>
+  <ul>
+    <li><a href="/">ホーム</a></li>
+    <li><a href="/about/">このガイドラインについて</a></li>
+    <li><a href="/services/">対象となるサービス</a></li>
+  </ul>
+</dialog>
